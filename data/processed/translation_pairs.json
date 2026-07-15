@@ -1,0 +1,1766 @@
+[
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65116\n bgp router-id 192.168.92.1\n neighbor 192.168.92.1 remote-as 64528\n address-family ipv4 unicast\n  network 10.254.92.0 mask 255.255.255.0\n  neighbor 192.168.92.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65116;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.92.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65116;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.92.1;\n        }\n    }\n}",
+    "output": "router bgp 65116\n bgp router-id 192.168.92.1\n neighbor 192.168.92.1 remote-as 64528\n address-family ipv4 unicast\n  network 10.254.92.0 mask 255.255.255.0\n  neighbor 192.168.92.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65480\n bgp router-id 192.168.200.1\n neighbor 192.168.200.1 remote-as 64592\n address-family ipv4 unicast\n  network 10.255.200.0 mask 255.255.255.0\n  neighbor 192.168.200.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65480;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64592;\n            neighbor 192.168.200.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.200.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65480;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64592;\n            neighbor 192.168.200.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.200.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65480\n bgp router-id 192.168.200.1\n neighbor 192.168.200.1 remote-as 64592\n address-family ipv4 unicast\n  network 10.255.200.0 mask 255.255.255.0\n  neighbor 192.168.200.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65484\n bgp router-id 192.168.204.1\n neighbor 192.168.204.1 remote-as 64596\n address-family ipv4 unicast\n  network 10.255.204.0 mask 255.255.255.0\n  neighbor 192.168.204.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65484;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.204.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65484;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.204.1;\n        }\n    }\n}",
+    "output": "router bgp 65484\n bgp router-id 192.168.204.1\n neighbor 192.168.204.1 remote-as 64596\n address-family ipv4 unicast\n  network 10.255.204.0 mask 255.255.255.0\n  neighbor 192.168.204.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65380\n bgp router-id 192.168.100.1\n neighbor 192.168.100.1 remote-as 64592\n address-family ipv4 unicast\n  network 10.255.100.0 mask 255.255.255.0\n  neighbor 192.168.100.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65380;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64592;\n            neighbor 192.168.100.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.100.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65380;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64592;\n            neighbor 192.168.100.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.100.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65380\n bgp router-id 192.168.100.1\n neighbor 192.168.100.1 remote-as 64592\n address-family ipv4 unicast\n  network 10.255.100.0 mask 255.255.255.0\n  neighbor 192.168.100.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65490\n neighbor 192.168.210.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.210.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65490;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.210.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65490;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.210.1;\n        }\n    }\n}",
+    "output": "router bgp 65490\n neighbor 192.168.210.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.210.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65422\n neighbor 192.168.142.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.142.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65422;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.142.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65422;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.142.1;\n        }\n    }\n}",
+    "output": "router bgp 65422\n neighbor 192.168.142.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.142.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65080\n bgp router-id 192.168.56.1\n neighbor 192.168.56.1 remote-as 64592\n address-family ipv4 unicast\n  network 10.254.56.0 mask 255.255.255.0\n  neighbor 192.168.56.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65080;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64592;\n            neighbor 192.168.56.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.56.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65080;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64592;\n            neighbor 192.168.56.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.56.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65080\n bgp router-id 192.168.56.1\n neighbor 192.168.56.1 remote-as 64592\n address-family ipv4 unicast\n  network 10.254.56.0 mask 255.255.255.0\n  neighbor 192.168.56.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65385\n neighbor 192.168.105.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.105.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65385;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.105.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65385;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.105.1;\n        }\n    }\n}",
+    "output": "router bgp 65385\n neighbor 192.168.105.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.105.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65388\n bgp router-id 192.168.108.1\n neighbor 192.168.108.1 remote-as 64600\n address-family ipv4 unicast\n  network 10.255.108.0 mask 255.255.255.0\n  neighbor 192.168.108.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65388;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.108.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65388;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.108.1;\n        }\n    }\n}",
+    "output": "router bgp 65388\n bgp router-id 192.168.108.1\n neighbor 192.168.108.1 remote-as 64600\n address-family ipv4 unicast\n  network 10.255.108.0 mask 255.255.255.0\n  neighbor 192.168.108.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65068\n bgp router-id 192.168.44.1\n neighbor 192.168.44.1 remote-as 64580\n address-family ipv4 unicast\n  network 10.254.44.0 mask 255.255.255.0\n  neighbor 192.168.44.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65068;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.44.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65068;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.44.1;\n        }\n    }\n}",
+    "output": "router bgp 65068\n bgp router-id 192.168.44.1\n neighbor 192.168.44.1 remote-as 64580\n address-family ipv4 unicast\n  network 10.254.44.0 mask 255.255.255.0\n  neighbor 192.168.44.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65051\n neighbor 192.168.27.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.27.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65051;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.27.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65051;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.27.1;\n        }\n    }\n}",
+    "output": "router bgp 65051\n neighbor 192.168.27.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.27.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65016\n neighbor 192.168.248.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.248.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65016;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.248.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65016;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.248.1;\n        }\n    }\n}",
+    "output": "router bgp 65016\n neighbor 192.168.248.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.248.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65090\n neighbor 192.168.66.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.66.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65090;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64602;\n            neighbor 192.168.66.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.66.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65090;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64602;\n            neighbor 192.168.66.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.66.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65090\n neighbor 192.168.66.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.66.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65135\n neighbor 192.168.111.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.111.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65135;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64547;\n            neighbor 192.168.111.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.111.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65135;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64547;\n            neighbor 192.168.111.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.111.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65135\n neighbor 192.168.111.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.111.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65033\n neighbor 192.168.9.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.9.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65033;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.9.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65033;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.9.1;\n        }\n    }\n}",
+    "output": "router bgp 65033\n neighbor 192.168.9.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.9.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65345\n neighbor 192.168.65.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.65.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65345;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64557;\n            neighbor 192.168.65.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.65.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65345;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64557;\n            neighbor 192.168.65.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.65.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65345\n neighbor 192.168.65.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.65.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65245\n neighbor 192.168.221.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.221.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65245;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.221.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65245;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.221.1;\n        }\n    }\n}",
+    "output": "router bgp 65245\n neighbor 192.168.221.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.221.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65152\n neighbor 192.168.128.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.128.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65152;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.128.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65152;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.128.1;\n        }\n    }\n}",
+    "output": "router bgp 65152\n neighbor 192.168.128.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.128.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65120\n bgp router-id 192.168.96.1\n neighbor 192.168.96.1 remote-as 64532\n address-family ipv4 unicast\n  network 10.254.96.0 mask 255.255.255.0\n  neighbor 192.168.96.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65120;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64532;\n            neighbor 192.168.96.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.96.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65120;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64532;\n            neighbor 192.168.96.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.96.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65120\n bgp router-id 192.168.96.1\n neighbor 192.168.96.1 remote-as 64532\n address-family ipv4 unicast\n  network 10.254.96.0 mask 255.255.255.0\n  neighbor 192.168.96.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65362\n neighbor 192.168.82.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.82.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65362;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.82.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65362;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.82.1;\n        }\n    }\n}",
+    "output": "router bgp 65362\n neighbor 192.168.82.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.82.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65412\n neighbor 192.168.132.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.132.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65412;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.132.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65412;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.132.1;\n        }\n    }\n}",
+    "output": "router bgp 65412\n neighbor 192.168.132.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.132.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65128\n bgp router-id 192.168.104.1\n neighbor 192.168.104.1 remote-as 64540\n address-family ipv4 unicast\n  network 10.254.104.0 mask 255.255.255.0\n  neighbor 192.168.104.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65128;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.104.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65128;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.104.1;\n        }\n    }\n}",
+    "output": "router bgp 65128\n bgp router-id 192.168.104.1\n neighbor 192.168.104.1 remote-as 64540\n address-family ipv4 unicast\n  network 10.254.104.0 mask 255.255.255.0\n  neighbor 192.168.104.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65431\n neighbor 192.168.151.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.151.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65431;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.151.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65431;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.151.1;\n        }\n    }\n}",
+    "output": "router bgp 65431\n neighbor 192.168.151.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.151.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65384\n neighbor 192.168.104.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.104.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65384;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.104.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65384;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.104.1;\n        }\n    }\n}",
+    "output": "router bgp 65384\n neighbor 192.168.104.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.104.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65335\n neighbor 192.168.55.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.55.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65335;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.55.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65335;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.55.1;\n        }\n    }\n}",
+    "output": "router bgp 65335\n neighbor 192.168.55.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.55.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65240\n bgp router-id 192.168.216.1\n neighbor 192.168.216.1 remote-as 64552\n address-family ipv4 unicast\n  network 10.254.216.0 mask 255.255.255.0\n  neighbor 192.168.216.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65240;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.216.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65240;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.216.1;\n        }\n    }\n}",
+    "output": "router bgp 65240\n bgp router-id 192.168.216.1\n neighbor 192.168.216.1 remote-as 64552\n address-family ipv4 unicast\n  network 10.254.216.0 mask 255.255.255.0\n  neighbor 192.168.216.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65070\n neighbor 192.168.46.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.46.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65070;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.46.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65070;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.46.1;\n        }\n    }\n}",
+    "output": "router bgp 65070\n neighbor 192.168.46.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.46.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65064\n bgp router-id 192.168.40.1\n neighbor 192.168.40.1 remote-as 64576\n address-family ipv4 unicast\n  network 10.254.40.0 mask 255.255.255.0\n  neighbor 192.168.40.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65064;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.40.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65064;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.40.1;\n        }\n    }\n}",
+    "output": "router bgp 65064\n bgp router-id 192.168.40.1\n neighbor 192.168.40.1 remote-as 64576\n address-family ipv4 unicast\n  network 10.254.40.0 mask 255.255.255.0\n  neighbor 192.168.40.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65295\n neighbor 192.168.15.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.15.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65295;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.15.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65295;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.15.1;\n        }\n    }\n}",
+    "output": "router bgp 65295\n neighbor 192.168.15.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.15.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65425\n neighbor 192.168.145.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.145.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65425;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64537;\n            neighbor 192.168.145.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.145.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65425;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64537;\n            neighbor 192.168.145.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.145.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65425\n neighbor 192.168.145.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.145.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65276\n neighbor 192.168.252.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.252.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65276;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.252.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65276;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.252.1;\n        }\n    }\n}",
+    "output": "router bgp 65276\n neighbor 192.168.252.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.252.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65112\n neighbor 192.168.88.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.88.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65112;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.88.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65112;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.88.1;\n        }\n    }\n}",
+    "output": "router bgp 65112\n neighbor 192.168.88.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.88.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65299\n neighbor 192.168.19.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.19.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65299;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.19.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65299;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.19.1;\n        }\n    }\n}",
+    "output": "router bgp 65299\n neighbor 192.168.19.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.19.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65250\n neighbor 192.168.226.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.226.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65250;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.226.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65250;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.226.1;\n        }\n    }\n}",
+    "output": "router bgp 65250\n neighbor 192.168.226.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.226.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65302\n neighbor 192.168.22.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.22.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65302;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.22.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65302;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.22.1;\n        }\n    }\n}",
+    "output": "router bgp 65302\n neighbor 192.168.22.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.22.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65190\n neighbor 192.168.166.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.166.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65190;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.166.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65190;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.166.1;\n        }\n    }\n}",
+    "output": "router bgp 65190\n neighbor 192.168.166.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.166.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65257\n neighbor 192.168.233.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.233.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65257;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.233.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65257;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.233.1;\n        }\n    }\n}",
+    "output": "router bgp 65257\n neighbor 192.168.233.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.233.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65310\n neighbor 192.168.30.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.30.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65310;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64522;\n            neighbor 192.168.30.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.30.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65310;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64522;\n            neighbor 192.168.30.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.30.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65310\n neighbor 192.168.30.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.30.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65015\n neighbor 192.168.247.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.247.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65015;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64527;\n            neighbor 192.168.247.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.253.247.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65015;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64527;\n            neighbor 192.168.247.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.253.247.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65015\n neighbor 192.168.247.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.247.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65186\n neighbor 192.168.162.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.162.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65186;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.162.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65186;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.162.1;\n        }\n    }\n}",
+    "output": "router bgp 65186\n neighbor 192.168.162.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.162.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65453\n neighbor 192.168.173.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.173.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65453;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.173.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65453;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.173.1;\n        }\n    }\n}",
+    "output": "router bgp 65453\n neighbor 192.168.173.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.173.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65445\n neighbor 192.168.165.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.165.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65445;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.165.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65445;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.165.1;\n        }\n    }\n}",
+    "output": "router bgp 65445\n neighbor 192.168.165.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.165.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65024\n neighbor 192.168.0.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.0.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65024;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.0.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65024;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.0.1;\n        }\n    }\n}",
+    "output": "router bgp 65024\n neighbor 192.168.0.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.0.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65356\n neighbor 192.168.76.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.76.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65356;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.76.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65356;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.76.1;\n        }\n    }\n}",
+    "output": "router bgp 65356\n neighbor 192.168.76.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.76.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65249\n neighbor 192.168.225.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.225.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65249;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.225.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65249;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.225.1;\n        }\n    }\n}",
+    "output": "router bgp 65249\n neighbor 192.168.225.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.225.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65360\n neighbor 192.168.80.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.80.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65360;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64572;\n            neighbor 192.168.80.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.80.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65360;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64572;\n            neighbor 192.168.80.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.80.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65360\n neighbor 192.168.80.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.80.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65036\n neighbor 192.168.12.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.12.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65036;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.12.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65036;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.12.1;\n        }\n    }\n}",
+    "output": "router bgp 65036\n neighbor 192.168.12.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.12.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65455\n neighbor 192.168.175.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.175.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65455;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.175.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65455;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.175.1;\n        }\n    }\n}",
+    "output": "router bgp 65455\n neighbor 192.168.175.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.175.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65370\n neighbor 192.168.90.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.90.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65370;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64582;\n            neighbor 192.168.90.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.90.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65370;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64582;\n            neighbor 192.168.90.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.90.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65370\n neighbor 192.168.90.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.90.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65390\n neighbor 192.168.110.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.110.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65390;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64602;\n            neighbor 192.168.110.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.110.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65390;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64602;\n            neighbor 192.168.110.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.110.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65390\n neighbor 192.168.110.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.110.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65444\n bgp router-id 192.168.164.1\n neighbor 192.168.164.1 remote-as 64556\n address-family ipv4 unicast\n  network 10.255.164.0 mask 255.255.255.0\n  neighbor 192.168.164.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65444;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.164.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65444;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.164.1;\n        }\n    }\n}",
+    "output": "router bgp 65444\n bgp router-id 192.168.164.1\n neighbor 192.168.164.1 remote-as 64556\n address-family ipv4 unicast\n  network 10.255.164.0 mask 255.255.255.0\n  neighbor 192.168.164.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65150\n neighbor 192.168.126.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.126.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65150;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.126.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65150;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.126.1;\n        }\n    }\n}",
+    "output": "router bgp 65150\n neighbor 192.168.126.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.126.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65092\n bgp router-id 192.168.68.1\n neighbor 192.168.68.1 remote-as 64604\n address-family ipv4 unicast\n  network 10.254.68.0 mask 255.255.255.0\n  neighbor 192.168.68.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65092;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.68.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65092;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.68.1;\n        }\n    }\n}",
+    "output": "router bgp 65092\n bgp router-id 192.168.68.1\n neighbor 192.168.68.1 remote-as 64604\n address-family ipv4 unicast\n  network 10.254.68.0 mask 255.255.255.0\n  neighbor 192.168.68.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65138\n neighbor 192.168.114.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.114.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65138;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.114.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65138;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.114.1;\n        }\n    }\n}",
+    "output": "router bgp 65138\n neighbor 192.168.114.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.114.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65285\n neighbor 192.168.5.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.5.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65285;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64597;\n            neighbor 192.168.5.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.5.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65285;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64597;\n            neighbor 192.168.5.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.5.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65285\n neighbor 192.168.5.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.5.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65050\n neighbor 192.168.26.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.26.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65050;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64562;\n            neighbor 192.168.26.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.26.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65050;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64562;\n            neighbor 192.168.26.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.26.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65050\n neighbor 192.168.26.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.26.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65098\n neighbor 192.168.74.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.74.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65098;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.74.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65098;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.74.1;\n        }\n    }\n}",
+    "output": "router bgp 65098\n neighbor 192.168.74.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.74.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65163\n neighbor 192.168.139.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.139.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65163;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.139.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65163;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.139.1;\n        }\n    }\n}",
+    "output": "router bgp 65163\n neighbor 192.168.139.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.139.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65100\n bgp router-id 192.168.76.1\n neighbor 192.168.76.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.254.76.0 mask 255.255.255.0\n  neighbor 192.168.76.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65100;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.76.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65100;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.76.1;\n        }\n    }\n}",
+    "output": "router bgp 65100\n bgp router-id 192.168.76.1\n neighbor 192.168.76.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.254.76.0 mask 255.255.255.0\n  neighbor 192.168.76.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65233\n neighbor 192.168.209.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.209.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65233;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.209.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65233;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.209.1;\n        }\n    }\n}",
+    "output": "router bgp 65233\n neighbor 192.168.209.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.209.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65379\n neighbor 192.168.99.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.99.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65379;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.99.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65379;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.99.1;\n        }\n    }\n}",
+    "output": "router bgp 65379\n neighbor 192.168.99.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.99.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65060\n bgp router-id 192.168.36.1\n neighbor 192.168.36.1 remote-as 64572\n address-family ipv4 unicast\n  network 10.254.36.0 mask 255.255.255.0\n  neighbor 192.168.36.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65060;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.36.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65060;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.36.1;\n        }\n    }\n}",
+    "output": "router bgp 65060\n bgp router-id 192.168.36.1\n neighbor 192.168.36.1 remote-as 64572\n address-family ipv4 unicast\n  network 10.254.36.0 mask 255.255.255.0\n  neighbor 192.168.36.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65440\n bgp router-id 192.168.160.1\n neighbor 192.168.160.1 remote-as 64552\n address-family ipv4 unicast\n  network 10.255.160.0 mask 255.255.255.0\n  neighbor 192.168.160.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65440;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64552;\n            neighbor 192.168.160.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.160.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65440;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64552;\n            neighbor 192.168.160.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.160.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65440\n bgp router-id 192.168.160.1\n neighbor 192.168.160.1 remote-as 64552\n address-family ipv4 unicast\n  network 10.255.160.0 mask 255.255.255.0\n  neighbor 192.168.160.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65232\n neighbor 192.168.208.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.208.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65232;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.208.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65232;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.208.1;\n        }\n    }\n}",
+    "output": "router bgp 65232\n neighbor 192.168.208.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.208.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65167\n neighbor 192.168.143.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.143.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65167;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.143.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65167;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.143.1;\n        }\n    }\n}",
+    "output": "router bgp 65167\n neighbor 192.168.143.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.143.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65065\n neighbor 192.168.41.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.41.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65065;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.41.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65065;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.41.1;\n        }\n    }\n}",
+    "output": "router bgp 65065\n neighbor 192.168.41.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.41.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65123\n neighbor 192.168.99.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.99.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65123;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.99.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65123;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.99.1;\n        }\n    }\n}",
+    "output": "router bgp 65123\n neighbor 192.168.99.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.99.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65208\n neighbor 192.168.184.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.184.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65208;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.184.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65208;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.184.1;\n        }\n    }\n}",
+    "output": "router bgp 65208\n neighbor 192.168.184.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.184.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65260\n neighbor 192.168.236.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.236.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65260;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64572;\n            neighbor 192.168.236.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.236.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65260;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64572;\n            neighbor 192.168.236.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.236.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65260\n neighbor 192.168.236.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.236.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65244\n bgp router-id 192.168.220.1\n neighbor 192.168.220.1 remote-as 64556\n address-family ipv4 unicast\n  network 10.254.220.0 mask 255.255.255.0\n  neighbor 192.168.220.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65244;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.220.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65244;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.220.1;\n        }\n    }\n}",
+    "output": "router bgp 65244\n bgp router-id 192.168.220.1\n neighbor 192.168.220.1 remote-as 64556\n address-family ipv4 unicast\n  network 10.254.220.0 mask 255.255.255.0\n  neighbor 192.168.220.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65129\n neighbor 192.168.105.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.105.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65129;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.105.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65129;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.105.1;\n        }\n    }\n}",
+    "output": "router bgp 65129\n neighbor 192.168.105.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.105.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65028\n neighbor 192.168.4.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.4.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65028;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.4.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65028;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.4.1;\n        }\n    }\n}",
+    "output": "router bgp 65028\n neighbor 192.168.4.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.4.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65040\n bgp router-id 192.168.16.1\n neighbor 192.168.16.1 remote-as 64552\n address-family ipv4 unicast\n  network 10.254.16.0 mask 255.255.255.0\n  neighbor 192.168.16.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65040;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.16.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65040;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.16.1;\n        }\n    }\n}",
+    "output": "router bgp 65040\n bgp router-id 192.168.16.1\n neighbor 192.168.16.1 remote-as 64552\n address-family ipv4 unicast\n  network 10.254.16.0 mask 255.255.255.0\n  neighbor 192.168.16.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65074\n neighbor 192.168.50.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.50.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65074;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.50.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65074;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.50.1;\n        }\n    }\n}",
+    "output": "router bgp 65074\n neighbor 192.168.50.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.50.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65180\n neighbor 192.168.156.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.156.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65180;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.156.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65180;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.156.1;\n        }\n    }\n}",
+    "output": "router bgp 65180\n neighbor 192.168.156.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.156.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65416\n bgp router-id 192.168.136.1\n neighbor 192.168.136.1 remote-as 64528\n address-family ipv4 unicast\n  network 10.255.136.0 mask 255.255.255.0\n  neighbor 192.168.136.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65416;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.136.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65416;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.136.1;\n        }\n    }\n}",
+    "output": "router bgp 65416\n bgp router-id 192.168.136.1\n neighbor 192.168.136.1 remote-as 64528\n address-family ipv4 unicast\n  network 10.255.136.0 mask 255.255.255.0\n  neighbor 192.168.136.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65043\n neighbor 192.168.19.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.19.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65043;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.19.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65043;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.19.1;\n        }\n    }\n}",
+    "output": "router bgp 65043\n neighbor 192.168.19.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.19.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65008\n neighbor 192.168.240.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.240.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65008;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.240.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65008;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.240.1;\n        }\n    }\n}",
+    "output": "router bgp 65008\n neighbor 192.168.240.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.240.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65395\n neighbor 192.168.115.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.115.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65395;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.115.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65395;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.115.1;\n        }\n    }\n}",
+    "output": "router bgp 65395\n neighbor 192.168.115.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.115.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65032\n bgp router-id 192.168.8.1\n neighbor 192.168.8.1 remote-as 64544\n address-family ipv4 unicast\n  network 10.254.8.0 mask 255.255.255.0\n  neighbor 192.168.8.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65032;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.8.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65032;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.8.1;\n        }\n    }\n}",
+    "output": "router bgp 65032\n bgp router-id 192.168.8.1\n neighbor 192.168.8.1 remote-as 64544\n address-family ipv4 unicast\n  network 10.254.8.0 mask 255.255.255.0\n  neighbor 192.168.8.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65248\n bgp router-id 192.168.224.1\n neighbor 192.168.224.1 remote-as 64560\n address-family ipv4 unicast\n  network 10.254.224.0 mask 255.255.255.0\n  neighbor 192.168.224.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65248;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.224.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65248;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.224.1;\n        }\n    }\n}",
+    "output": "router bgp 65248\n bgp router-id 192.168.224.1\n neighbor 192.168.224.1 remote-as 64560\n address-family ipv4 unicast\n  network 10.254.224.0 mask 255.255.255.0\n  neighbor 192.168.224.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65483\n neighbor 192.168.203.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.203.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65483;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.203.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65483;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.203.1;\n        }\n    }\n}",
+    "output": "router bgp 65483\n neighbor 192.168.203.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.203.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65376\n bgp router-id 192.168.96.1\n neighbor 192.168.96.1 remote-as 64588\n address-family ipv4 unicast\n  network 10.255.96.0 mask 255.255.255.0\n  neighbor 192.168.96.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65376;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.96.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65376;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.96.1;\n        }\n    }\n}",
+    "output": "router bgp 65376\n bgp router-id 192.168.96.1\n neighbor 192.168.96.1 remote-as 64588\n address-family ipv4 unicast\n  network 10.255.96.0 mask 255.255.255.0\n  neighbor 192.168.96.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65340\n bgp router-id 192.168.60.1\n neighbor 192.168.60.1 remote-as 64552\n address-family ipv4 unicast\n  network 10.255.60.0 mask 255.255.255.0\n  neighbor 192.168.60.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65340;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.60.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65340;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.60.1;\n        }\n    }\n}",
+    "output": "router bgp 65340\n bgp router-id 192.168.60.1\n neighbor 192.168.60.1 remote-as 64552\n address-family ipv4 unicast\n  network 10.255.60.0 mask 255.255.255.0\n  neighbor 192.168.60.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65227\n neighbor 192.168.203.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.203.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65227;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.203.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65227;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.203.1;\n        }\n    }\n}",
+    "output": "router bgp 65227\n neighbor 192.168.203.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.203.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65277\n neighbor 192.168.253.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.253.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65277;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.253.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65277;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.253.1;\n        }\n    }\n}",
+    "output": "router bgp 65277\n neighbor 192.168.253.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.253.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65181\n neighbor 192.168.157.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.157.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65181;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.157.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65181;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.157.1;\n        }\n    }\n}",
+    "output": "router bgp 65181\n neighbor 192.168.157.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.157.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65010\n neighbor 192.168.242.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.242.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65010;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64522;\n            neighbor 192.168.242.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.253.242.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65010;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64522;\n            neighbor 192.168.242.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.253.242.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65010\n neighbor 192.168.242.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.242.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65132\n neighbor 192.168.108.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.108.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65132;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.108.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65132;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.108.1;\n        }\n    }\n}",
+    "output": "router bgp 65132\n neighbor 192.168.108.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.108.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65392\n bgp router-id 192.168.112.1\n neighbor 192.168.112.1 remote-as 64604\n address-family ipv4 unicast\n  network 10.255.112.0 mask 255.255.255.0\n  neighbor 192.168.112.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65392;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.112.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65392;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.112.1;\n        }\n    }\n}",
+    "output": "router bgp 65392\n bgp router-id 192.168.112.1\n neighbor 192.168.112.1 remote-as 64604\n address-family ipv4 unicast\n  network 10.255.112.0 mask 255.255.255.0\n  neighbor 192.168.112.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65456\n bgp router-id 192.168.176.1\n neighbor 192.168.176.1 remote-as 64568\n address-family ipv4 unicast\n  network 10.255.176.0 mask 255.255.255.0\n  neighbor 192.168.176.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65456;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.176.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65456;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.176.1;\n        }\n    }\n}",
+    "output": "router bgp 65456\n bgp router-id 192.168.176.1\n neighbor 192.168.176.1 remote-as 64568\n address-family ipv4 unicast\n  network 10.255.176.0 mask 255.255.255.0\n  neighbor 192.168.176.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65314\n neighbor 192.168.34.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.34.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65314;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.34.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65314;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.34.1;\n        }\n    }\n}",
+    "output": "router bgp 65314\n neighbor 192.168.34.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.34.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65171\n neighbor 192.168.147.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.147.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65171;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.147.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65171;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.147.1;\n        }\n    }\n}",
+    "output": "router bgp 65171\n neighbor 192.168.147.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.147.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65308\n bgp router-id 192.168.28.1\n neighbor 192.168.28.1 remote-as 64520\n address-family ipv4 unicast\n  network 10.255.28.0 mask 255.255.255.0\n  neighbor 192.168.28.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65308;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.28.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65308;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.28.1;\n        }\n    }\n}",
+    "output": "router bgp 65308\n bgp router-id 192.168.28.1\n neighbor 192.168.28.1 remote-as 64520\n address-family ipv4 unicast\n  network 10.255.28.0 mask 255.255.255.0\n  neighbor 192.168.28.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65140\n neighbor 192.168.116.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.116.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65140;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64552;\n            neighbor 192.168.116.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.116.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65140;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64552;\n            neighbor 192.168.116.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.116.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65140\n neighbor 192.168.116.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.116.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65104\n bgp router-id 192.168.80.1\n neighbor 192.168.80.1 remote-as 64516\n address-family ipv4 unicast\n  network 10.254.80.0 mask 255.255.255.0\n  neighbor 192.168.80.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65104;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.80.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65104;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.80.1;\n        }\n    }\n}",
+    "output": "router bgp 65104\n bgp router-id 192.168.80.1\n neighbor 192.168.80.1 remote-as 64516\n address-family ipv4 unicast\n  network 10.254.80.0 mask 255.255.255.0\n  neighbor 192.168.80.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65022\n neighbor 192.168.254.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.254.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65022;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.254.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65022;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.254.1;\n        }\n    }\n}",
+    "output": "router bgp 65022\n neighbor 192.168.254.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.254.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65265\n neighbor 192.168.241.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.241.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65265;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64577;\n            neighbor 192.168.241.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.241.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65265;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64577;\n            neighbor 192.168.241.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.241.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65265\n neighbor 192.168.241.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.241.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65375\n neighbor 192.168.95.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.95.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65375;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.95.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65375;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.95.1;\n        }\n    }\n}",
+    "output": "router bgp 65375\n neighbor 192.168.95.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.95.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65460\n bgp router-id 192.168.180.1\n neighbor 192.168.180.1 remote-as 64572\n address-family ipv4 unicast\n  network 10.255.180.0 mask 255.255.255.0\n  neighbor 192.168.180.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65460;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64572;\n            neighbor 192.168.180.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.180.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65460;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64572;\n            neighbor 192.168.180.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.180.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65460\n bgp router-id 192.168.180.1\n neighbor 192.168.180.1 remote-as 64572\n address-family ipv4 unicast\n  network 10.255.180.0 mask 255.255.255.0\n  neighbor 192.168.180.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65106\n neighbor 192.168.82.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.82.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65106;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.82.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65106;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.82.1;\n        }\n    }\n}",
+    "output": "router bgp 65106\n neighbor 192.168.82.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.82.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65320\n bgp router-id 192.168.40.1\n neighbor 192.168.40.1 remote-as 64532\n address-family ipv4 unicast\n  network 10.255.40.0 mask 255.255.255.0\n  neighbor 192.168.40.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65320;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64532;\n            neighbor 192.168.40.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.40.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65320;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64532;\n            neighbor 192.168.40.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.255.40.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65320\n bgp router-id 192.168.40.1\n neighbor 192.168.40.1 remote-as 64532\n address-family ipv4 unicast\n  network 10.255.40.0 mask 255.255.255.0\n  neighbor 192.168.40.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65271\n neighbor 192.168.247.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.247.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65271;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.247.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65271;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.247.1;\n        }\n    }\n}",
+    "output": "router bgp 65271\n neighbor 192.168.247.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.247.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65200\n neighbor 192.168.176.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.176.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65200;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.176.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.176.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65200;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.176.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.176.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65200\n neighbor 192.168.176.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.176.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65145\n neighbor 192.168.121.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.121.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65145;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64557;\n            neighbor 192.168.121.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.121.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65145;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64557;\n            neighbor 192.168.121.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.121.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65145\n neighbor 192.168.121.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.121.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65055\n neighbor 192.168.31.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.31.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65055;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.31.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65055;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.31.1;\n        }\n    }\n}",
+    "output": "router bgp 65055\n neighbor 192.168.31.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.31.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65275\n neighbor 192.168.251.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.251.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65275;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.251.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65275;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.251.1;\n        }\n    }\n}",
+    "output": "router bgp 65275\n neighbor 192.168.251.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.251.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65290\n neighbor 192.168.10.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.10.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65290;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.10.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65290;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.10.1;\n        }\n    }\n}",
+    "output": "router bgp 65290\n neighbor 192.168.10.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.10.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65000\n neighbor 192.168.232.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.232.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65000;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.232.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.253.232.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65000;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.232.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.253.232.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65000\n neighbor 192.168.232.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.232.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65125\n neighbor 192.168.101.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.101.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65125;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64537;\n            neighbor 192.168.101.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.101.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65125;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64537;\n            neighbor 192.168.101.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.101.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65125\n neighbor 192.168.101.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.101.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65220\n neighbor 192.168.196.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.196.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65220;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64532;\n            neighbor 192.168.196.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.196.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65220;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64532;\n            neighbor 192.168.196.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.196.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65220\n neighbor 192.168.196.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.196.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65263\n neighbor 192.168.239.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.239.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65263;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.239.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65263;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.239.1;\n        }\n    }\n}",
+    "output": "router bgp 65263\n neighbor 192.168.239.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.239.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65469\n neighbor 192.168.189.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.189.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65469;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.189.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65469;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.189.1;\n        }\n    }\n}",
+    "output": "router bgp 65469\n neighbor 192.168.189.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.189.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65400\n neighbor 192.168.120.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.120.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65400;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.120.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65400;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.120.1;\n        }\n    }\n}",
+    "output": "router bgp 65400\n neighbor 192.168.120.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.120.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65476\n neighbor 192.168.196.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.196.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65476;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.196.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65476;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.196.1;\n        }\n    }\n}",
+    "output": "router bgp 65476\n neighbor 192.168.196.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.196.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65144\n bgp router-id 192.168.120.1\n neighbor 192.168.120.1 remote-as 64556\n address-family ipv4 unicast\n  network 10.254.120.0 mask 255.255.255.0\n  neighbor 192.168.120.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65144;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.120.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65144;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.120.1;\n        }\n    }\n}",
+    "output": "router bgp 65144\n bgp router-id 192.168.120.1\n neighbor 192.168.120.1 remote-as 64556\n address-family ipv4 unicast\n  network 10.254.120.0 mask 255.255.255.0\n  neighbor 192.168.120.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65404\n bgp router-id 192.168.124.1\n neighbor 192.168.124.1 remote-as 64516\n address-family ipv4 unicast\n  network 10.255.124.0 mask 255.255.255.0\n  neighbor 192.168.124.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65404;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.124.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65404;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.124.1;\n        }\n    }\n}",
+    "output": "router bgp 65404\n bgp router-id 192.168.124.1\n neighbor 192.168.124.1 remote-as 64516\n address-family ipv4 unicast\n  network 10.255.124.0 mask 255.255.255.0\n  neighbor 192.168.124.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65088\n bgp router-id 192.168.64.1\n neighbor 192.168.64.1 remote-as 64600\n address-family ipv4 unicast\n  network 10.254.64.0 mask 255.255.255.0\n  neighbor 192.168.64.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65088;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.64.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65088;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.64.1;\n        }\n    }\n}",
+    "output": "router bgp 65088\n bgp router-id 192.168.64.1\n neighbor 192.168.64.1 remote-as 64600\n address-family ipv4 unicast\n  network 10.254.64.0 mask 255.255.255.0\n  neighbor 192.168.64.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65316\n bgp router-id 192.168.36.1\n neighbor 192.168.36.1 remote-as 64528\n address-family ipv4 unicast\n  network 10.255.36.0 mask 255.255.255.0\n  neighbor 192.168.36.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65316;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.36.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65316;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.36.1;\n        }\n    }\n}",
+    "output": "router bgp 65316\n bgp router-id 192.168.36.1\n neighbor 192.168.36.1 remote-as 64528\n address-family ipv4 unicast\n  network 10.255.36.0 mask 255.255.255.0\n  neighbor 192.168.36.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65156\n bgp router-id 192.168.132.1\n neighbor 192.168.132.1 remote-as 64568\n address-family ipv4 unicast\n  network 10.254.132.0 mask 255.255.255.0\n  neighbor 192.168.132.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65156;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.132.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65156;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.132.1;\n        }\n    }\n}",
+    "output": "router bgp 65156\n bgp router-id 192.168.132.1\n neighbor 192.168.132.1 remote-as 64568\n address-family ipv4 unicast\n  network 10.254.132.0 mask 255.255.255.0\n  neighbor 192.168.132.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65020\n bgp router-id 192.168.252.1\n neighbor 192.168.252.1 remote-as 64532\n address-family ipv4 unicast\n  network 10.253.252.0 mask 255.255.255.0\n  neighbor 192.168.252.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65020;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64532;\n            neighbor 192.168.252.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.253.252.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65020;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64532;\n            neighbor 192.168.252.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.253.252.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65020\n bgp router-id 192.168.252.1\n neighbor 192.168.252.1 remote-as 64532\n address-family ipv4 unicast\n  network 10.253.252.0 mask 255.255.255.0\n  neighbor 192.168.252.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65402\n neighbor 192.168.122.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.122.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65402;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.122.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65402;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.122.1;\n        }\n    }\n}",
+    "output": "router bgp 65402\n neighbor 192.168.122.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.122.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65229\n neighbor 192.168.205.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.205.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65229;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.205.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65229;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.205.1;\n        }\n    }\n}",
+    "output": "router bgp 65229\n neighbor 192.168.205.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.205.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65300\n neighbor 192.168.20.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.20.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65300;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.20.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65300;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.20.1;\n        }\n    }\n}",
+    "output": "router bgp 65300\n neighbor 192.168.20.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.20.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65442\n neighbor 192.168.162.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.162.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65442;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.162.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65442;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.162.1;\n        }\n    }\n}",
+    "output": "router bgp 65442\n neighbor 192.168.162.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.162.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65081\n neighbor 192.168.57.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.57.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65081;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.57.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65081;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.57.1;\n        }\n    }\n}",
+    "output": "router bgp 65081\n neighbor 192.168.57.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.57.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65133\n neighbor 192.168.109.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.109.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65133;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.109.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65133;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.109.1;\n        }\n    }\n}",
+    "output": "router bgp 65133\n neighbor 192.168.109.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.109.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65075\n neighbor 192.168.51.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.51.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65075;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.51.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65075;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.51.1;\n        }\n    }\n}",
+    "output": "router bgp 65075\n neighbor 192.168.51.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.51.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65420\n bgp router-id 192.168.140.1\n neighbor 192.168.140.1 remote-as 64532\n address-family ipv4 unicast\n  network 10.255.140.0 mask 255.255.255.0\n  neighbor 192.168.140.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65420;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.140.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65420;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.140.1;\n        }\n    }\n}",
+    "output": "router bgp 65420\n bgp router-id 192.168.140.1\n neighbor 192.168.140.1 remote-as 64532\n address-family ipv4 unicast\n  network 10.255.140.0 mask 255.255.255.0\n  neighbor 192.168.140.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65110\n neighbor 192.168.86.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.86.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65110;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.86.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65110;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.86.1;\n        }\n    }\n}",
+    "output": "router bgp 65110\n neighbor 192.168.86.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.86.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65103\n neighbor 192.168.79.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.79.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65103;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.79.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65103;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.79.1;\n        }\n    }\n}",
+    "output": "router bgp 65103\n neighbor 192.168.79.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.79.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65403\n neighbor 192.168.123.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.123.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65403;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.123.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65403;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.123.1;\n        }\n    }\n}",
+    "output": "router bgp 65403\n neighbor 192.168.123.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.123.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65270\n neighbor 192.168.246.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.246.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65270;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64582;\n            neighbor 192.168.246.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.246.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65270;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64582;\n            neighbor 192.168.246.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.246.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65270\n neighbor 192.168.246.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.246.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65363\n neighbor 192.168.83.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.83.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65363;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.83.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65363;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.83.1;\n        }\n    }\n}",
+    "output": "router bgp 65363\n neighbor 192.168.83.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.83.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65366\n neighbor 192.168.86.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.86.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65366;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.86.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65366;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.86.1;\n        }\n    }\n}",
+    "output": "router bgp 65366\n neighbor 192.168.86.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.86.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65035\n neighbor 192.168.11.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.11.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65035;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64547;\n            neighbor 192.168.11.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.11.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65035;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64547;\n            neighbor 192.168.11.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.11.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65035\n neighbor 192.168.11.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.11.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65004\n bgp router-id 192.168.236.1\n neighbor 192.168.236.1 remote-as 64516\n address-family ipv4 unicast\n  network 10.253.236.0 mask 255.255.255.0\n  neighbor 192.168.236.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65004;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.236.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65004;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.236.1;\n        }\n    }\n}",
+    "output": "router bgp 65004\n bgp router-id 192.168.236.1\n neighbor 192.168.236.1 remote-as 64516\n address-family ipv4 unicast\n  network 10.253.236.0 mask 255.255.255.0\n  neighbor 192.168.236.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65056\n bgp router-id 192.168.32.1\n neighbor 192.168.32.1 remote-as 64568\n address-family ipv4 unicast\n  network 10.254.32.0 mask 255.255.255.0\n  neighbor 192.168.32.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65056;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.32.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65056;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.32.1;\n        }\n    }\n}",
+    "output": "router bgp 65056\n bgp router-id 192.168.32.1\n neighbor 192.168.32.1 remote-as 64568\n address-family ipv4 unicast\n  network 10.254.32.0 mask 255.255.255.0\n  neighbor 192.168.32.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65492\n neighbor 192.168.212.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.212.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65492;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.212.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65492;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.212.1;\n        }\n    }\n}",
+    "output": "router bgp 65492\n neighbor 192.168.212.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.212.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65193\n neighbor 192.168.169.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.169.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65193;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.169.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65193;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.169.1;\n        }\n    }\n}",
+    "output": "router bgp 65193\n neighbor 192.168.169.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.169.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65499\n neighbor 192.168.219.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.219.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65499;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.219.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65499;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.219.1;\n        }\n    }\n}",
+    "output": "router bgp 65499\n neighbor 192.168.219.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.219.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65280\n bgp router-id 192.168.0.1\n neighbor 192.168.0.1 remote-as 64592\n address-family ipv4 unicast\n  network 10.255.0.0 mask 255.255.255.0\n  neighbor 192.168.0.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65280;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.0.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65280;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.0.1;\n        }\n    }\n}",
+    "output": "router bgp 65280\n bgp router-id 192.168.0.1\n neighbor 192.168.0.1 remote-as 64592\n address-family ipv4 unicast\n  network 10.255.0.0 mask 255.255.255.0\n  neighbor 192.168.0.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65091\n neighbor 192.168.67.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.67.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65091;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.67.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65091;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.67.1;\n        }\n    }\n}",
+    "output": "router bgp 65091\n neighbor 192.168.67.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.67.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65304\n neighbor 192.168.24.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.24.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65304;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.24.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65304;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.24.1;\n        }\n    }\n}",
+    "output": "router bgp 65304\n neighbor 192.168.24.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.24.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65343\n neighbor 192.168.63.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.63.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65343;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.63.1;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65343;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64512;\n            neighbor 192.168.63.1;\n        }\n    }\n}",
+    "output": "router bgp 65343\n neighbor 192.168.63.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.63.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65165\n neighbor 192.168.141.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.141.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65165;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64577;\n            neighbor 192.168.141.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.141.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65165;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64577;\n            neighbor 192.168.141.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.141.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65165\n neighbor 192.168.141.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.141.1 activate\n exit-address-family"
+  },
+  {
+    "task": "config_translation_c2j",
+    "instruction": "Translate the following Cisco IOS configuration to Juniper Junos format:",
+    "input": "router bgp 65160\n neighbor 192.168.136.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.136.1 activate\n exit-address-family",
+    "output": "routing-options {\n    autonomous-system 65160;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64572;\n            neighbor 192.168.136.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.136.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}"
+  },
+  {
+    "task": "config_translation_j2c",
+    "instruction": "Translate the following Juniper Junos configuration to Cisco IOS format:",
+    "input": "routing-options {\n    autonomous-system 65160;\n}\nprotocols {\n    bgp {\n        group external {\n            type external;\n            peer-as 64572;\n            neighbor 192.168.136.1;\n        }\n    }\n}\npolicy-options {\n    policy-statement export-direct {\n        term 1 {\n            from {\n                route-filter 10.254.136.0/24 exact;\n            }\n            then accept;\n        }\n    }\n}",
+    "output": "router bgp 65160\n neighbor 192.168.136.1 remote-as 64512\n address-family ipv4 unicast\n  network 10.0.0.0 mask 255.255.255.0\n  neighbor 192.168.136.1 activate\n exit-address-family"
+  }
+]

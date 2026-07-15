@@ -158,9 +158,7 @@ def compute_bleu(candidate: str, reference: str, max_n: int = 4) -> float:
         ref_ngrams = compute_ngram_counts(ref_tokens, n)
         clipped = sum(min(count, ref_ngrams.get(ng, 0)) for ng, count in cand_ngrams.items())
         total = max(sum(cand_ngrams.values()), 1)
-        precisions.append(clipped / total)
-    if any(p == 0 for p in precisions):
-        return 0.0
+        precisions.append((clipped + 1) / (total + 1))
     log_avg = sum(math.log(p) for p in precisions) / len(precisions)
     return bp * math.exp(log_avg)
 
@@ -184,12 +182,7 @@ def compute_weighted_bleu(candidate: str, reference: str, max_n: int = 4) -> flo
             clipped = min(count, ref_ngrams.get(ng, 0))
             weighted_clipped += w * clipped
             weighted_total += w * count
-        if weighted_total > 0:
-            precisions.append(weighted_clipped / weighted_total)
-        else:
-            precisions.append(0.0)
-    if any(p == 0 for p in precisions):
-        return 0.0
+        precisions.append((weighted_clipped + 1) / (weighted_total + 1))
     log_avg = sum(math.log(p) for p in precisions) / len(precisions)
     return bp * math.exp(log_avg)
 

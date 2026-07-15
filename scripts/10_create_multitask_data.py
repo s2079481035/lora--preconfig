@@ -290,13 +290,33 @@ def main():
         all_samples.extend(translation)
         logger.info(f"Added {len(translation)} translation samples")
 
-    # 5. Shuffle and split test set
-    random.shuffle(all_samples)
+    # 5. Deduplicate by output, then split by unique output to avoid data leakage
+    #    (同一个 output 的 generation / completion / translation 版本不会跨 train/test)
+    seen_outputs = set()
+    unique_by_output = []
+    for s in all_samples:
+        o = s.get("output", "")
+        if o not in seen_outputs:
+            seen_outputs.add(o)
+            unique_by_output.append(s)
 
-    if args.test_ratio > 0 and all_samples:
-        split_idx = int(len(all_samples) * (1 - args.test_ratio))
-        train = all_samples[:split_idx]
-        test = all_samples[split_idx:]
+    dedup_removed = len(all_samples) - len(unique_by_output)
+    if dedup_removed:
+        logger.warning(f"Deduplication removed {dedup_removed} samples with duplicate outputs")
+
+    random.shuffle(unique_by_output)
+
+    if args.test_ratio > 0 and unique_by_output:
+        split_idx = int(len(unique_by_output) * (1 - args.test_ratio))
+        # Use the unique-output set for splitting
+        test_outputs = set(s["output"] for s in unique_by_output[split_idx:])
+        # Assign all samples: if output is in test_outputs → test, else train
+        train, test = [], []
+        for s in all_samples:
+            if s.get("output", "") in test_outputs:
+                test.append(s)
+            else:
+                train.append(s)
 
         out_path = Path(args.output)
         out_path.parent.mkdir(parents=True, exist_ok=True)
