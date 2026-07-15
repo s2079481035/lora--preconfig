@@ -1,0 +1,90 @@
+# PreConfig Reproduction Configuration
+# ====================================
+
+# Model Configuration
+model:
+  base_model: "Qwen/Qwen2.5-Coder-Instruct-1.5B"
+  max_length: 2048
+  load_in_4bit: false
+  torch_dtype: "bfloat16"
+
+# LoRA Configuration
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# Training Configuration
+training:
+  output_dir: "./models/preconfig-finetuned"
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 5.0e-5
+  warmup_ratio: 0.1
+  weight_decay: 0.01
+  logging_steps: 10
+  save_strategy: "epoch"
+  evaluation_strategy: "epoch"
+  fp16: false
+  bf16: true
+  max_grad_norm: 1.0
+  lr_scheduler_type: "cosine"
+  seed: 42
+
+# Data Configuration
+data:
+  raw_data_dir: "./data/raw"
+  processed_data_dir: "./data/processed"
+  augmented_data_dir: "./data/augmented"
+  max_samples_per_task: 5000
+
+# Task Definitions
+tasks:
+  - name: "config_generation"
+    description: "NL -> Config"
+    input_type: "natural_language"
+    output_type: "config"
+  - name: "config_analysis"
+    description: "Config -> NL"
+    input_type: "config"
+    output_type: "natural_language"
+  - name: "config_translation"
+    description: "Cisco <-> Juniper"
+    input_type: "config"
+    output_type: "config"
+  - name: "config_completion"
+    description: "Partial -> Complete"
+    input_type: "partial_config"
+    output_type: "config"
+
+# Data Sources
+data_sources:
+  cisco:
+    docs_url: "https://www.cisco.com/c/en/us/support/ios-nx-os-software/index.html"
+    forum_url: "https://community.cisco.com/t5/technology-and-support/ct-p/technology-support"
+  juniper:
+    docs_url: "https://www.juniper.net/documentation"
+    forum_url: "https://community.juniper.net/home"
+
+# Evaluation
+evaluation:
+  metrics: ["bleu", "rouge", "meteor", "config_bleu"]
+  config_bleu:
+    alpha: 0.4
+    beta: 0.3
+    gamma: 0.3
+    keyword_weight: 5.0
+  test_split: 0.1
+  val_split: 0.1
+
+# LLM Data Augmentation (GPT-4)
+augmentation:
+  model: "gpt-4"
+  temperature: 0.7
+  max_variants: 5
+  use_sop: true

@@ -1,0 +1,142 @@
+[
+  {
+    "source_config": "Device(config)# router bgp 40000",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# network 10.1.1.0 mask 255.255.255.0",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# bgp router-id 10.1.1.99",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# timers bgp 70 120",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# bgp fast-external-fallover",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# bgp log-neighbor-changes",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# end",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "BGP table version is 12, local router ID is 10.1.1.99\nStatus codes: s suppressed, d damped, h history, * valid, > best, i - internal,\n              r RIB-failure, S Stale\nOrigin codes: i - IGP, e - EGP, ? - incomplete\n   Network          Next Hop            Metric LocPrf Weight Path\n*> 10.1.1.0/24      0.0.0.0                  0         32768 i",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config)# router bgp 40000",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# neighbor 192.168.1.1 remote-as 45000",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# address-family ipv4 unicast",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router-af)# neighbor 192.168.1.1 activate",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router-af)# end",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router-af)# show ip bgp neighbors 192.168.2.2",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "BGP table version is 13, local router ID is 10.1.1.99\nStatus codes: s suppressed, d damped, h history, * valid, > best, i - internal,\n              r RIB-failure, S Stale\nOrigin codes: i - IGP, e - EGP, ? - incomplete\n   Network          Next Hop            Metric LocPrf Weight Path\n*> 10.1.1.0/24      0.0.0.0                  0         32768 i\n*> 172.17.1.0/24    192.168.1.1              0             0 45000 i",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "BGP neighbor is 192.168.1.1,  remote AS 45000, external link\n  BGP version 4, remote router ID 172.17.1.99\n  BGP state = Established, up for 00:06:55\n  Last read 00:00:15, last write 00:00:15, hold time is 120, keepalive intervals\n  Configured hold time is 120,keepalive interval is 70 seconds, Minimum holdtims\n  Neighbor capabilities:\n    Route refresh: advertised and received (old & new)\n    Address family IPv4 Unicast: advertised and received\n  Message statistics:\n    InQ depth is 0\n    OutQ depth is 0\n                         Sent       Rcvd\n    Opens:                  1          1\n    Notifications:          0          0\n    Updates:                1          2\n    Keepalives:            13         13\n    Route Refresh:          0          0\n    Total:                 15         16\n  Default minimum time between advertisement runs is 30 seconds\n For address family: IPv4 Unicast\n  BGP table version 13, neighbor version 13/0\n Output queue size : 0\n  Index 1, Offset 0, Mask 0x2\n  1 update-group member\n                                 Sent       Rcvd\n  Prefix activity:               ----       ----\n    Prefixes Current:               1          1 (Consumes 52 bytes)\n    Prefixes Total:                 1          1\n    Implicit Withdraw:              0          0\n    Explicit Withdraw:              0          0\n    Used as bestpath:             n/a          1\n    Used as multipath:            n/a          0\n                                   Outbound    Inbound\n  Local Policy Denied Prefixes:    --------    -------\n    AS_PATH loop:                       n/a          1\n    Bestpath from this peer:              1        n/a\n    Total:                                1          1\n  Number of NLRIs in the update sent: max 0, min 0\n  Connections established 1; dropped 0\n  Last reset never\nConnection state is ESTAB, I/O status: 1, unread input bytes: 0        \nConnection is ECN Disabled\nLocal host: 192.168.1.2, Local port: 179\nForeign host: 192.168.1.1, Foreign port: 37725\nEnqueued packets for retransmit: 0, input: 0  mis-ordered: 0 (0 bytes)\nEvent Timers (current time is 0x12F4F2C):\nTimer          Starts    Wakeups            Next\nRetrans            14          0             0x0\nTimeWait            0          0             0x0\nAckHold            13          8             0x0\nSendWnd             0          0             0x0\nKeepAlive           0          0             0x0\nGiveUp              0          0             0x0\nPmtuAger            0          0             0x0\nDeadWait            0          0             0x0\niss:  165379618  snduna:  165379963  sndnxt:  165379963     sndwnd:  16040\nirs: 3127821601  rcvnxt: 3127821993  rcvwnd:      15993  delrcvwnd:    391\nSRTT: 254 ms, RTTO: 619 ms, RTV: 365 ms, KRTT: 0 ms\nminRTT: 12 ms, maxRTT: 300 ms, ACK hold: 200 ms\nFlags: passive open, nagle, gen tcbs\nIP Precedence value : 6\nDatagrams (max data segment is 1460 bytes):\nRcvd: 20 (out of order: 0), with data: 15, total data bytes: 391\nSent: 22 (retransmit: 0, fastretransmit: 0, partialack: 0, Second Congestion: 04",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-if)# ip address 192.168.3.1 255.255.255.0",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config)# router bgp 45000",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router)# address-family ipv4 vrf vpn1",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  },
+  {
+    "source_config": "Device(config-router-af)# neighbor 192.168.3.2 remote-as 50000",
+    "translated_config": "/* Juniper translation of Cisco config */\nprotocols {\n    /* TODO: translate */\n}",
+    "direction": "cisco_to_juniper",
+    "source_vendor": "cisco",
+    "target_vendor": "juniper"
+  }
+]

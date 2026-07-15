@@ -1,0 +1,26 @@
+{
+  "config_generation": {
+    "train": [],
+    "val": [],
+    "test": [],
+    "description": "NL -> Config (Cisco/Juniper)"
+  },
+  "config_analysis": {
+    "train": [],
+    "val": [],
+    "test": [],
+    "description": "Config -> NL (Cisco/Juniper)"
+  },
+  "config_translation": {
+    "train": [],
+    "val": [],
+    "test": [],
+    "description": "Cisco <-> Juniper"
+  },
+  "config_completion": {
+    "train": [],
+    "val": [],
+    "test": [],
+    "description": "Partial -> Complete"
+  }
+}

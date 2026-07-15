@@ -1,0 +1,218 @@
+[
+  {
+    "type": "config",
+    "text": "neighbor 192.168.1.2 remote-as 40000\nneighbor 192.168.3.2 remote-as 50000\nneighbor 192.168.3.2 description finance"
+  },
+  {
+    "type": "config",
+    "text": "neighbor 192.168.1.2 activate\nneighbor 192.168.3.2 activate\nno auto-summary\nno synchronization\nnetwork 172.17.1.0 mask 255.255.255.0"
+  },
+  {
+    "type": "config",
+    "text": "neighbor 192.168.3.2 activate\nneighbor 192.168.3.2 advertisement-interval 25\nno auto-summary\nno synchronization\nnetwork 172.17.1.0 mask 255.255.255.0"
+  },
+  {
+    "type": "config",
+    "text": "neighbor 172.16.1.2 remote-as 45000\nneighbor 172.21.1.2 remote-as 45000\nneighbor 192.168.1.2 remote-as 40000\nneighbor 192.168.3.2 remote-as 50000\nneighbor 172.16.1.2 activate\nneighbor 172.21.1.2 activate\nneighbor 192.168.1.2 activate\nneighbor 192.168.3.2 activate\nnetwork 172.17.1.0 mask 255.255.255.0"
+  },
+  {
+    "type": "config",
+    "text": "no route-map bgp-to-eigrp\nrouter eigrp 100\nno redistribute bgp 45000"
+  },
+  {
+    "type": "config",
+    "text": "router bgp 100\nneighbor 192.168.1.1 remote-as 200\nneighbor 192.168.1.1 soft-reconfiguration inbound"
+  },
+  {
+    "type": "config",
+    "text": "router bgp 45000\nneighbor 192.168.1.2 remote-as 40000\nneighbor 192.168.3.2 remote-as 50000"
+  },
+  {
+    "type": "config",
+    "text": "neighbor mygroup peer-group\nneighbor 192.168.1.2 peer-group mygroup\nneighbor 192.168.3.2 peer-group mygroup\nrouter bgp 45000\nneighbor 192.168.1.2 remote-as 40000\nneighbor 192.168.3.2 remote-as 50000"
+  },
+  {
+    "type": "config",
+    "text": "neighbor mygroup peer-group\nneighbor 192.168.1.2 peer-group mygroup\nneighbor 192.168.3.2 peer-group mygroup\nneighbor 192.168.1.2 activate\nneighbor 192.168.3.2 activate"
+  },
+  {
+    "type": "config",
+    "text": "interface serial 1\nip address 10.0.0.2 255.0.0.0\nip ospf network point-to-multipoint"
+  },
+  {
+    "type": "config",
+    "text": "interface serial 0\nip address 10.0.0.1 255.0.0.0\nip ospf network point-to-multipoint"
+  },
+  {
+    "type": "config",
+    "text": "interface serial 3\nip address 10.0.0.4 255.0.0.0\nip ospf network point-to-multipoint"
+  },
+  {
+    "type": "config",
+    "text": "interface serial 2\nip address 10.0.0.3 255.0.0.0\nip ospf network point-to-multipoint"
+  },
+  {
+    "type": "config",
+    "text": "router ospf 1\nnetwork 10.0.1.0 0.0.0.255 area 0\nneighbor 10.0.1.5 cost 5\nneighbor 10.0.1.4 cost 10"
+  },
+  {
+    "type": "config",
+    "text": "interface serial 0\nip address 10.0.1.3 255.255.255.0\nip ospf network point-to-multipoint"
+  },
+  {
+    "type": "config",
+    "text": "interface Serial0\nip address 10.0.1.1 255.255.255.0\nip ospf network point-to-multipoint non-broadcast"
+  },
+  {
+    "type": "config",
+    "text": "router ospf 1\nnetwork 10.0.1.0 0.0.0.255 area 0\nneighbor 10.0.1.3 cost 5\nneighbor 10.0.1.4 cost 10\nneighbor 10.0.1.5 cost 15"
+  },
+  {
+    "type": "config",
+    "text": "ip ospf network point-to-multipoint non-broadcast\nno ip mroute-cache\nno keepalive\nno fair-queue"
+  },
+  {
+    "type": "config",
+    "text": "interface ethernet 0\nip address 172.16.10.1 255.255.255.0\n! 8 bits of host address space reserved for ethernets\ninterface serial 0\nip address 172.16.20.1 255.255.255.252\n! 2 bits of address space reserved for serial lines\n! Router is configured for OSPF and assigned AS 107\nrouter ospf 107\n! Specifies network directly connected to the router\nnetwork 172.16.0.0 0.0.255.255 area 0.0.0.0"
+  },
+  {
+    "type": "config",
+    "text": "interface Ethernet0/0\nip address 192.168.0.1 255.255.255.0\nip ospf 1 area 0\nno cdp enable"
+  },
+  {
+    "type": "config",
+    "text": "interface Ethernet3/0\nip address 192.168.3.3 255.255.255.0\nno cdp enable"
+  },
+  {
+    "type": "config",
+    "text": "interface Ethernet3/0\nip address 192.168.3.4 255.255.255.0\nno cdp enable"
+  },
+  {
+    "type": "config",
+    "text": "interface Ethernet0/0\nip address 192.168.0.10 255.255.255.0\nip ospf 1 area 0\nno cdp enable"
+  },
+  {
+    "type": "config",
+    "text": "interface Ethernet1/1\nip address 192.168.11.10 255.255.255.0\nip ospf 1 area 0"
+  },
+  {
+    "type": "config",
+    "text": "interface ethernet 0\nip address 10.93.1.1 255.255.255.0\nip ospf cost 1"
+  },
+  {
+    "type": "config",
+    "text": "router ospf 109\nnetwork 192.168.10.0 0.0.0.255 area 10.9.50.0\nnetwork 192.168.20.0 0.0.255.255 area 2\nnetwork 192.168.30.0 0.0.0.255 area 3\nnetwork 192.168.40.0 255.255.255.255 area 0"
+  },
+  {
+    "type": "config",
+    "text": "! Interface Ethernet0 is in area 10.9.50.0:\ninterface ethernet 0\nip address 192.168.10.5 255.255.255.0"
+  },
+  {
+    "type": "config",
+    "text": "! Interface Ethernet1 is in area 2:\ninterface ethernet 1\nip address 192.168.20.5 255.255.255.0"
+  },
+  {
+    "type": "config",
+    "text": "! Interface Ethernet2 is in area 2:\ninterface ethernet 2\nip address 192.168.20.7 255.255.255.0"
+  },
+  {
+    "type": "config",
+    "text": "! Interface Ethernet4 is in area 0:\ninterface ethernet 4\nip address 192.168.40.1 255.255.255.0"
+  },
+  {
+    "type": "config",
+    "text": "Router A Configuration—Internal Router\ninterface ethernet 1\nip address 192.168.1.1 255.255.255.0\nrouter ospf 1\nnetwork 192.168.0.0 0.0.255.255 area 1"
+  },
+  {
+    "type": "config",
+    "text": "Router B Configuration—Internal Router\ninterface ethernet 2\nip address 192.168.1.2 255.255.255.0\nrouter ospf 202\nnetwork 192.168.0.0 0.0.255.255 area 1"
+  },
+  {
+    "type": "config",
+    "text": "Router C Configuration—ABR\ninterface ethernet 3\nip address 192.168.1.3 255.255.255.0\ninterface serial 0\nip address 192.168.2.3 255.255.255.0\nrouter ospf 999\nnetwork 192.168.1.0 0.0.0.255 area 1\nnetwork 192.168.2.0 0.0.0.255 area 0"
+  },
+  {
+    "type": "config",
+    "text": "Router D Configuration—Internal Router\ninterface ethernet 4\nip address 10.0.0.4 255.0.0.0\ninterface serial 1\nip address 192.168.2.4 255.255.255.0\nrouter ospf 50\nnetwork 192.168.2.0 0.0.0.255 area 0\nnetwork 10.0.0.0 0.255.255.255 area 0"
+  },
+  {
+    "type": "config",
+    "text": "Router E Configuration—ASBR\ninterface ethernet 5\nip address 10.0.0.5 255.0.0.0\ninterface serial 2\nip address 172.16.1.5 255.255.255.0\nrouter ospf 65001\nnetwork 10.0.0.0 0.255.255.255 area 0"
+  },
+  {
+    "type": "config",
+    "text": "router bgp 109\nnetwork 192.168.0.0\nnetwork 10.0.0.0\nneighbor 172.16.1.6 remote-as 110"
+  },
+  {
+    "type": "config",
+    "text": "interface ethernet 0\nip address 192.0.2.201 255.255.255.0\nip ospf authentication-key abcdefgh\nip ospf cost 10"
+  },
+  {
+    "type": "config",
+    "text": "interface ethernet 1\nip address 172.19.251.202 255.255.255.0\nip ospf authentication-key ijklmnop\nip ospf cost 20\nip ospf retransmit-interval 10\nip ospf transmit-delay 2\nip ospf priority 4"
+  },
+  {
+    "type": "config",
+    "text": "interface ethernet 2\nip address 172.19.254.2 255.255.255.0\nip ospf authentication-key abcdefgh\nip ospf cost 10"
+  },
+  {
+    "type": "config",
+    "text": "interface ethernet 3\nip address 10.56.0.0 255.255.0.0\nip ospf authentication-key ijklmnop\nip ospf cost 20\nip ospf dead-interval 80"
+  },
+  {
+    "type": "config",
+    "text": "router ospf 201\nnetwork 10.10.0.0 0.255.255.255 area 10.10.0.0\nnetwork 192.42.110.0 0.0.0.255 area 192.42.110.0\nnetwork 172.16.0.0 0.0.255.255 area 0"
+  },
+  {
+    "type": "config",
+    "text": "route-map rip-to-ospf permit\nmatch metric 1\nset metric 5\nset metric-type type1\nset tag 1"
+  },
+  {
+    "type": "config",
+    "text": "route-map 5 permit\nmatch tag 7\nset metric 15"
+  },
+  {
+    "type": "config",
+    "text": "route-map 10 permit\nmatch route-type internal\nmatch interface serial 0\nset metric 5"
+  },
+  {
+    "type": "config",
+    "text": "route-map 2 permit\nmatch route-type external\nmatch tag 5\nset metric 5\nset level level-2"
+  },
+  {
+    "type": "config",
+    "text": "route-map 3 permit\nmatch address 2000\nset metric 30"
+  },
+  {
+    "type": "config",
+    "text": "route-map 1 permit\nmatch tag 1 2\nset metric 1"
+  },
+  {
+    "type": "config",
+    "text": "route-map 1 permit\nmatch tag 3\nset metric 5"
+  },
+  {
+    "type": "config",
+    "text": "route-map 1 permit\nmatch ip address 1\nmatch clns address 2\nset metric 5\nset level level-2"
+  },
+  {
+    "type": "config",
+    "text": "route-map ospf-default permit\nmatch ip address 1\nset metric 5\nset metric-type type-2"
+  },
+  {
+    "type": "config",
+    "text": "interface TokenRing0\nip address 192.168.50.5 255.255.255.0\nno shutdown"
+  },
+  {
+    "type": "config",
+    "text": "router ospf 100\nnetwork 192.168.45.0 0.0.0.255 area 0\nnetwork 192.168.45.50 0.0.0.255 area 0"
+  },
+  {
+    "type": "config",
+    "text": "interface Ethernet0\nip address 192.168.50.16 255.255.255.0\nno shutdown"
+  },
+  {
+    "type": "config",
+    "text": "router ospf 100\nnetwork 192.168.45.0 0.0.0.255 area 0\nnetwork 192.168.45.50 0.0.0.255 area 0"
+  }
+]

@@ -1,0 +1,12 @@
+models/
+__pycache__/
+*.pyc
+venv/
+logs/
+data/backups/
+data/augmented/augmented_raw.json
+data/processed/train_data*.json
+data/processed/test_data*.json
+data/raw/all_crawled.json
+.DS_Store
+miniconda.sh

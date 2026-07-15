@@ -1,0 +1,2819 @@
+[
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 40000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# network 10.1.1.0 mask 255.255.255.0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# bgp router-id 10.1.1.99",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# timers bgp 70 120",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# bgp fast-external-fallover",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# bgp log-neighbor-changes",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following sample output from theshowipbgpcommand shows the BGP routing table for Router A in the figure above after this task has been configured on Router A. You\n                                 can see an entry for the network 10.1.1.0 that is local to this autonomous system.",
+    "config_text": "BGP table version is 12, local router ID is 10.1.1.99\nStatus codes: s suppressed, d damped, h history, * valid, > best, i - internal,\n              r RIB-failure, S Stale\nOrigin codes: i - IGP, e - EGP, ? - incomplete\n   Network          Next Hop            Metric LocPrf Weight Path\n*> 10.1.1.0/24      0.0.0.0                  0         32768 i",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 40000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.1 remote-as 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# address-family ipv4 unicast",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor 192.168.1.1 activate",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# show ip bgp neighbors 192.168.2.2",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following sample output from theshowipbgpcommand shows the BGP routing table for Router A in the figure above after this task has been configured on Router A and\n                                 Router B. You can now see an entry for the network 172.17.1.0 in autonomous system 45000.",
+    "config_text": "BGP table version is 13, local router ID is 10.1.1.99\nStatus codes: s suppressed, d damped, h history, * valid, > best, i - internal,\n              r RIB-failure, S Stale\nOrigin codes: i - IGP, e - EGP, ? - incomplete\n   Network          Next Hop            Metric LocPrf Weight Path\n*> 10.1.1.0/24      0.0.0.0                  0         32768 i\n*> 172.17.1.0/24    192.168.1.1              0             0 45000 i",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following sample output from theshowipbgpneighborscommand shows information about the TCP and BGP connections to the BGP neighbor 192.168.1.1 of Router A in the figure above\n                                 after this task has been configured on Router A:",
+    "config_text": "BGP neighbor is 192.168.1.1,  remote AS 45000, external link\n  BGP version 4, remote router ID 172.17.1.99\n  BGP state = Established, up for 00:06:55\n  Last read 00:00:15, last write 00:00:15, hold time is 120, keepalive intervals\n  Configured hold time is 120,keepalive interval is 70 seconds, Minimum holdtims\n  Neighbor capabilities:\n    Route refresh: advertised and received (old & new)\n    Address family IPv4 Unicast: advertised and received\n  Message statistics:\n    InQ depth is 0\n    OutQ depth is 0\n                         Sent       Rcvd\n    Opens:                  1          1\n    Notifications:          0          0\n    Updates:                1          2\n    Keepalives:            13         13\n    Route Refresh:          0          0\n    Total:                 15         16\n  Default minimum time between advertisement runs is 30 seconds\n For address family: IPv4 Unicast\n  BGP table version 13, neighbor version 13/0\n Output queue size : 0\n  Index 1, Offset 0, Mask 0x2\n  1 update-group member\n                                 Sent       Rcvd\n  Prefix activity:               ----       ----\n    Prefixes Current:               1          1 (Consumes 52 bytes)\n    Prefixes Total:                 1          1\n    Implicit Withdraw:              0          0\n    Explicit Withdraw:              0          0\n    Used as bestpath:             n/a          1\n    Used as multipath:            n/a          0\n                                   Outbound    Inbound\n  Local Policy Denied Prefixes:    --------    -------\n    AS_PATH loop:                       n/a          1\n    Bestpath from this peer:              1        n/a\n    Total:                                1          1\n  Number of NLRIs in the update sent: max 0, min 0\n  Connections established 1; dropped 0\n  Last reset never\nConnection state is ESTAB, I/O status: 1, unread input bytes: 0        \nConnection is ECN Disabled\nLocal host: 192.168.1.2, Local port: 179\nForeign host: 192.168.1.1, Foreign port: 37725\nEnqueued packets for retransmit: 0, input: 0  mis-ordered: 0 (0 bytes)\nEvent Timers (current time is 0x12F4F2C):\nTimer          Starts    Wakeups            Next\nRetrans            14          0             0x0\nTimeWait            0          0             0x0\nAckHold            13          8             0x0\nSendWnd             0          0             0x0\nKeepAlive           0          0             0x0\nGiveUp              0          0             0x0\nPmtuAger            0          0             0x0\nDeadWait            0          0             0x0\niss:  165379618  snduna:  165379963  sndnxt:  165379963     sndwnd:  16040\nirs: 3127821601  rcvnxt: 3127821993  rcvwnd:      15993  delrcvwnd:    391\nSRTT: 254 ms, RTTO: 619 ms, RTV: 365 ms, KRTT: 0 ms\nminRTT: 12 ms, maxRTT: 300 ms, ACK hold: 200 ms\nFlags: passive open, nagle, gen tcbs\nIP Precedence value : 6\nDatagrams (max data segment is 1460 bytes):\nRcvd: 20 (out of order: 0), with data: 15, total data bytes: 391\nSent: 22 (retransmit: 0, fastretransmit: 0, partialack: 0, Second Congestion: 04",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-if)# ip address 192.168.3.1 255.255.255.0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# address-family ipv4 vrf vpn1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor 192.168.3.2 remote-as 50000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor 192.168.3.2 maximum-prefix 10000 warning-only",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor 192.168.3.2 activate",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# no bgp default ipv4-unicast",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.3.2 remote-as 50000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.3.2 description finance",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# address-family ipv4 multicast",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# network 172.17.1.0 mask 255.255.255.0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor 192.168.3.2 activate",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor 192.168.3.2 advertisement-interval 25",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor 192.168.3.2 default-originate",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# exit-address-family",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.3.2 shutdown",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device# show ip bgp neighbors 192.168.3.2",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following sample output from theshowipbgpipv4multicastcommand shows BGP IPv4 multicast information for Router B in the figure above after this task has been configured on Router\n                                 B and Router E. Note that the networks local to each device that were configured under IPv4 multicast address family appear\n                                 in the output table.",
+    "config_text": "BGP table version is 3, local router ID is 172.17.1.99\nStatus codes: s suppressed, d damped, h history, * valid, > best, i - internal,\n              r RIB-failure, S Stale\nOrigin codes: i - IGP, e - EGP, ? - incomplete\n   Network          Next Hop            Metric LocPrf Weight Path\n*> 10.2.2.0/24      192.168.3.2              0             0 50000 i\n*> 172.17.1.0/24    0.0.0.0                  0         32768 i",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following partial sample output from theshowipbgpneighborscommand for neighbor 192.168.3.2 shows general BGP information and specific BGP IPv4 multicast address family information\n                                 about the neighbor. The command was entered on Router B in the figure above after this task had been configured on Router\n                                 B and Router E.",
+    "config_text": "BGP neighbor is 192.168.3.2,  remote AS 50000, external link\n Description: finance\n  BGP version 4, remote router ID 10.2.2.99\n  BGP state = Established, up for 01:48:27\n  Last read 00:00:26, last write 00:00:26, hold time is 120, keepalive intervals\n  Configured hold time is 120,keepalive interval is 70 seconds, Minimum holdtims\n  Neighbor capabilities:\n    Route refresh: advertised and received (old & new)\n    Address family IPv4 Unicast: advertised\n    Address family IPv4 Multicast: advertised and received\n!        \n For address family: IPv4 Multicast\n  BGP table version 3, neighbor version 3/0\n Output queue size : 0\n  Index 1, Offset 0, Mask 0x2\n  1 update-group member\n    Uses NEXT_HOP attribute for MBGP NLRIs\n                                 Sent       Rcvd\n  Prefix activity:               ----       ----\n    Prefixes Current:               1          1 (Consumes 48 bytes)\n    Prefixes Total:                 1          1\n    Implicit Withdraw:              0          0\n    Explicit Withdraw:              0          0\n    Used as bestpath:             n/a          1\n    Used as multipath:            n/a          0\n                                   Outbound    Inbound\n  Local Policy Denied Prefixes:    --------    -------\n    Bestpath from this peer:              1        n/a\n    Total:                                1          0\n  Number of NLRIs in the update sent: max 0, min 0\n  Minimum time between advertisement runs is 25 seconds\n  Connections established 8; dropped 7\n  Last reset 01:48:54, due to User reset\nConnection state is ESTAB, I/O status: 1, unread input bytes: 0        \nConnection is ECN Disabled\nLocal host: 192.168.3.1, Local port: 13172\nForeign host: 192.168.3.2, Foreign port: 179\n!",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# no route-map bgp-to-eigrp",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router eigrp 100",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# no redistribute bgp 45000",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# bgp log-neighbor-changes",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# bgp soft-reconfig-backup",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.2 remote-as 40000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.2 soft-reconfiguration inbound",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.2 route-map LOCAL in",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# exit",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# route-map LOCAL permit 10",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-route-map)# set ip next-hop 192.168.1.144",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-route-map)# end",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device# show ip bgp neighbors 192.168.1.2",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following\n                                    \t\t  partial output from theshowipbgpneighborscommand shows information about the TCP\n                                    \t\t  and BGP connections to the BGP neighbor 192.168.2.1. This peer supports route\n                                    \t\t  refresh.",
+    "config_text": "BGP neighbor is 192.168.1.2,  remote AS 40000, external link\n Neighbor capabilities:\n   Route refresh: advertised and received(new)",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following\n                                    \t\t  partial output from theshowipbgpneighborscommand shows information about the TCP\n                                    \t\t  and BGP connections to the BGP neighbor 192.168.3.2. This peer does not support\n                                    \t\t  route refresh so the soft-reconfig inbound paths for BGP peer 192.168.3.2 will\n                                    \t\t  be stored because there is no other way to update any inbound policy updates.",
+    "config_text": "BGP neighbor is 192.168.3.2,  remote AS 50000, external link\n Neighbor capabilities:\n   Route refresh: advertised",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device#showipbgpneighbors192.168.3.2advertised-routes",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# ip route 172.0.0.0 255.0.0.0 null 0",
+    "config_type": "static",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# redistribute static",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# aggregate-address 172.0.0.0 255.0.0.0 as-set",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.2 remote-as 40000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# aggregate-address 172.0.0.0 255.0.0.0 summary-only",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# aggregate-address 172.0.0.0 255.0.0.0 suppress-map map1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.2 unsuppress map1",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.2 remote-as 40000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.2 advertise-map map1 exist-map map2",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# exit",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# route-map map1 permit 10",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-route-map)# match ip address 1",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-route-map)# exit",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# route-map map2 permit 10",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-route-map)# match ip address 2",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-route-map)# exit",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# access-list 1 permit 172.17.0.0",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# access-list 2 permit 192.168.50.0",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# ip prefix-list DEFAULT permit 10.1.1.0/24",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# route-map ROUTE",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-route-map)# match ip address prefix-list DEFAULT",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-route-map)# exit",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 40000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.3.2 default-originate",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 172.22.1.2 remote-as 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# network 172.21.1.0 backdoor",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router bgp 40000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor fingroup peer-group",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.1 remote-as 45000",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# neighbor 192.168.1.1 peer-group fingroup",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# address-family ipv4 multicast",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor fingroup activate",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# neighbor 192.168.1.1 peer-group fingroup",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Router B",
+    "config_text": "router bgp 45000\n bgp router-id 172.17.1.99\n no bgp default ipv4-unicast\n bgp log-neighbor-changes\n timers bgp 70 120\n neighbor 192.168.1.2 remote-as 40000\n neighbor 192.168.3.2 remote-as 50000\n neighbor 192.168.3.2 description finance\n !\n address-family ipv4\n  neighbor 192.168.1.2 activate\n  neighbor 192.168.3.2 activate\n  no auto-summary\n  no synchronization\n  network 172.17.1.0 mask 255.255.255.0\n  exit-address-family\n !\n address-family ipv4 multicast\n  neighbor 192.168.3.2 activate\n  neighbor 192.168.3.2 advertisement-interval 25\n  no auto-summary\n  no synchronization\n  network 172.17.1.0 mask 255.255.255.0\n  exit-address-family",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "CLI to Enable BGP Route Redistribution Into EIGRP",
+    "config_text": "route-map bgp-to-eigrp permit 10\n match tag 50000\n set tag 65000\n exit\nrouter bgp 45000\n bgp log-neighbor-changes\n address-family ipv4\n  neighbor 172.16.1.2 remote-as 45000\n  neighbor 172.21.1.2 remote-as 45000\n  neighbor 192.168.1.2 remote-as 40000\n  neighbor 192.168.3.2 remote-as 50000\n  neighbor 172.16.1.2 activate\n  neighbor 172.21.1.2 activate\n  neighbor 192.168.1.2 activate\n  neighbor 192.168.3.2 activate\n  network 172.17.1.0 mask 255.255.255.0\n  exit-address-family\n exit\nrouter eigrp 100\n redistribute bgp 45000 metric 10000 100 255 1 1500 route-map bgp-to-eigrp\n no auto-summary\n exit",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "CLI to Remove BGP Route Redistribution Into EIGRP",
+    "config_text": "configure terminal\n no route-map bgp-to-eigrp \n router eigrp 100\n  no redistribute bgp 45000 \n  end",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following example shows how to enable inbound soft reconfiguration for the neighbor 192.168.1.1. All the updates received\n                                 from this neighbor will be stored unmodified, regardless of the inbound policy. When inbound soft reconfiguration is performed\n                                 later, the stored information will be used to generate a new set of inbound updates.",
+    "config_text": "router bgp 100\n neighbor 192.168.1.1 remote-as 200\n neighbor 192.168.1.1 soft-reconfiguration inbound",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Theshowipbgpneighborscommand is used to display information about the TCP and BGP connections to neighbors. The following example displays the\n                                 routes that were advertised from Router B in the figure above (in the “Configuring a BGP Peer for the IPv4 VRF Address Family”\n                                 section) to its BGP neighbor 192.168.3.2 on Router E:",
+    "config_text": "Device#show ip bgp neighbors 192.168.3.2 advertised-routesBGP table version is 3, local router ID is 172.17.1.99\nStatus codes: s suppressed, d damped, h history, * valid, > best, i - internal,\n              r RIB-failure, S Stale\nOrigin codes: i - IGP, e - EGP, ? - incomplete\n   Network          Next Hop            Metric LocPrf Weight Path\n*> 10.1.1.0/24      192.168.1.2              0             0 40000 i\n*> 172.17.1.0/24    0.0.0.0                  0         32768 i\nTotal number of prefixes 2",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "Theshowipbgpsummarycommand is used to display the status of all BGP connections. The following example displays BGP routing table information\n                                 for Router B in the figure above (in the “Customizing a BGP Peer” section):",
+    "config_text": "Device#show ip bgp summaryBGP router identifier 172.17.1.99, local AS number 45000\nBGP table version is 3, main routing table version 3\n2 network entries using 234 bytes of memory\n2 path entries using 104 bytes of memory\n4/2 BGP path/bestpath attribute entries using 496 bytes of memory\n2 BGP AS-PATH entries using 48 bytes of memory\n0 BGP route-map cache entries using 0 bytes of memory\n0 BGP filter-list cache entries using 0 bytes of memory\nBGP using 882 total bytes of memory\nBGP activity 14/10 prefixes, 16/12 paths, scan interval 60 secs\nNeighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd\n192.168.1.2     4 40000     667     672        3    0    0 00:03:49        1\n192.168.3.2     4 50000     468     467        0    0    0 00:03:49 (NoNeg)",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "In the following example, theredistributestaticrouter configuration command is used to redistribute aggregate route 10.0.0.0:",
+    "config_text": "ip route 10.0.0.0 255.0.0.0 null 0\n!\nrouter bgp 100\n redistribute static",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following configuration shows how to create an aggregate entry in the BGP routing table when at least one specific route\n                                 falls into the specified range. The aggregate route will be advertised as coming from your autonomous system and has the atomic\n                                 aggregate attribute set to show that information might be missing. (By default, atomic aggregate is set unless you use theas-setkeyword in theaggregate-addressrouter configuration command.)",
+    "config_text": "router bgp 100\n aggregate-address 10.0.0.0 255.0.0.0",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following example shows how to create an aggregate entry using the same rules as in the previous example, but the path\n                                 advertised for this route will be an AS_SET consisting of all elements contained in all paths that are being summarized:",
+    "config_text": "router bgp 100\n aggregate-address 10.0.0.0 255.0.0.0 as-set",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following example shows how to create the aggregate route for 10.0.0.0 and also suppress advertisements of more specific\n                                 routes to all neighbors:",
+    "config_text": "router bgp 100\n aggregate-address 10.0.0.0 255.0.0.0 summary-only",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following example configures BGP to not advertise inactive routes:",
+    "config_text": "Device(config)#router bgp 50000Device(config-router)#address-family ipv4 unicastDevice(config-router-af)#bgp suppress-inactiveDevice(config-router-af)#end",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following example configures a maximum route limit in the VRF named RED and configures BGP to not advertise inactive\n                                 routes through the VRF named RED:",
+    "config_text": "Device(config)#ip vrf REDDevice(config-vrf)#rd 50000:10Device(config-vrf)#maximum routes 1000 10Device(config-vrf)#exitDevice(config)#router bgp 50000Device(config-router)#address-family ipv4 vrf REDDevice(config-router-af)#bgp suppress-inactiveDevice(config-router-af)#end",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_irg-bgp4.html",
+    "nl_text": "The following example shows how to use an address family to configure a peer group so that all members of the peer group\n                                 are both unicast- and multicast-capable:",
+    "config_text": "router bgp 45000\n neighbor 192.168.1.2 remote-as 40000\n neighbor 192.168.3.2 remote-as 50000\n address-family ipv4 unicast\n  neighbor mygroup peer-group\n  neighbor 192.168.1.2 peer-group mygroup\n  neighbor 192.168.3.2 peer-group mygroup\nrouter bgp 45000\n neighbor 192.168.1.2 remote-as 40000\n neighbor 192.168.3.2 remote-as 50000\n address-family ipv4 multicast\n  neighbor mygroup peer-group\n  neighbor 192.168.1.2 peer-group mygroup\n  neighbor 192.168.3.2 peer-group mygroup\n  neighbor 192.168.1.2 activate\n  neighbor 192.168.3.2 activate",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#router ospf 15",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#network 10.1.1.1 255.240.0.0 area 20",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#router ospfv3 15OR\nDevice(config)#ipv6 router ospf 15",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#area .3 range 2001:0DB8::/32 not-advertise",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#maximum paths 16",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#exit",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#interface gigabitethernet 1/0/1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-if)#router ospfv3 21 area .3OR\nDevice(config-if)#ipv6 ospf 21 area .3",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device#show ipv6 ospf 21 interface gigabitethernet 2/0/1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#interface gigabitethernet 1/0/1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device#show ip ospf interface gigabitethernet 1/0/1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device#show ip ospf neighbor detail",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#router ospf 15",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#area 1 authentication",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#area 1 authentication message-digest",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#area 1 stub",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#area 1 nssa default-information originate",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#area 1 range 255.240.0.0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Determines the \"cost\" of a link, which OSPF uses to calculate the shortest path.",
+    "config_text": "cost = reference_bandwidth / interface_bandwidth",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#router ospf 15",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#summary-address 10.1.1.1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#area 2 virtual-link 192.168.255.1 hello-interval 5",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#area 1 nssa default-information originate",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#default information originate metric 100 metric-type 1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#ip ospf name-lookup",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)#auto-cost reference-bandwidth ref-bw",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/ospf/ospf-configuration-guide/ospf.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#passive-interface gigabitethernet 1/0/6",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "The following is an example of how a static FQDN redirect ACL is defined:",
+    "config_text": "ip access-list fqdn redirect_fqdn\n8 deny ip any host dynamic yahoo.com\n9 deny ip host dynamic google.com any\n10 deny udp any any eq domain\n20 deny udp any any eq domain\n30 deny udp any eq bootps any\n40 deny udp any any eq bootpc\n50 deny udp any eq bootpc any\n60 deny ip any host 10.2.1.11\n70 deny ip host 10.2.1.11 any\n80 permit tcp any any eq www\n90 permit tcp any any eq 443",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "The following is an example of how an FQDN redirect ACL using Cisco-AV pair is defined:",
+    "config_text": "cisco-av-pair = ip:fqdn-redirect-acl#1 = deny ip any host store.example.com\ncisco-av-pair = ip:fqdn-redirect-acl#2 = deny ip any host example.google.com\ncisco-av-pair = ip:fqdn-redirect-acl#3 = deny ip any host portal.example.com\ncisco-av-pair = ip:fqdn-redirect-acl#4 = permit ip any any\ncisco-av-pair = ip:fqdn-redirect-acl#10 = deny udp any any eq domain\ncisco-av-pair = ip:fqdn-redirect-acl#20 = deny udp any eq bootps any\ncisco-av-pair = ip:fqdn-redirect-acl#30 = deny ip host 10.2.1.11 any\ncisco-av-pair = ip:fqdn-redirect-acl#40 = permit tcp any any eq 443",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#access-list 2 deny your_host",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#access-list 101 permit ip host 10.1.1.2 any precedence 0 tos 0 log",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#access-list 101 permit tcp any any eq 500",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#access-list 101 permit udp any any eq 100",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#access-list 101 permit icmp any any 200",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#access-list 101 permit igmp any any 14",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#ip access-list standard 20",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-std-nacl)#deny 192.168.0.0 0.0.255.255 255.255.0.0 0.0.255.255",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "or",
+    "config_text": "Device(config-std-nacl)#permit 10.108.0.0 0.0.0.0 255.255.255.0 0.0.0.0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#ip access-list extended 150",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-ext-nacl)#permit 0 any any",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#ip access-list fqdn facl",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-fqdn-acl)#10 permit tcp any host 10.1.1.1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#interface gigabitethernet1/0/1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#mac access-list extended mac1",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-ext-macl)#deny any any decnet-iv",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "or",
+    "config_text": "Device(config-ext-macl)#permit any any",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#interface gigabitethernet1/0/2",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device#show mac access-group interface gigabitethernet1/0/2",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#ip access-list extended 150",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#ip access-list extended 151",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)#interface gigabitethernet1/0/1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-access-map)#match ip address ip2",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example uses a standard ACL to filter traffic coming into Server B from a port, permitting traffic only from Accounting’s\n                                 source addresses 172.20.128.64 to 172.20.128.95. The ACL is applied to traffic coming out of routed Port 1 from the specified\n                                 source address.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 6 permit 172.20.128.64 0.0.0.31Device(config)#exitDevice#show access-listsStandard IP access list 6\n    10 permit 172.20.128.64, wildcard bits 0.0.0.31\n\nDevice#configure terminalDevice(config)#interface gigabitethernet1/0/1Device(config-if)#ip access-group 6 outDevice(config-if)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example uses an extended ACL to filter traffic coming from Server B into a port, permitting traffic from any source address\n                                 (in this case Server B) to only the Accounting destination addresses 172.20.128.64 to 172.20.128.95. The ACL is appliDeviceed\n                                 to traffic going into routed Port 1, permitting it to go only to the specified destination addresses. Note that with extended\n                                 ACLs, you must enter the protocol (IP) before the source and destination information.",
+    "config_text": "Device(config)#access-list 106 permit ip any 172.20.128.64 0.0.0.31Device(config)#exitDevice#show access-listsExtended IP access list 106\n    10 permit ip any 172.20.128.64 0.0.0.31\n\n\nDevice#configure terminalDevice(config)#interface gigabitethernet1/0/1Device(config-if)#ip access-group 106 inDevice(config-if)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "In this example, network 10.0.0.0 is a Class A network whose second octet specifies a subnet; that is, its subnet mask is\n                                 255.255.0.0. The third and fourth octets of a network 10.0.0.0 address specify a particular host. Using access list 2, the\n                                 switch accepts one address on subnet 48 and reject all others on that subnet. The last line of the list shows that the switch\n                                 accepts addresses on all other network 10.0.0.0 subnets. The ACL is applied to packets entering a port.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 2 permit 10.48.0.3Device(config)#access-list 2 deny 10.48.0.0 0.0.255.255Device(config)#access-list 2 permit 10.0.0.0 0.255.255.255Device(config)#interface gigabitethernet2/0/1Device(config-if)#ip access-group 2 inDevice(config-if)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "In this example, the first line permits any incoming TCP connections with destination ports greater than 1023. The second\n                                 line permits incoming TCP connections to the Simple Mail Transfer Protocol (SMTP) port of host 172.16.0.0. The third line\n                                 permits incoming ICMP messages for error feedback.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 102 permit tcp any 172.16.0.0 0.0.255.255 gt 1023Device(config)#access-list 102 permit tcp any host 172.16.1.2 eq 25Device(config)#access-list 102 permit icmp any anyDevice(config)#interface gigabitethernet 2/0/1Device(config-if)#ip access-group 102 inDevice(config-if)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "SMTP uses TCP port 25 on one end of the connection and a random port number on the other end. The same port numbers are used\n                                 throughout the life of the connection. Mail packets coming in from the Internet have a destination port of 25. Because the\n                                 secure system of the network always accepts mail connections on port 25, the incoming sevices are separately controlled.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 102 permit tcp any 172.16.0.0 0.0.255.255 eq 23Device(config)#access-list 102 permit tcp any 172.16.0.0 0.0.255.255 eq 25Device(config)#interface gigabitethernet 1/0/1Device(config-if)#ip access-group 102 inDevice(config-if)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "In this example, the network is a Class B network with the address 172.16.0.0, and the mail host address is 172.16.1.2. Theestablishedkeyword is used only for the TCP to show an established connection. A match occurs if the TCP datagram has the ACK or RST\n                                 bits set, which show that the packet belongs to an existing connection. Gigabit Ethernet interface 1 is the interface that\n                                 connects the device to the Internet.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 102 permit tcp any 172.16.0.0 0.0.255.255 establishedDevice(config)#access-list 102 permit tcp any host 172.16.1.2 eq 25Device(config)#interface gigabitethernet 1/0/1Device(config-if)#ip access-group 102 inDevice(config-if)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example creates a standard ACL namedinternet_filterand an extended ACL namedmarketing_group. Theinternet_filterACL allows all traffic from the source address 10.2.3.4.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list standard Internet_filterDevice(config-ext-nacl)#permit 10.2.3.4Device(config-ext-nacl)#exitDevice(config-ext-nacl)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Themarketing_groupACL allows any TCP Telnet traffic to the destination address and wildcard 172.16.0.0 0.0.255.255 and denies any other TCP\n                                 traffic. It permits ICMP traffic, denies UDP traffic from any source to the destination address range 172.16.0.0 through 172.16.255.255\n                                 with a destination port less than 1024, denies any other IP traffic, and provides a log of the result.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended marketing_groupDevice(config-ext-nacl)#permit tcp any 172.16.0.0 0.0.255.255 eq telnetDevice(config-ext-nacl)#deny tcp any anyDevice(config-ext-nacl)#permit icmp any anyDevice(config-ext-nacl)#deny udp any 172.16.0.0 0.0.255.255 lt 1024Device(config-ext-nacl)#deny ip any any logDevice(config-ext-nacl)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "TheInternet_filterACL is applied to outgoing traffic and themarketing_groupACL is applied to incoming traffic on a Layer 3 port.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#interface gigabitethernet3/0/2Device(config-if)#no switchportDevice(config-if)#ip address 10.0.5.1 255.255.255.0Device(config-if)#ip access-group Internet_filter outDevice(config-if)#ip access-group marketing_group inDevice(config-if)#end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example shows how to delete individual ACEs from the named access listborder-list:",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended border-listDevice(config-ext-nacl)#no permit ip host 10.1.1.3 anyDevice(config-ext-nacl)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example shows how to multiply the FQDN TTL packet timeout by 100 and create an FQDN ACL namedfacl:",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#fqdn ttl-timeout-factor 100Device(config)#ip access-list fqdn faclDevice(config-fqdn-acl)#100 permit ip any host 10.1.1.1Device(config-fqdn-acl)#10 permit ip any host dynamic www.google.comDevice(config-fqdn-acl)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "The followingshow running-config ip access-list fqdncommand output shows the conditions set for the FQDN, including wildcards that are defined:",
+    "config_text": "Device#show running-config ip access-list fqdn FQDN_ACLip access-list fqdn FQDN_ACL\n  10 permit ip any host dynamic *.google.com\n  20 permit  ip any host dynamic *.cisco.com\n  30 deny tcp any any eq www",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This is an example of the output for theshow ip-access lists redirectcommand:",
+    "config_text": "Device#show ip-access lists redirectFQDN IP access list redirect\n    1 deny ip any host 172.26.197.126\n    2 deny udp any any eq domain\n\n    1000 permit ip any host dynamic webserver.9k.com\n    1010 permit ip any host dynamic host1.9k.com\n    1020 permit ip any host dynamic host2.9k.com\n\nExtended IP access list redirect    \n    10000 deny ip any host 172.26.197.126\n    20000 deny udp any any eq domain",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This is an example of theshow fqdn databasecommand.",
+    "config_text": "Device#show fqdn database=============== MAIN DB ===================\nFQDN Name: webserver.9k.com\nIP Address        Type        TTL\n172.26.197.131    IPV4        35896/36000",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "In this example, standard named access liststan1denies traffic from 10.1.1.0 0.0.0.255, allows traffic from all other sources, and includes thelogkeyword.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list standard stan1Device(config-std-nacl)#deny 10.1.1.0 0.0.0.255 logDevice(config-std-nacl)#permit any logDevice(config-std-nacl)#exitDevice(config)#interface gigabitethernet1/0/1Device(config-if)#ip access-group stan1 inDevice(config-if)#endDevice#show loggingSyslog logging: enabled (0 messages dropped, 0 flushes, 0 overruns)\n    Console logging: level debugging, 37 messages logged\n    Monitor logging: level debugging, 0 messages logged\n    Buffer logging: level debugging, 37 messages logged\n    File logging: disabled\n    Trap logging: level debugging, 39 message lines logged\n\nLog Buffer (4096 bytes):\n\n00:00:48: NTP: authentication delay calculation problems\n\n<output truncated>\n\n00:09:34:%SEC-6-IPACCESSLOGS:list stan1 permitted 0.0.0.0 1 packet\n00:09:59:%SEC-6-IPACCESSLOGS:list stan1 denied 10.1.1.15 1 packet\n00:10:11:%SEC-6-IPACCESSLOGS:list stan1 permitted 0.0.0.0 1 packet",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example is a named extended access listext1that permits ICMP packets from any source to 10.1.1.0 0.0.0.255 and denies all UDP packets.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended ext1Device(config-ext-nacl)#permit icmp any 10.1.1.0 0.0.0.255 logDevice(config-ext-nacl)#deny udp any any logDevice(config-std-nacl)#exitDevice(config)#interface gigabitethernet1/0/2Device(config-if)#ip access-group ext1 inDevice(config)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This is a an example of a log for an extended ACL:",
+    "config_text": "01:24:23:%SEC-6-IPACCESSLOGDP:list ext1 permitted icmp 10.1.1.15 -> 10.1.1.61 (0/0), 1 packet\n01:25:14:%SEC-6-IPACCESSLOGDP:list ext1 permitted icmp 10.1.1.15 -> 10.1.1.61 (0/0), 7 packets\n01:26:12:%SEC-6-IPACCESSLOGP:list ext1 denied udp 0.0.0.0(0) -> 255.255.255.255(0), 1 packet\n01:31:33:%SEC-6-IPACCESSLOGP:list ext1 denied udp 0.0.0.0(0) -> 255.255.255.255(0), 8 packets",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This is an example of an output message when thelog-inputkeyword is entered:",
+    "config_text": "00:04:21:%SEC-6-IPACCESSLOGDP:list inputlog permitted icmp 10.1.1.10 (Vlan1 0001.42ef.a400) -> \n10.1.1.61 (0/0), 1 packet",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "A log message for the same sort of packet using thelogkeyword does not include the input interface information:",
+    "config_text": "00:05:47:%SEC-6-IPACCESSLOGDP:list inputlog permitted icmp 10.1.1.10 -> 10.1.1.61 (0/0), 1 packet",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Consider access list 102, configured with these commands, applied to three fragmented packets:",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 102 permit tcp any host 10.1.1.1 eq smtpDevice(config)#access-list 102 deny tcp any host 10.1.1.2 eq telnetDevice(config)#access-list 102 permit tcp any host 10.1.1.2Device(config)#access-list 102 deny tcp any anyDevice(config)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "To apply a time range, enter the time-range name in an extended ACL that can implement time ranges. This example shows how\n                                 to create and verify extended access list 188 that denies TCP traffic from any source to any destination during the defined\n                                 holiday times and permits all TCP traffic during work hours.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 188 deny tcp any any time-range new_year_day_2006Device(config)#access-list 188 permit tcp any any time-range workhoursDevice(config)#exitDevice#show access-listsExtended IP access list 188\n   10 deny tcp any any time-range new_year_day_2006 (inactive)\n   20 permit tcp any any time-range workhours (inactive)",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example uses named ACLs to permit and deny the same traffic.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended deny_accessDevice(config-ext-nacl)#deny tcp any any time-range new_year_day_2006Device(config-ext-nacl)#exitDevice(config)#ip access-list extended may_accessDevice(config-ext-nacl)#permit tcp any any time-range workhoursDevice(config-ext-nacl)#endDevice#show ip access-listsExtended IP access list lpip_default\n    10 permit ip any any\nExtended IP access list deny_access\n    10 deny tcp any any time-range new_year_day_2006 (inactive)\nExtended IP access list may_access\n    10 permit tcp any any time-range workhours (inactive)",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example denies HTTP traffic on IP on Monday through Friday between the hours of 8:00 a.m. and 6:00 p.m (18:00). The example\n                                 allows UDP traffic only on Saturday and Sunday from noon to 8:00 p.m. (20:00).",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#time-range no-httpDevice(config)#periodic weekdays 8:00 to 18:00Device(config)#time-range udp-yesDevice(config)#periodic weekend 12:00 to 20:00Device(config)#ip access-list extended strictDevice(config-ext-nacl)#deny tcp any any eq www time-range no-httpDevice(config-ext-nacl)#permit udp any any time-range udp-yesDevice(config-ext-nacl)#exitDevice(config)#interface gigabitethernet2/0/1Device(config-if)#ip access-group strict inDevice(config-if)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "In this example, the workstation that belongs to user1 is allowed access, and the workstation that belongs to user2 is not\n                                 allowed access:",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 1 remark Permit only user1 workstation throughDevice(config)#access-list 1 permit 171.69.2.88Device(config)#access-list 1 remark Do not allow user2 throughDevice(config)#access-list 1 deny 171.69.3.13Device(config)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "In this example, the subnet1 subnet is not allowed to use outbound Telnet:",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended telnettingDevice(config-ext-nacl)#remark Do not allow subnet1 subnet to telnet outDevice(config-ext-nacl)#deny tcp host 171.69.2.88 any eq telnetDevice(config-ext-nacl)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example shows how to create an ACL and a VLAN map to deny a packet. In the first map, any packets that match theip1ACL (TCP packets) would be dropped. You first create theip1ACL to permit any TCP packet and no other packets. Because there is a match clause for IP packets in the VLAN map, the default\n                                 action is to drop any IP packet that does not match any of the match clauses.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended ip1Device(config-ext-nacl)#permit tcp any anyDevice(config-ext-nacl)#exitDevice(config)#vlan access-map map_1 10Device(config-access-map)#match ip address ip1Device(config-access-map)#action dropDevice(config-access-map)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "This example shows how to create a VLAN map to permit a packet. ACLip2permits UDP packets and any packets that match theip2ACL are forwarded. In this map, any IP packets that did not match any of the previous ACLs (that is, packets that are not\n                                 TCP packets or UDP packets) would get dropped.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended ip2Device(config-ext-nacl)#permit udp any anyDevice(config-ext-nacl)#exitDevice(config)#vlan access-map map_1 20Device(config-access-map)#match ip address ip2Device(config-access-map)#action forwardDevice(config-access-map)#exit",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Forward all non-IP packets",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#access-list 101 permit udp any anyDevice(config)#ip access-list extended igmp-matchDevice(config-ext-nacl)#permit igmp any anyDevice(config)#action forwardDevice(config-ext-nacl)#permit tcp any anyDevice(config-ext-nacl)#exitDevice(config)#vlan access-map drop-ip-default 10Device(config-access-map)#match ip address 101Device(config-access-map)#action forwardDevice(config-access-map)#exitDevice(config)#vlan access-map drop-ip-default 20Device(config-access-map)#match ip address igmp-matchDevice(config-access-map)#action dropDevice(config-access-map)#exitDevice(config)#vlan access-map drop-ip-default 30Device(config-access-map)#match ip address tcp-matchDevice(config-access-map)#action forwardDevice(config-access-map)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Forward all IP packets",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#mac access-list extended good-hostsDevice(config-ext-macl)#permit host 000.0c00.0111 anyDevice(config-ext-macl)#permit host 000.0c00.0211 anyDevice(config-ext-nacl)#exitDevice(config)#action forwardDevice(config-ext-macl)#mac access-list extended good-protocolsDevice(config-ext-macl)#permit any any vines-ipDevice(config-ext-nacl)#exitDevice(config)#vlan access-map drop-mac-default 10Device(config-access-map)#match mac address good-hostsDevice(config-access-map)#action forwardDevice(config-access-map)#exitDevice(config)#vlan access-map drop-mac-default 20Device(config-access-map)#match mac address good-protocolsDevice(config-access-map)#action forwardDevice(config-access-map)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Drop all other MAC packets",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#vlan access-map drop-all-default 10Device(config-access-map)#match ip address tcp-matchDevice(config-access-map)#action forwardDevice(config-access-map)#exitDevice(config)#vlan access-map drop-all-default 20Device(config-access-map)#match mac address good-hostsDevice(config-access-map)#action forwardDevice(config-access-map)#end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "First, define the IP access listhttpthat permits (matches) any TCP traffic on the HTTP port.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended httpDevice(config-ext-nacl)#permit tcp host 10.1.1.32 host 10.1.1.34 eq wwwDevice(config-ext-nacl)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Next, create VLAN access mapmap2so that traffic that matches thehttpaccess list is dropped and all other IP traffic is forwarded.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#vlan access-map map2 10Device(config-access-map)#match ip address httpDevice(config-access-map)#action dropDevice(config-access-map)#exitDevice(config)#ip access-list extended match_allDevice(config-ext-nacl)#permit ip any anyDevice(config-ext-nacl)#exitDevice(config)#vlan access-map map2 20Device(config-access-map)#match ip address match_allDevice(config-access-map)#action forwardDevice(config-access-map)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Define the IP ACL that will match the correct packets.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#ip access-list extended SERVER1_ACLDevice(config-ext-nacl)#permit ip 10.1.2.0 0.0.0.255 host 10.1.1.100Device(config-ext-nacl)#permit ip host 10.1.1.4 host 10.1.1.100Device(config-ext-nacl)#permit ip host 10.1.1.8 host 10.1.1.100Device(config-ext-nacl)#end",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-14/configuration_guide/sec/b_1714_sec_9300_cg/configuring_ipv4_acls.html",
+    "nl_text": "Define a VLAN map using this ACL that will drop IP packets that match SERVER1_ACL and forward IP packets that do not match\n                                    the ACL.",
+    "config_text": "Device>enableDevice#configure terminalDevice(config)#vlan access-map SERVER1_MAPDevice(config-access-map)#match ip address SERVER1_ACLDevice(config-access-map)#action dropDevice(config)#vlan access-map SERVER1_MAP 20Device(config-access-map)#action forwardDevice(config-access-map)#end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# Gigabit Ethernet 1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# ip ospf 10 area 0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# interface Gigabitethernet 0/0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# interface gigabitethernet 0/0/0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device#(config-if) ip ospf network point-to-multipoint",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device#(config) router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device#(config-router) neighbor 192.168.3.4 cost 180",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# interface gigabitethernet 0/0/0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device#(config-if) ip ospf network point-to-multipoint non-broadcast",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device#(config) router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device#(config-router) neighbor 192.168.3.4 cost 180",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 10",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# area 10.0.0.0 authentication",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# area 10.0.0.0 stub no-summary",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# area 10.0.0.0 default-cost 1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 10",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# redistribute rip subnets",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# network 192.168.129.11 0.0.0.255 area 1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# area 1 nssa",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# summary-address 10.1.0.0 255.255.0.0 not-advertise",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 1",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# area 10 nssa translate type7 always",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# area 10 nssa translate type7 suppress-fa",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 1",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# compatible rfc1587",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device#(config-router) summary-address 10.1.0.0 255.255.0.0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router-af)# area 1 virtual-link 10.1.1.1 router1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# default-information originate always",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# interface loopback 0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device#(config-if) ip address 192.108.1.27 255.255.255.0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device# router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# auto-cost reference-bandwidth 101",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# distance ospf external 200",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Purpose",
+    "config_text": "passive-interfaceinterface-typeinterface-number",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# timers throttle spf 5 1000 9000",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# log-adjacency-changes detail",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config)# router ospf 109",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# timers pacing lsa-group 60",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Example:",
+    "config_text": "Device(config-router)# end",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Purpose",
+    "config_text": "neighborip-addressdatabase-filterallout",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays general information about OSPF routing processes.",
+    "config_text": "showipospfborder-routers",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays the internal OSPF routing table entries to the ABR and ASBR.",
+    "config_text": "showipospf[process-id[area-id]]database[router][self-originate]",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays the internal OSPF routing table entries to the ABR and ASBR.",
+    "config_text": "showipospf[process-id[area-id]]database[router][adv-router[ip-address]]",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays the internal OSPF routing table entries to the ABR and ASBR.",
+    "config_text": "showipospf[process-id[area-id]]database[router][link-state-id]",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays the internal OSPF routing table entries to the ABR and ASBR.",
+    "config_text": "showipospf[process-id[area-id]]database[network][link-state-id]",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays the internal OSPF routing table entries to the ABR and ASBR.",
+    "config_text": "showipospf[process-id[Router#area-id]]database[external] [link-state-id]",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays lists of information related to the OSPF database.",
+    "config_text": "show ip ospf flood-list interfacetype",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays a list of LSAs waiting to be flooded over an interface (to observe OSPF packet pacing).",
+    "config_text": "show ip ospf interface[typenumber]",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays OSPF-related interface information.",
+    "config_text": "show ip ospf neighbor[interface-name] [neighbor-id]detail",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays OSPF neighbor information on a per-interface basis.",
+    "config_text": "show ip ospf request-list[neighbor] [interface] [interface-neighbor]",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Displays a list of all LSAs requested by a router.",
+    "config_text": "show ip ospf retransmission-list[neighbor] [interface] [interface-neighbor]",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Purpose",
+    "config_text": "clearipospf[pid]{process|redistribution|counters[neighbor[neighbor-interface]\n \n[neighbor-id]]}",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router 1 Configuration",
+    "config_text": "hostname Router 1\n!\ninterface serial 1\n ip address 10.0.0.2 255.0.0.0\n ip ospf network point-to-multipoint\n encapsulation frame-relay\n frame-relay map ip 10.0.0.1 201 broadcast\n frame-relay map ip 10.0.0.3 202 broadcast\n frame-relay map ip 10.0.0.4 203 broadcast\n!\nrouter ospf 1\n network 10.0.0.0 0.0.0.255 area 0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router 2 Configuration",
+    "config_text": "hostname Router 2\n!\ninterface serial 0\n ip address 10.0.0.1 255.0.0.0\n ip ospf network point-to-multipoint\n encapsulation frame-relay\n frame-relay map ip 10.0.0.2 101 broadcast\n frame-relay map ip 10.0.0.4 102 broadcast\n!\nrouter ospf 1\n network 10.0.0.0 0.0.0.255 area 0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router 3 Configuration",
+    "config_text": "hostname Router 3\n!\ninterface serial 3\n ip address 10.0.0.4 255.0.0.0\n ip ospf network point-to-multipoint\n encapsulation frame-relay\n clock rate 1000000\n frame-relay map ip 10.0.0.1 401 broadcast\n frame-relay map ip 10.0.0.2 402 broadcast\n!\nrouter ospf 1\n network 10.0.0.0 0.0.0.255 area 0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router 4 Configuration",
+    "config_text": "hostname Router 4\n!\ninterface serial 2\n ip address 10.0.0.3 255.0.0.0\n ip ospf network point-to-multipoint\n encapsulation frame-relay\n clock rate 2000000\n frame-relay map ip 10.0.0.2 301 broadcast\n!\nrouter ospf 1\n network 10.0.0.0 0.0.0.255 area 0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following\n                                 \t\t  example illustrates a point-to-multipoint network with broadcast:",
+    "config_text": "interface Serial0\n ip address 10.0.1.1 255.255.255.0\n encapsulation frame-relay\n ip ospf cost 100\n ip ospf network point-to-multipoint\n frame-relay map ip 10.0.1.3 202 broadcast\n frame-relay map ip 10.0.1.4 203 broadcast\n frame-relay map ip 10.0.1.5 204 broadcast\n frame-relay local-dlci 200\n!\nrouter ospf 1\n network 10.0.1.0 0.0.0.255 area 0\n neighbor 10.0.1.5 cost 5\n neighbor 10.0.1.4 cost 10",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following\n                                 \t\t  example shows the configuration of the neighbor at 10.0.1.3:",
+    "config_text": "interface serial 0\n ip address 10.0.1.3 255.255.255.0\n ip ospf network point-to-multipoint\n encapsulation frame-relay\n frame-relay local-dlci 301\n frame-relay map ip 10.0.1.1 300 broadcast\n no shutdown\n!\n router ospf 1\n network 10.0.1.0 0.0.0.255 area 0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The output shown\n                                 \t\t  for neighbors in the first configuration is as follows:",
+    "config_text": "Device#show ip ospf neighborNeighbor ID     Pri   State           Dead Time   Address         Interface\n172.16.1.1           1   FULL/  -        00:01:50    10.0.1.5        Serial0\n172.16.1.4           1   FULL/  -        00:01:47    10.0.1.4        Serial0\n172.16.1.8           1   FULL/  -        00:01:45    10.0.1.3        Serial0",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The route\n                                 \t\t  information in the first configuration is as follows:",
+    "config_text": "Device#show ip routeCodes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area \n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, * - candidate default\n       U - per-user static route, o - ODR\nGateway of last resort is not set\nC    1.0.0.0/8 is directly connected, Loopback0\n     10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks\nO       10.0.1.3/32 [110/100] via 10.0.1.3, 00:39:08, Serial0\nC       10.0.1.0/24 is directly connected, Serial0\nO       10.0.1.5/32 [110/5] via 10.0.1.5, 00:39:08, Serial0\nO       10.0.1.4/32 [110/10] via 10.0.1.4, 00:39:08, Serial0",
+    "config_type": "static",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following\n                                 \t\t  example illustrates a point-to-multipoint network with nonbroadcast:",
+    "config_text": "interface Serial0\n ip address 10.0.1.1 255.255.255.0\n ip ospf network point-to-multipoint non-broadcast\n encapsulation frame-relay\n no keepalive\n frame-relay local-dlci 200\n frame-relay map ip 10.0.1.3 202\n frame-relay map ip 10.0.1.4 203\n frame-relay map ip 10.0.1.5 204\n no shutdown\n !\n router ospf 1\n  network 10.0.1.0 0.0.0.255 area 0\n  neighbor 10.0.1.3 cost 5\n  neighbor 10.0.1.4 cost 10\n  neighbor 10.0.1.5 cost 15",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following\n                                 \t\t  example is the configuration for the router on the other side:",
+    "config_text": "interface Serial9/2\n ip address 10.0.1.3 255.255.255.0\n encapsulation frame-relay\n ip ospf network point-to-multipoint non-broadcast\n no ip mroute-cache\n no keepalive\n no fair-queue\n frame-relay local-dlci 301\n frame-relay map ip 10.0.1.1 300\n no shutdown\n !\n router ospf 1\n  network 10.0.1.0 0.0.0.255 area 0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The output shown\n                                 \t\t  for neighbors in the first configuration is as follows:",
+    "config_text": "Device#show ip ospf neighborNeighbor ID     Pri   State           Dead Time   Address         Interface\n172.16.1.1           1   FULL/  -        00:01:52    10.0.1.5        Serial0\n172.16.1.4           1   FULL/  -        00:01:52    10.0.1.4        Serial0\n172.16.1.8           1   FULL/  -        00:01:52    10.0.1.3        Serial0",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "In the following example, a 30-bit subnet mask is used, leaving two bits of address space reserved for serial-line host addresses.\n                                 There is sufficient host address space for two host endpoints on a point-to-point serial link.",
+    "config_text": "interface ethernet 0\n ip address 172.16.10.1 255.255.255.0\n! 8 bits of host address space reserved for ethernets\ninterface serial 0\n ip address 172.16.20.1 255.255.255.252\n! 2 bits of address space reserved for serial lines\n! Router is configured for OSPF and assigned AS 107\nrouter ospf 107\n! Specifies network directly connected to the router\n network 172.16.0.0 0.0.255.255 area 0.0.0.0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Device 1",
+    "config_text": "hostname Device1\n!\ninterface Loopback1\n ip address 10.1.0.1 255.255.255.255\n!\ninterface Ethernet0/0\n ip address 192.168.0.1 255.255.255.0\n ip ospf 1 area 0\n no cdp enable\n!\ninterface Serial10/0\n description Device2 interface s11/0\n ip address 192.168.10.1 255.255.255.0\n ip ospf 1 area 1\n serial restart-delay 0\n no cdp enable\n!\nrouter ospf 1\n area 1 nssa\n!\nend",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Device 2",
+    "config_text": "hostname Device2\n!\n!\ninterface Loopback1\n ip address 10.1.0.2 255.255.255.255\n!\ninterface Serial10/0\n description Device1 interface s11/0\n no ip address\n shutdown\n serial restart-delay 0\n no cdp enable\n!\ninterface Serial11/0\n description Device1 interface s10/0\n ip address 192.168.10.2 255.255.255.0\n ip ospf 1 area 1\n serial restart-delay 0\n no cdp enable\n!\ninterface Serial14/0\n description Device3 interface s13/0\n ip address 192.168.14.2 255.255.255.0\n ip ospf 1 area 1\n serial restart-delay 0\n no cdp enable\n!\nrouter ospf 1\n area 1 nssa\n!\nend",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Device 3",
+    "config_text": "hostname Device3\n!\ninterface Loopback1\n ip address 10.1.0.3 255.255.255.255\n!\ninterface Ethernet3/0\n ip address 192.168.3.3 255.255.255.0\n no cdp enable\n!\ninterface Serial13/0\n description Device2 interface s14/0\n ip address 192.168.14.3 255.255.255.0\n ip ospf 1 area 1\n serial restart-delay 0\n no cdp enable\n!\nrouter ospf 1\n log-adjacency-changes\n area 1 nssa\n redistribute rip subnets\n!\nrouter rip\n version 2\n redistribute ospf 1 metric 15\n network 192.168.3.0\nend",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Device 4",
+    "config_text": "hostname Device4\n!\ninterface Loopback1\n ip address 10.1.0.4 255.255.255.255\n!\ninterface Ethernet3/0\n ip address 192.168.3.4 255.255.255.0\n no cdp enable\n!\ninterface Ethernet4/1\n ip address 192.168.41.4 255.255.255.0\n!\nrouter rip\n version 2\n network 192.168.3.0\n network 192.168.41.0\n!\nend",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Device 5",
+    "config_text": "hostname Device5\n!\ninterface Loopback1\n ip address 10.1.0.5 255.255.255.255\n!\ninterface Ethernet0/0\n ip address 192.168.0.10 255.255.255.0\n ip ospf 1 area 0\n no cdp enable\n!\ninterface Ethernet1/1\n ip address 192.168.11.10 255.255.255.0\n ip ospf 1 area 0\n!\nrouter ospf 1\n!\nend",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "In the following\n                                 \t\t  example, the output for theshowipospfandshowipospfdatabasenssacommands shows an Open Shortest Path First\n                                 \t\t  Not-So-Stubby Area (OSPF NSSA) area where RFC 3101 is disabled, RFC 1587 is\n                                 \t\t  active, and an NSSA Area Border Router (ABR) device is configured as a forced\n                                 \t\t  NSSA LSA translator. If RFC 3101 is disabled, the forced NSSA LSA translator\n                                 \t\t  remains inactive.",
+    "config_text": "Device#show ip ospfRouting Process \"ospf 1\" with ID 10.0.2.1\nStart time: 00:00:25.512, Time elapsed: 00:01:02.200\nSupports only single TOS(TOS0) routes\nSupports opaque LSA\nSupports Link-local Signaling (LLS)\nSupports area transit capability\nSupports NSSA (compatible with RFC 1587)\nEvent-log enabled, Maximum number of events: 1000, Mode: cyclic\nRouter is not originating router-LSAs with maximum metric\nInitial SPF schedule delay 5000 msecs\nMinimum hold time between two consecutive SPFs 10000 msecs\nMaximum wait time between two consecutive SPFs 10000 msecs\nIncremental-SPF disabled\nMinimum LSA interval 5 secs\nMinimum LSA arrival 1000 msecs\nLSA group pacing timer 240 secs\nInterface flood pacing timer 33 msecs\nRetransmission pacing timer 66 msecs\nNumber of external LSA 0. Checksum Sum 0x000000\nNumber of opaque AS LSA 0. Checksum Sum 0x000000\nNumber of DCbitless external and opaque AS LSA 0\nNumber of DoNotAge external and opaque AS LSA 0\nNumber of areas in this router is 1. 0 normal 0 stub 1 nssa\nNumber of areas transit capable is 0\nExternal flood list length 0\nIETF NSF helper support enabled\nCisco NSF helper support enabled\nReference bandwidth unit is 100 mbps\nArea 1\nNumber of interfaces in this area is 1\nIt is a NSSA area\nConfigured to translate Type-7 LSAs, inactive (RFC3101 support\ndisabled)\nArea has no authentication\nSPF algorithm last executed 00:00:07.160 ago\nSPF algorithm executed 3 times\nArea ranges are\nNumber of LSA 3. Checksum Sum 0x0245F0\nNumber of opaque link LSA 0. Checksum Sum 0x000000\nNumber of DCbitless LSA 0\nNumber of indication LSA 0\nNumber of DoNotAge LSA 0\nFlood list length 0",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Specifies that OSPF NSSA area has an ABR device configured to act as a forced translator\n                                             \t\t  of Type 7 LSAs. However, it is inactive because RFC 3101 is disabled",
+    "config_text": "Device2#show ip ospf database nssaRouter Link States (Area 1)\nLS age: 28\nOptions: (No TOS-capability, DC)\nLS Type: Router Links\nLink State ID: 10.0.2.1\nAdvertising Router: 10.0.2.1\nLS Seq Number: 80000004\nChecksum: 0x5CA2\nLength: 36\nArea Border Router\nAS Boundary Router\nUnconditional NSSA translator\nNumber of Links: 1\nLink connected to: a Stub Network\n(Link ID) Network/subnet number: 192.0.2.5\n(Link Data) Network Mask: 255.255.255.0\nNumber of MTID metrics: 0\nTOS 0 Metrics: 10",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example illustrates a simple OSPF configuration that enables OSPF routing process 9000, attaches Ethernet interface\n                                    0 to area 0.0.0.0, and redistributes RIP into OSPF and OSPF into RIP:",
+    "config_text": "interface ethernet 0\n ip address 10.93.1.1 255.255.255.0\n ip ospf cost 1\n!\ninterface ethernet 1\n ip address 10.94.1.1 255.255.255.0\n!\nrouter ospf 9000\n network 10.93.0.0 0.0.255.255 area 0.0.0.0\n redistribute rip metric 1 subnets\n!\nrouter rip\n network 10.94.0.0\n redistribute ospf 9000\n default-metric 1",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example illustrates the assignment of four area IDs to four IP address ranges. In the example, OSPF routing\n                                    process 109 is initialized, and four OSPF areas are defined: 10.9.50.0, 2, 3, and 0. Areas 10.9.50.0, 2, and 3 mask specific\n                                    address ranges, and area 0 enables OSPF forallothernetworks.",
+    "config_text": "router ospf 109\n network 192.168.10.0 0.0.0.255 area 10.9.50.0\n network 192.168.20.0 0.0.255.255 area 2\n network 192.168.30.0 0.0.0.255 area 3\n network 192.168.40.0 255.255.255.255 area 0\n!\n! Interface Ethernet0 is in area 10.9.50.0:\ninterface ethernet 0\n ip address 192.168.10.5 255.255.255.0\n!\n! Interface Ethernet1 is in area 2:\ninterface ethernet 1\n ip address 192.168.20.5 255.255.255.0\n!\n! Interface Ethernet2 is in area 2:\ninterface ethernet 2\n ip address 192.168.20.7 255.255.255.0\n!\n! Interface Ethernet3 is in area 3:\ninterface ethernet 3\n ip address 192.169.30.5 255.255.255.0\n!\n! Interface Ethernet4 is in area 0:\ninterface ethernet 4\n ip address 192.168.40.1 255.255.255.0\n!\n! Interface Ethernet5 is in area 0:\ninterface ethernet 5\n ip address 192.168.40.12 255.255.0.0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router A Configuration—Internal Router",
+    "config_text": "interface ethernet 1\n ip address 192.168.1.1 255.255.255.0\nrouter ospf 1\n network 192.168.0.0 0.0.255.255 area 1",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router B Configuration—Internal Router",
+    "config_text": "interface ethernet 2\n ip address 192.168.1.2 255.255.255.0\nrouter ospf 202\n network 192.168.0.0 0.0.255.255 area 1",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router C Configuration—ABR",
+    "config_text": "interface ethernet 3\n ip address 192.168.1.3 255.255.255.0\ninterface serial 0\n ip address 192.168.2.3 255.255.255.0\nrouter ospf 999\n network 192.168.1.0 0.0.0.255 area 1\n network 192.168.2.0 0.0.0.255 area 0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router D Configuration—Internal Router",
+    "config_text": "interface ethernet 4\n ip address 10.0.0.4 255.0.0.0\ninterface serial 1\n ip address 192.168.2.4 255.255.255.0\nrouter ospf 50\n network 192.168.2.0 0.0.0.255 area 0\n network 10.0.0.0 0.255.255.255 area 0",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router E Configuration—ASBR",
+    "config_text": "interface ethernet 5\n ip address 10.0.0.5 255.0.0.0\ninterface serial 2\n ip address 172.16.1.5 255.255.255.0\nrouter ospf 65001\n network 10.0.0.0 0.255.255.255 area 0\n redistribute bgp 109 metric 1 metric-type 1\nrouter bgp 109\n network 192.168.0.0\n network 10.0.0.0\n neighbor 172.16.1.6 remote-as 110",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following is a sample OSPF configuration:",
+    "config_text": "interface ethernet 0\n ip address 192.0.2.201 255.255.255.0\n ip ospf authentication-key abcdefgh\n ip ospf cost 10\n!\ninterface ethernet 1\n ip address 172.19.251.202 255.255.255.0\n ip ospf authentication-key ijklmnop\n ip ospf cost 20\n ip ospf retransmit-interval 10\n ip ospf transmit-delay 2\n ip ospf priority 4\n!\ninterface ethernet 2\n ip address 172.19.254.2 255.255.255.0\n ip ospf authentication-key abcdefgh\n ip ospf cost 10\n!\ninterface ethernet 3\n ip address 10.56.0.0 255.255.0.0\n ip ospf authentication-key ijklmnop\n ip ospf cost 20\n ip ospf dead-interval 80",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "In the following configuration, OSPF is on network 172.16.0.0:",
+    "config_text": "router ospf 201\n network 10.10.0.0 0.255.255.255 area 10.10.0.0\n network 192.42.110.0 0.0.0.255 area 192.42.110.0\n network 172.16.0.0 0.0.255.255 area 0\n area 0 authentication\n area 10.10.0.0 stub\n area 10.10.0.0 authentication\n area 10.10.0.0 default-cost 20\n area 192.42.110.0 authentication\n area 10.10.0.0 range 10.10.0.0 255.0.0.0\n area 192.42.110.0 range 192.42.110.0 255.255.255.0\n area 0 range 172.16.251.0 255.255.255.0\n area 0 range 172.16.254.0 255.255.255.0\n redistribute igrp 200 metric-type 2 metric 1 tag 200 subnets\n redistribute rip metric-type 2 metric 1 tag 200",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "In the following configuration, IGRP autonomous system 200 is on 192.0.2.1:",
+    "config_text": "router igrp 200\n network 172.31.0.0\n!\n! RIP for 192.168.110\n!\nrouter rip\n network 192.168.110.0\n redistribute igrp 200 metric 1\n redistribute ospf 201 metric 1",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example redistributes all OSPF routes into IGRP:",
+    "config_text": "router igrp 109\n redistribute ospf 110",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example redistributes RIP routes with a hop count equal to 1 into OSPF. These routes will be redistributed\n                                 into OSPF as external LSAs with a metric of 5, a metric type of Type 1, and a tag equal to 1.",
+    "config_text": "router ospf 109\n redistribute rip route-map rip-to-ospf\n!\nroute-map rip-to-ospf permit\n match metric 1\n set metric 5\n set metric-type type1\n set tag 1",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example redistributes OSPF learned routes with tag 7 as a RIP metric of 15:",
+    "config_text": "router rip\n redistribute ospf 109 route-map 5\n!\nroute-map 5 permit\n match tag 7\n set metric 15",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example redistributes OSPF intra-area and interarea routes with next-hop routers on serial interface 0 into\n                                 BGP with an INTER_AS metric of 5:",
+    "config_text": "router bgp 109\n redistribute ospf 109 route-map 10\n!\nroute-map 10 permit\n match route-type internal\n match interface serial 0\n set metric 5",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example redistributes two types of routes into the integrated IS-IS routing table (supporting both IP and CLNS).\n                                 The first type is OSPF external IP routes with tag 5; these routes are inserted into Level 2 IS-IS link state packets (LSPs)\n                                 with a metric of 5. The second type is ISO-IGRP derived CLNS prefix routes that match CLNS access list 2000; these routes\n                                 will be redistributed into IS-IS as Level 2 LSPs with a metric of 30.",
+    "config_text": "router isis\n redistribute ospf 109 route-map 2\n redistribute iso-igrp nsfnet route-map 3\n!\nroute-map 2 permit\n match route-type external\n match tag 5\n set metric 5\n set level level-2\n!\nroute-map 3 permit\n match address 2000\n set metric 30",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "With the following configuration, OSPF external routes with tags 1, 2, 3, and 5 are redistributed into RIP with metrics of\n                                 1, 1, 5, and 5, respectively. The OSPF routes with a tag of 4 are not redistributed.",
+    "config_text": "router rip\n redistribute ospf 109 route-map 1\n!\nroute-map 1 permit\n match tag 1 2\n set metric 1\n!\nroute-map 1 permit \n match tag 3\n set metric 5\n!\nroute-map 1 deny\n match tag 4\n!\nroute map 1 permit\n match tag 5\n set metric 5",
+    "config_type": "route_policy",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "In the following configuration, a RIP-learned route for network 192.168.0.0 and an ISO-IGRP-learned route with prefix 49.0001.0002\n                                 are redistributed into an IS-IS Level 2 LSP with a metric of 5:",
+    "config_text": "router isis\n redistribute rip route-map 1\n redistribute iso-igrp remote route-map 1\n!\nroute-map 1 permit\n match ip address 1\n match clns address 2\n set metric 5\n set level level-2\n!\n access-list 1 permit 192.168.0.0 0.0.255.255\n clns filter-set 2 permit 49.0001.0002...",
+    "config_type": "acl",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Only routes external to the OSPF process can be used for tracking, such as non-OSPF routes or OSPF routes from a separate\n                                             OSPF process.",
+    "config_text": "route-map ospf-default permit\n match ip address 1\n set metric 5\n set metric-type type-2\n!\n access-list 1 permit 172.16.0.0 0.0.255.255\n!\nrouter ospf 109\n default-information originate route-map ospf-default",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router A Configuration",
+    "config_text": "router ospf 1\n redistribute ospf 2 subnet\n distance ospf external 200\n!\nrouter ospf 2\n redistribute ospf 1 subnet\n distance ospf external 200",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router B Configuration",
+    "config_text": "router ospf 1\n redistribute ospf 2 subnet\n distance ospf external 200\n!\nrouter ospf 2\n redistribute ospf 1 subnet\n distance ospf external 200",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router A Configuration",
+    "config_text": "username RouterB password 7 060C1A2F47\nisdn switch-type basic-5ess\nip routing\n!\ninterface TokenRing0\n ip address 192.168.50.5 255.255.255.0\n no shutdown\n!\ninterface BRI0\n no cdp enable\n description connected PBX 1485\n ip address 192.168.45.30 255.255.255.0\n encapsulation ppp\n ip ospf demand-circuit\n dialer map ip 192.0.2.6 name RouterB broadcast 61484\n dialer-group 1\n ppp authentication chap\n no shutdown\n!\nrouter ospf 100\n network 192.168.45.0 0.0.0.255 area 0\n network 192.168.45.50 0.0.0.255 area 0\n!\ndialer-list 1 protocol ip permit",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "Router B Configuration",
+    "config_text": "username RouterA password 7 04511E0804\nisdn switch-type basic-5ess\nip routing\n!\ninterface Ethernet0\n ip address 192.168.50.16 255.255.255.0\n no shutdown\n!\ninterface BRI0\n no cdp enable\n description connected PBX 1484\n ip address  192.168.45.17 255.255.255.0\n encapsulation ppp\n dialer map ip 192.168.45.19 name RouterA broadcast 61485\n dialer-group 1\n ppp authentication chap\t\n no shutdown\n!\nrouter ospf 100\n network 192.168.45.0 0.0.0.255 area 0\n network 192.168.45.50 0.0.0.255 area 0\n!\ndialer-list 1 protocol ip permit",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example changes the OSPF pacing between LSA groups to 60 seconds:",
+    "config_text": "router ospf\n timers pacing lsa-group 60",
+    "config_type": "ospf",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example prevents flooding of OSPF LSAs to broadcast, nonbroadcast, or point-to-point networks reachable through\n                                 Ethernet interface 0:",
+    "config_text": "interface ethernet 0\n ip ospf database-filter all out",
+    "config_type": "other",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example prevents flooding of OSPF LSAs to point-to-multipoint networks to the neighbor at IP address 10.10.10.45:",
+    "config_text": "router ospf 109\n neighbor 10.10.10.45 database-filter all out",
+    "config_type": "bgp",
+    "metadata": {}
+  },
+  {
+    "source": "cisco",
+    "doc_type": "docs",
+    "url": "https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-routing/b-ip-routing/m_iro-cfg-0.html",
+    "nl_text": "The following example configures the router to suppress the sending of syslog messages when it receives MOSPF packets:",
+    "config_text": "router ospf 109\n ignore lsa mospf",
+    "config_type": "ospf",
+    "metadata": {}
+  }
+]
