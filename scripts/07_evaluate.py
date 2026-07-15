@@ -22,6 +22,10 @@ MODEL_DIR = PROJECT_ROOT / "models" / "preconfig-finetuned"
 TEST_DATA_PATH = PROJECT_ROOT / "data" / "processed" / "test_data.json"
 
 
+TASK_CONFIG_OUTPUT = {"config_generation", "config_translation_c2j", "config_translation_j2c", "config_completion"}
+TASK_NL_OUTPUT = {"config_analysis"}
+
+
 def build_prompt(sample):
     instruction = sample.get("instruction", "")
     inp = sample.get("input", "")
@@ -74,7 +78,13 @@ def evaluate():
 
     model, tokenizer = load_model_and_tokenizer(args.model_path)
 
-    results = {"generation": [], "analysis": []}
+    TASK_BUCKET = {
+        "config_generation": "generation",
+        "config_translation_c2j": "translation_c2j",
+        "config_translation_j2c": "translation_j2c",
+        "config_completion": "completion",
+    }
+    results = {"generation": [], "analysis": [], "translation_c2j": [], "translation_j2c": [], "completion": []}
     for i, sample in enumerate(test_data):
         task = sample.get("task", "config_generation")
         prompt = build_prompt(sample)
@@ -83,12 +93,17 @@ def evaluate():
         logger.info(f"[{i+1}/{len(test_data)}] Evaluating {task}...")
         prediction = generate(model, tokenizer, prompt)
 
-        if task == "config_generation":
+        if i < 3:
+            logger.info(f"  [DEBUG] Input[:80]: {sample.get('input', '')[:80]}")
+            logger.info(f"  [DEBUG] Reference[:80]: {reference[:80]}")
+            logger.info(f"  [DEBUG] Prediction[:80]: {prediction[:80]}")
+
+        if task in TASK_CONFIG_OUTPUT:
             metrics = compute_all_metrics(prediction, reference)
-            results["generation"].append({"sample": i, "reference": reference, "prediction": prediction, **metrics})
+            bucket = TASK_BUCKET.get(task, "generation")
+            results[bucket].append({"sample": i, "reference": reference, "prediction": prediction, **metrics})
             logger.info(f"  ConfigBLEU={metrics['config_bleu']:.4f}, BLEU={metrics['bleu']:.4f}")
         else:
-            # NL output (analysis): use ROUGE-L and METEOR only
             from scripts.configbleu import compute_rouge_l, compute_meteor
             rouge = compute_rouge_l(prediction, reference)
             meteor = compute_meteor(prediction, reference)
@@ -102,16 +117,22 @@ def evaluate():
     logger.info("\n" + "="*50)
     logger.info("EVALUATION RESULTS")
     logger.info("="*50)
-    if results["generation"]:
-        gen_metrics = {k: [r[k] for r in results["generation"]] for k in ["config_bleu", "bleu", "rouge_l", "meteor"]}
-        logger.info(f"\nConfig Generation ({len(results['generation'])} samples):")
-        for k, v in gen_metrics.items():
-            logger.info(f"  Average {k}: {sum(v)/len(v):.4f}")
-    if results["analysis"]:
-        ana_metrics = {k: [r[k] for r in results["analysis"]] for k in ["rouge_l", "meteor"]}
-        logger.info(f"\nConfig Analysis ({len(results['analysis'])} samples):")
-        for k, v in ana_metrics.items():
-            logger.info(f"  Average {k}: {sum(v)/len(v):.4f}")
+    for bucket_name, bucket_label in [
+        ("generation", "Config Generation"),
+        ("translation_c2j", "C->J Translation"),
+        ("translation_j2c", "J->C Translation"),
+        ("completion", "Config Completion"),
+        ("analysis", "Config Analysis"),
+    ]:
+        bucket = results[bucket_name]
+        if bucket:
+            if bucket_name == "analysis":
+                metrics = {k: [r[k] for r in bucket] for k in ["rouge_l", "meteor"]}
+            else:
+                metrics = {k: [r[k] for r in bucket] for k in ["config_bleu", "bleu", "rouge_l", "meteor"]}
+            logger.info(f"\n{bucket_label} ({len(bucket)} samples):")
+            for k, v in metrics.items():
+                logger.info(f"  Average {k}: {sum(v)/len(v):.4f}")
 
     output_path = PROJECT_ROOT / "logs" / "eval_results.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)

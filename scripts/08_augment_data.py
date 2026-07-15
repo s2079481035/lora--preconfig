@@ -97,6 +97,8 @@ Step 3: Self-check each variant for:
   - Syntactic correctness (valid {vendor} commands)
   - Semantic equivalence (same network behavior as original)
 
+CRITICAL: Output ONLY raw configuration syntax. Do NOT include any explanations, notes, descriptions, or natural language before, after, or within the configuration. No markdown formatting.
+
 Output format: each variant clearly separated by "=== Variant N ===".""",
     },
 }
@@ -336,9 +338,24 @@ def _llm_generate(client, model_name: str, prompt_key: str, **kwargs) -> List[st
             max_tokens=2000,
         )
         text = resp.choices[0].message.content
+
+        # Parse V1:/V2: format (nl_paraphrase)
         results = re.findall(r'^V\d+:\s*(.+)$', text, re.MULTILINE)
+
+        # Parse === Variant N === format (config_variant)
         if not results:
-            results = [line for line in text.strip().split('\n') if line.strip() and ':' in line]
+            sections = re.split(r'^={3,}\s*Variant\s*\d+\s*={3,}', text, flags=re.MULTILINE)
+            if len(sections) > 1:
+                results = [s.strip() for s in sections[1:] if s.strip()]
+            else:
+                # No sections found, try splitting on ===
+                sections = re.split(r'^={3,}', text, flags=re.MULTILINE)
+                results = [s.strip() for s in sections if s.strip()]
+
+        # Last resort: use the entire text as a single result
+        if not results:
+            results = [text.strip()]
+
         return [r.strip() for r in results[:kwargs.get("num_variants", 3)]]
     except Exception as e:
         logger.error(f"LLM generation failed ({model_name}): {e}")
