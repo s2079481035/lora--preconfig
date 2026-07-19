@@ -288,7 +288,15 @@ def main():
     if not args.no_translation and args.translation_provider:
         translation = create_translation_data(raw_data, args.translation_provider)
         all_samples.extend(translation)
-        logger.info(f"Added {len(translation)} translation samples")
+        logger.info(f"Added {len(translation)} LLM translation samples")
+
+    # 4b. Load pre-generated translation pairs (if available, no API needed)
+    translation_pairs_path = PROJECT_ROOT / "data" / "processed" / "translation_pairs.json"
+    if translation_pairs_path.exists():
+        with open(translation_pairs_path, "r", encoding="utf-8") as f:
+            translation_pairs = json.load(f)
+        all_samples.extend(translation_pairs)
+        logger.info(f"Added {len(translation_pairs)} pre-generated translation pairs")
 
     # 5. Deduplicate by output, then split by unique output to avoid data leakage
     #    (同一个 output 的 generation / completion / translation 版本不会跨 train/test)
