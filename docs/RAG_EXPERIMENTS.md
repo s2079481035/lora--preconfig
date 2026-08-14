@@ -76,10 +76,44 @@ top-k docs injected into the prompt as reference configurations.
    retrieved neighbors are near-identical templates (only parameters differ). RAG scores
    here represent an optimistic upper bound for this benchmark.
 
+## Retriever Comparison: Vector vs Reranker vs BM25
+
+Three retrievers over the same 6294-doc knowledge base:
+
+| Retriever | Base Gen | v4 Gen | v4 J->C | v4 Comp |
+|---|---|---|---|---|
+| No RAG | 0.0806 | 0.8895 | 0.8333 | 0.9642 |
+| Vector k=1 | 0.3201 | 0.8228 | 0.9225 | 0.7761 |
+| Vector k=3 | 0.4244 | 0.8172 | 0.9395 | 0.9088 |
+| Vector k=5 | 0.4509 | 0.8102 | 0.9406 | 0.9398 |
+| Vector k=10 | **0.5737** | 0.7995 | 0.9406 | 0.8967 |
+| Reranker k=1 | 0.3541 | 0.8208 | 0.9029 | 0.7799 |
+| Reranker k=3 | 0.3822 | **0.8223** | 0.9066 | 0.9144 |
+| Reranker k=5 | 0.4125 | 0.8150 | 0.8804 | **0.9409** |
+| Reranker k=10 | 0.5264 | 0.8088 | 0.9395 | 0.9035 |
+| BM25 k=3 | 0.3427 | 0.7682 | 0.8059 | 0.8969 |
+| BM25 k=5 | 0.3880 | 0.7623 | 0.8035 | 0.9096 |
+
+**Findings**:
+1. **Reranker gives marginal gains over pure vector search for v4** (Gen k=3:
+   0.8172 → 0.8223; Comp k=5: 0.9398 → 0.9409) but **hurts J->C** (0.9395 → 0.9066)
+   — reranking emphasizes lexical/semantic relevance and can break the near-duplicate
+   template ordering that helps translation.
+2. **Reranker does not help the base model**: k=3 Gen 0.4244 (vector) vs 0.3822 (rerank);
+   k=10 0.5737 vs 0.5264. With a coarse pool of near-duplicate templates, the extra
+   ranking stage adds noise without new evidence.
+3. **BM25 is a solid lightweight baseline** (base Gen 0.34~0.39, no GPU/embedding needed)
+   but consistently below vector retrieval; for v4 it also underperforms vector search
+   on all tasks (Gen 0.76~0.77 vs 0.80~0.82).
+4. Overall: **vector retrieval + LoRA v4 remains the best practical configuration**;
+   reranker and BM25 are useful ablations showing the retriever's robustness.
+
 ## Files
 
 - `scripts/16_build_rag_index.py` — embed train set, build FAISS index
-- `scripts/17_rag_retrieve.py` — top-10 retrieval cache for test samples
-- `scripts/18_evaluate_rag.py` — RAG evaluation (reference injection, `--k`, `--is-base`, `--no-rag`)
+- `scripts/17_rag_retrieve.py` — top-10 vector retrieval cache for test samples
+- `scripts/18_evaluate_rag.py` — RAG evaluation (`--k`, `--is-base`, `--no-rag`, `--retrieval vector|rerank|bm25`)
+- `scripts/19_rag_retrieve_rerank.py` — two-stage retrieval (vector top-20 → bge-reranker-base top-10)
+- `scripts/20_bm25_retrieve.py` — BM25 keyword retrieval cache (CPU-only)
 - `logs/rag_eval_*.json` — per-sample results per config
-- `data/rag/` — FAISS index, docs, retrieval cache (not in git, ~30MB)
+- `data/rag/` — FAISS index, docs, retrieval caches (not in git, ~30MB)
