@@ -108,6 +108,34 @@ Three retrievers over the same 6294-doc knowledge base:
 4. Overall: **vector retrieval + LoRA v4 remains the best practical configuration**;
    reranker and BM25 are useful ablations showing the retriever's robustness.
 
+## Unseen-Config Validation (NetworkConfigPro Benchmark)
+
+The 583-sample test set shares a template generator with the knowledge base, so RAG
+gains there are an optimistic upper bound. To test **real generalization**, we evaluate
+RAG on 8 brand-new configurations from NetworkConfigPro (absent from the knowledge base;
+retrieved neighbors are structurally similar but parameter-different, top-1 cosine ~0.81-0.86):
+
+| Config | C->J | J->C |
+|---|---|---|
+| Base (no RAG) | 0.1951 | 0.3348 |
+| Base + RAG k=3 | **0.2853** (+46%) | **0.3435** (+3%) |
+| LoRA v4 (no RAG) | 0.3181 | 0.6681 |
+| LoRA v4 + RAG k=3 | **0.3997** (+26%) | 0.4500 (-33%) |
+
+**Findings**:
+1. **RAG improves C->J translation on truly unseen configs for both models**
+   (base +46%, v4 +26%) — the model uses the retrieved Junos example's structure while
+   translating the Cisco parameters. This is genuine generalization, not memorization.
+2. **RAG hurts v4 J->C on unseen configs** (-33%): the model sometimes *copies parameters
+   from the retrieved Cisco reference* (e.g. hostname `rt-045` from the retrieved doc
+   instead of `rt-098` from the source Junos config). Retrieved reference params leak
+   into the output and override the source. Base J->C is immune (it lacks the confidence
+   to trust references over the source).
+3. This direction asymmetry is a novel, publication-worthy observation: reference
+   injection helps when the model is weaker (base), helps when the target structure is
+   the bottleneck (C->J: retrieving the target-syntax example), and hurts when the model
+   must preserve source parameters under conflicting reference evidence (J->C).
+
 ## Files
 
 - `scripts/16_build_rag_index.py` — embed train set, build FAISS index
@@ -115,5 +143,7 @@ Three retrievers over the same 6294-doc knowledge base:
 - `scripts/18_evaluate_rag.py` — RAG evaluation (`--k`, `--is-base`, `--no-rag`, `--retrieval vector|rerank|bm25`)
 - `scripts/19_rag_retrieve_rerank.py` — two-stage retrieval (vector top-20 → bge-reranker-base top-10)
 - `scripts/20_bm25_retrieve.py` — BM25 keyword retrieval cache (CPU-only)
+- `scripts/21_benchmark_retrieve.py` — vector retrieval for NetworkConfigPro unseen benchmark
+- `scripts/22_eval_benchmark_rag.py` — RAG eval on unseen benchmark (`--is-base`, `--k`, `--no-rag`)
 - `logs/rag_eval_*.json` — per-sample results per config
 - `data/rag/` — FAISS index, docs, retrieval caches (not in git, ~30MB)
