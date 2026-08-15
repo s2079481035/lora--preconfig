@@ -29,6 +29,7 @@ TEST_DATA = PROJECT_ROOT / "data" / "processed" / "test_data_multitask.json"
 RETRIEVAL = PROJECT_ROOT / "data" / "rag" / "test_retrieval.json"
 RETRIEVAL_RERANK = PROJECT_ROOT / "data" / "rag" / "test_retrieval_rerank.json"
 RETRIEVAL_BM25 = PROJECT_ROOT / "data" / "rag" / "test_retrieval_bm25.json"
+RETRIEVAL_TASKAWARE = PROJECT_ROOT / "data" / "rag" / "test_retrieval_taskaware.json"
 
 TASK_CONFIG_OUTPUT = {"config_generation", "config_translation_c2j", "config_translation_j2c", "config_completion"}
 TASK_NL_OUTPUT = {"config_analysis"}
@@ -98,8 +99,8 @@ def main():
     parser.add_argument("--tag", default=None, help="输出文件名标记")
     parser.add_argument("--is-base", action="store_true", help="基座模型")
     parser.add_argument("--no-rag", action="store_true", help="跑无 RAG baseline")
-    parser.add_argument("--retrieval", default="vector", choices=["vector", "rerank", "bm25"],
-                        help="检索缓存: vector=纯向量, rerank=bge-reranker 精排, bm25=关键词")
+    parser.add_argument("--retrieval", default="vector", choices=["vector", "rerank", "bm25", "taskaware"],
+                        help="检索缓存: vector=纯向量, rerank=bge-reranker 精排, bm25=关键词, taskaware=按任务过滤")
     parser.add_argument("--max-samples", type=int, default=None)
     parser.add_argument("--sanitize", action="store_true", help="参考配置参数清洗(占位符化)")
     args = parser.parse_args()
@@ -107,6 +108,7 @@ def main():
     test_data = json.load(open(TEST_DATA, encoding="utf-8"))
     retrieval_path = {
         "vector": RETRIEVAL, "rerank": RETRIEVAL_RERANK, "bm25": RETRIEVAL_BM25,
+        "taskaware": RETRIEVAL_TASKAWARE,
     }[args.retrieval]
     retrieval = json.load(open(retrieval_path, encoding="utf-8"))
     logger.info(f"Loaded {len(test_data)} test samples, {len(retrieval)} retrieval results ({args.retrieval})")
@@ -154,7 +156,7 @@ def main():
 
     model_name = Path(args.model_path).name if Path(args.model_path).exists() else args.model_path.replace("/", "_")
     tag = args.tag or f"{model_name}_k{args.k}"
-    if args.retrieval in ("rerank", "bm25"):
+    if args.retrieval != "vector":
         tag += f"_{args.retrieval}"
     if args.sanitize:
         tag += "_san"
