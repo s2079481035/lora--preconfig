@@ -17,6 +17,7 @@ from transformers import AutoTokenizer
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from scripts.configbleu import compute_all_metrics
+from scripts.sanitize_ref import sanitize_config
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -79,12 +80,13 @@ Translate the following Juniper Junos configuration to Cisco IOS format:
 }
 
 
-def build_prompt(direction, src_cfg, refs, k):
+def build_prompt(direction, src_cfg, refs, k, sanitize=False):
     ref_block = ""
     if refs:
+        refs_ = [sanitize_config(r["doc_text"]) if sanitize else r["doc_text"] for r in refs[:k]]
         ref_block = ("Reference configurations (retrieved as similar examples "
                      "from the knowledge base):\n"
-                     + "\n\n".join(r["doc_text"] for r in refs[:k]) + "\n\n")
+                     + "\n\n".join(refs_) + "\n\n")
     return TRANSLATE_PROMPTS[direction].format(config=src_cfg, refs=ref_block)
 
 
@@ -104,6 +106,7 @@ def main():
     parser.add_argument("--is-base", action="store_true")
     parser.add_argument("--k", type=int, default=3)
     parser.add_argument("--no-rag", action="store_true")
+    parser.add_argument("--sanitize", action="store_true", help="参考配置参数清洗(占位符化)")
     parser.add_argument("--tag", default=None)
     args = parser.parse_args()
 
@@ -121,7 +124,7 @@ def main():
             src_cfg = p[src_key]
             ref_cfg = p[ref_key]
             refs = ret["hits"][direction] if not args.no_rag else []
-            prompt = build_prompt(direction, src_cfg, refs, args.k)
+            prompt = build_prompt(direction, src_cfg, refs, args.k, sanitize=args.sanitize)
             pred = generate(model, tokenizer, prompt)
             m = compute_all_metrics(pred, ref_cfg)
             results[direction].append({

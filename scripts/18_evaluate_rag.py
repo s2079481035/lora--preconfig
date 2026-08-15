@@ -19,6 +19,7 @@ from transformers import AutoTokenizer
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from scripts.configbleu import compute_all_metrics
+from scripts.sanitize_ref import sanitize_config
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -26,15 +27,18 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).parent.parent
 TEST_DATA = PROJECT_ROOT / "data" / "processed" / "test_data_multitask.json"
 RETRIEVAL = PROJECT_ROOT / "data" / "rag" / "test_retrieval.json"
+RETRIEVAL_RERANK = PROJECT_ROOT / "data" / "rag" / "test_retrieval_rerank.json"
+RETRIEVAL_BM25 = PROJECT_ROOT / "data" / "rag" / "test_retrieval_bm25.json"
 
 TASK_CONFIG_OUTPUT = {"config_generation", "config_translation_c2j", "config_translation_j2c", "config_completion"}
 TASK_NL_OUTPUT = {"config_analysis"}
 
 
-def build_rag_prompt(sample, hits, k):
+def build_rag_prompt(sample, hits, k, sanitize=False):
     instruction = sample.get("instruction", "")
     inp = sample.get("input", "")
-    refs = "\n\n".join(h["doc_text"] for h in hits[:k])
+    refs = [sanitize_config(h["doc_text"]) if sanitize else h["doc_text"] for h in hits[:k]]
+    refs_text = "\n\n".join(refs)
     return (
         "<|im_start|>system\n"
         "You are a network configuration expert. Generate accurate and syntactically "
@@ -43,7 +47,7 @@ def build_rag_prompt(sample, hits, k):
         f"<|im_start|>user\n{instruction}\n\n{inp}\n\n"
         "Reference configurations (from a network configuration knowledge base, "
         "retrieved as similar examples):\n"
-        f"{refs}<|im_end|>\n"
+        f"{refs_text}<|im_end|>\n"
         "<|im_start|>assistant\n"
     )
 
@@ -94,12 +98,18 @@ def main():
     parser.add_argument("--tag", default=None, help="输出文件名标记")
     parser.add_argument("--is-base", action="store_true", help="基座模型")
     parser.add_argument("--no-rag", action="store_true", help="跑无 RAG baseline")
+    parser.add_argument("--retrieval", default="vector", choices=["vector", "rerank", "bm25"],
+                        help="检索缓存: vector=纯向量, rerank=bge-reranker 精排, bm25=关键词")
     parser.add_argument("--max-samples", type=int, default=None)
+    parser.add_argument("--sanitize", action="store_true", help="参考配置参数清洗(占位符化)")
     args = parser.parse_args()
 
     test_data = json.load(open(TEST_DATA, encoding="utf-8"))
-    retrieval = json.load(open(RETRIEVAL, encoding="utf-8"))
-    logger.info(f"Loaded {len(test_data)} test samples, {len(retrieval)} retrieval results")
+    retrieval_path = {
+        "vector": RETRIEVAL, "rerank": RETRIEVAL_RERANK, "bm25": RETRIEVAL_BM25,
+    }[args.retrieval]
+    retrieval = json.load(open(retrieval_path, encoding="utf-8"))
+    logger.info(f"Loaded {len(test_data)} test samples, {len(retrieval)} retrieval results ({args.retrieval})")
 
     if args.max_samples:
         test_data = test_data[:args.max_samples]
@@ -123,7 +133,7 @@ def main():
         if args.no_rag:
             prompt = build_plain_prompt(sample)
         else:
-            prompt = build_rag_prompt(sample, hits, args.k)
+            prompt = build_rag_prompt(sample, hits, args.k, sanitize=args.sanitize)
 
         prediction = generate(model, tokenizer, prompt)
 
@@ -144,6 +154,10 @@ def main():
 
     model_name = Path(args.model_path).name if Path(args.model_path).exists() else args.model_path.replace("/", "_")
     tag = args.tag or f"{model_name}_k{args.k}"
+    if args.retrieval in ("rerank", "bm25"):
+        tag += f"_{args.retrieval}"
+    if args.sanitize:
+        tag += "_san"
     out_path = PROJECT_ROOT / "logs" / f"rag_eval_{tag}.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)

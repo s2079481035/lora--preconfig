@@ -1,0 +1,38 @@
+2026-08-15 13:06:13,011 [INFO] Loaded 583 test samples, 583 retrieval results (vector)
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 39/338 [00:00<00:00, 341.39it/s]Loading weights:  26%|██▌       | 87/338 [00:00<00:00, 412.97it/s]Loading weights:  38%|███▊      | 129/338 [00:00<00:00, 378.33it/s]Loading weights:  50%|████▉     | 168/338 [00:00<00:00, 372.99it/s]Loading weights:  61%|██████    | 206/338 [00:00<00:00, 360.90it/s]Loading weights:  72%|███████▏  | 243/338 [00:00<00:00, 345.37it/s]Loading weights:  82%|████████▏ | 278/338 [00:00<00:00, 328.19it/s]Loading weights:  93%|█████████▎| 316/338 [00:00<00:00, 335.14it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 354.44it/s]
+2026-08-15 13:07:13,011 [INFO] [20/583] config_generation ConfigBLEU=1.0000
+2026-08-15 13:07:54,532 [INFO] [40/583] config_analysis ROUGE-L=0.2564
+2026-08-15 13:09:13,145 [INFO] [60/583] config_generation ConfigBLEU=1.0000
+2026-08-15 13:10:26,241 [INFO] [80/583] config_analysis ROUGE-L=0.2778
+2026-08-15 13:11:09,235 [INFO] [100/583] config_analysis ROUGE-L=0.4638
+2026-08-15 13:11:48,604 [INFO] [120/583] config_analysis ROUGE-L=0.4225
+2026-08-15 13:12:57,268 [INFO] [140/583] config_generation ConfigBLEU=0.3855
+2026-08-15 13:13:43,365 [INFO] [160/583] config_analysis ROUGE-L=0.3717
+2026-08-15 13:14:26,901 [INFO] [180/583] config_analysis ROUGE-L=1.0000
+2026-08-15 13:15:15,946 [INFO] [200/583] config_generation ConfigBLEU=1.0000
+2026-08-15 13:15:52,112 [INFO] [220/583] config_generation ConfigBLEU=1.0000
+2026-08-15 13:16:50,280 [INFO] [240/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:17:54,462 [INFO] [260/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:18:51,342 [INFO] [280/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:19:56,506 [INFO] [300/583] config_completion ConfigBLEU=0.9471
+2026-08-15 13:20:55,976 [INFO] [320/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:21:50,086 [INFO] [340/583] config_completion ConfigBLEU=0.9471
+2026-08-15 13:22:46,945 [INFO] [360/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:23:49,527 [INFO] [380/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:24:45,701 [INFO] [400/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:25:52,291 [INFO] [420/583] config_completion ConfigBLEU=0.8830
+2026-08-15 13:26:55,216 [INFO] [440/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:27:54,687 [INFO] [460/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:29:00,602 [INFO] [480/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:30:01,530 [INFO] [500/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:31:00,802 [INFO] [520/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:32:08,275 [INFO] [540/583] config_completion ConfigBLEU=1.0000
+2026-08-15 13:33:19,073 [INFO] [560/583] config_translation_j2c ConfigBLEU=1.0000
+2026-08-15 13:34:23,682 [INFO] [580/583] config_translation_j2c ConfigBLEU=0.6387
+2026-08-15 13:34:34,004 [INFO] Saved → /home/sunjb/preconfig/network-config/preconfig-reproduce/logs/rag_eval_v4_k3_san.json
+2026-08-15 13:34:34,004 [INFO] Config Generation: ConfigBLEU=0.8384 (n=107)
+2026-08-15 13:34:34,004 [INFO] C->J: ConfigBLEU=0.9685 (n=14)
+2026-08-15 13:34:34,004 [INFO] J->C: ConfigBLEU=0.9024 (n=14)
+2026-08-15 13:34:34,005 [INFO] Completion: ConfigBLEU=0.9471 (n=332)
+2026-08-15 13:34:34,005 [INFO] Analysis: ROUGE-L=0.5365 (n=116)
