@@ -25,6 +25,10 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).parent.parent
 PAIRS = PROJECT_ROOT / "data" / "external" / "translation_benchmark" / "pairs.json"
 RETRIEVAL = PROJECT_ROOT / "data" / "rag" / "benchmark_retrieval.json"
+PAIRS_40 = PROJECT_ROOT / "data" / "external" / "translation_benchmark" / "benchmark_pairs_40.json"
+RETRIEVAL_40 = PROJECT_ROOT / "data" / "rag" / "benchmark40_retrieval.json"
+RETRIEVAL_40_BM25 = PROJECT_ROOT / "data" / "rag" / "benchmark40_retrieval_bm25.json"
+RETRIEVAL_40_RERANK = PROJECT_ROOT / "data" / "rag" / "benchmark40_retrieval_rerank.json"
 
 SYSTEM_PROMPT = ("You are a network configuration expert. Generate accurate and "
                  "syntactically correct network configurations. Use the reference "
@@ -108,10 +112,18 @@ def main():
     parser.add_argument("--no-rag", action="store_true")
     parser.add_argument("--sanitize", action="store_true", help="参考配置参数清洗(占位符化)")
     parser.add_argument("--tag", default=None)
+    parser.add_argument("--bench40", action="store_true", help="使用 40 对扩展基准")
+    parser.add_argument("--retrieval", choices=["vector", "bm25", "rerank"], default="vector")
     args = parser.parse_args()
 
-    pairs = json.load(open(PAIRS, encoding="utf-8"))
-    retrieval = json.load(open(RETRIEVAL, encoding="utf-8"))
+    pairs_path = PAIRS_40 if args.bench40 else PAIRS
+    retrieval_path = RETRIEVAL_40 if args.bench40 else RETRIEVAL
+    if args.bench40 and args.retrieval == "bm25":
+        retrieval_path = RETRIEVAL_40_BM25
+    elif args.bench40 and args.retrieval == "rerank":
+        retrieval_path = RETRIEVAL_40_RERANK
+    pairs = json.load(open(pairs_path, encoding="utf-8"))
+    retrieval = json.load(open(retrieval_path, encoding="utf-8"))
     model, tokenizer = load_model(args.model_path, args.is_base)
 
     results = {"c2j": [], "j2c": []}
@@ -136,6 +148,10 @@ def main():
     model_name = Path(args.model_path).name if Path(args.model_path).exists() else args.model_path.replace("/", "_")
     mode = "norag" if args.no_rag else f"rag_k{args.k}"
     tag = args.tag or f"benchmark_{model_name}_{mode}"
+    if args.bench40:
+        tag = tag.replace("benchmark_", "benchmark40_")
+    if args.retrieval != "vector":
+        tag += f"_{args.retrieval}"
     out = PROJECT_ROOT / "logs" / f"{tag}.json"
     with open(out, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)

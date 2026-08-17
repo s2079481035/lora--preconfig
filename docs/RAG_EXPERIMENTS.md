@@ -122,19 +122,51 @@ retrieved neighbors are structurally similar but parameter-different, top-1 cosi
 | LoRA v4 (no RAG) | 0.3181 | 0.6681 |
 | LoRA v4 + RAG k=3 | **0.3997** (+26%) | 0.4500 (-33%) |
 
-**Findings**:
-1. **RAG improves C->J translation on truly unseen configs for both models**
-   (base +46%, v4 +26%) — the model uses the retrieved Junos example's structure while
-   translating the Cisco parameters. This is genuine generalization, not memorization.
-2. **RAG hurts v4 J->C on unseen configs** (-33%): the model sometimes *copies parameters
-   from the retrieved Cisco reference* (e.g. hostname `rt-045` from the retrieved doc
-   instead of `rt-098` from the source Junos config). Retrieved reference params leak
-   into the output and override the source. Base J->C is immune (it lacks the confidence
-   to trust references over the source).
-3. This direction asymmetry is a novel, publication-worthy observation: reference
-   injection helps when the model is weaker (base), helps when the target structure is
-   the bottleneck (C->J: retrieving the target-syntax example), and hurts when the model
-   must preserve source parameters under conflicting reference evidence (J->C).
+**Findings** (n=8; superseded by the 40-pair benchmark below, which is more reliable):
+1. RAG improves C->J translation on truly unseen configs for both models
+   (base +46%, v4 +26%).
+2. RAG hurts v4 J->C on unseen configs (-33%): parameter copy from the retrieved
+   reference (e.g. hostname `rt-045` from the retrieved doc instead of `rt-098` from
+   the source Junos config). This was later shown to be a small-sample artifact — see
+   the 40-pair benchmark, where J->C no longer degrades.
+3. The direction asymmetry observation survives but is much smaller at n=40.
+
+### Expanded benchmark: 40 fresh pairs (reliable estimate)
+
+`scripts/24_gen_benchmark_40.py` generated 40 fresh parallel Cisco/Junos configs
+(seed 2024, zero overlap with the 8-pair set and the knowledge base; 0 render fails).
+Full matrix evaluated with `scripts/22_eval_benchmark_rag.py --bench40`:
+
+| Config | C->J | J->C |
+|---|---|---|
+| Base (no RAG) | 0.1632 | 0.2463 |
+| Base + RAG k=3 | **0.2945** (+80%) | **0.3906** (+59%) |
+| LoRA v4 (no RAG) | 0.2373 | 0.6257 |
+| LoRA v4 + RAG k=3 | **0.3570** (+51%) | **0.6360** (+2%) |
+| Base + RAG k=3 + sanitize | 0.2734 (+68%) | 0.2646 (+7%) |
+| LoRA v4 + RAG k=3 + sanitize | 0.2742 (+16%) | 0.5956 (-5%) |
+
+Retriever ablation at k=3 (v4): vector C->J 0.3570 / J->C 0.6360; BM25 0.3577 /
+0.6554; reranker 0.3374 / 0.5381. Same ordering as the main test set (rerank worse,
+BM25 ≈ vector).
+
+**Key results (n=40, statistically robust):**
+1. **RAG improves C->J translation on truly unseen configs for both models
+   (base +80%, v4 +51%)** — the strongest and most reliable RAG effect.
+2. **v4 J->C no longer degrades with RAG** (+2%): the -33% at n=8 was a
+   small-sample artifact. Base J->C still improves strongly (+59%).
+3. RAG helps the weaker model (base) more across the board — consistent with
+   reference injection providing structure that the base model lacks.
+4. **Sanitize flips from helpful (n=8) to neutral/harmful (n=40)**: with fresh
+   random configs, retrieved references do not lure the model into parameter
+   plagiarism (they are clearly unrelated), so removing parameters only destroys
+   information (e.g. hostname `rt-003` → `<HOSTNAME>` mismatch). Sanitize only
+   helps when reference and source share a template family (the n=8 case).
+
+### Unified no-RAG baselines (@max_new_tokens=512)
+Re-run no-RAG on the 8-pair benchmark with the same script/tokens as RAG runs:
+v4 C->J 0.3181 / J->C 0.6681; base C->J 0.1970 / J->C 0.3348. Confirms the
+earlier @512 values; the old 0.3012 figure was the @400 setting.
 
 ## Sanitize: Reference Parameter Cleaning
 
@@ -192,21 +224,60 @@ v4 J->C, sample 0: source Junos has `host-name gw-01`, but RAG output says
 ConfigBLEU drops 0.7591 → 0.1119. `--sanitize` restores it to 0.5793 (hostname `gw-01`).
 This motivated the sanitize experiment.
 
-### Case 2: Analysis "degradation" is a reference-style artifact
+### Case 2: Analysis "degradation" — training-template memorization, not pure eval artifact
 v4 analysis samples (6, 8, 21, 31, ...): without RAG the model emits a terse summary
 ("Configure BGP on Juniper with AS 65162") that exactly matches the short reference
-(ROUGE=1.0). With RAG, the retrieved detailed reference pulls the model into a verbose
-style ("Configure BGP on this Juniper router with AS number 65152, and add an external
-peer group...") that is more complete but no longer matches the short gold text
-(ROUGE=0.2~0.3). 18 samples show this pattern. **The apparent RAG "degradation" on
-analysis is largely an evaluation artifact of short gold answers combined with a
-length-sensitive ROUGE** — the RAG outputs are semantically superior but stylistically
-displaced. Using BERTScore or LLM-judge would likely reverse this conclusion.
+(ROUGE=1.0, bge semantic sim=1.0 — string-identical). The reference is itself the
+**training template sentence**, so the high no-RAG score is memorization, not ability.
+With RAG, the retrieved detailed reference pulls the model into a verbose style
+("Configure BGP on this Juniper router with AS number 65152, and add an external
+peer group...") that is semantically complete and correct but no longer matches the
+template gold text (ROUGE=0.2~0.3). 18 samples show this pattern. Verification with
+bge-large-en-v1.5 cosine similarity (scripts/27_ana_semantic.py): no-RAG avg=1.0000,
+RAG avg=0.7657, RAG better in 0/18 — i.e. **the semantic metric agrees with ROUGE here
+because the gold is a memorized template, so both metrics measure string-match against
+a degenerate reference.** Conclusion: the analysis task's gold references are
+low-quality (instruction restatements); this caveat is reported and per-sample
+inspection favors RAG outputs for informativeness.
 
 ### Case 3: Template-family plagiarism (generation, v3)
 v3 generation samples contaminated by jvd `policy-statement export-direct` /
 `route-filter` templates (ConfigBLEU dropped to ~0.59); fixed in v4 by training-set
 cleanup. Shows model-side memorization risk, distinct from retrieval-side plagiarism.
+
+## Statistical-Rigor Fixes (in progress)
+
+### 1. Expanded unseen benchmark: 8 → 40 pairs
+`scripts/24_gen_benchmark_40.py` regenerates 40 fresh parallel Cisco/Junos configs
+with NetworkConfigPro (seed 2024, zero overlap with the original 8 or the train set;
+0 render failures). Retrieval caches: `data/rag/benchmark40_retrieval.json`
+(vector), `_bm25.json`, `_rerank.json` (`scripts/25`, `scripts/28`). Evaluation:
+`scripts/22_eval_benchmark_rag.py --bench40 [--retrieval bm25|rerank]`.
+Full 6-config matrix + retriever ablation evaluated — see "Expanded benchmark"
+section above. **Bottom line: J->C degradation at n=8 was a small-sample artifact
+(+2% at n=40); sanitize's benefit does not transfer to fresh configs.**
+
+### 2. Unified no-RAG baselines
+Re-running no-RAG baselines (base + v4) on both benchmarks with the same script and
+`max_new_tokens=512` to fix the earlier 400/512 token inconsistency. Done — confirms
+@512 values (v4 8-pair C->J 0.3181 / J->C 0.6681; base 0.1970 / 0.3348).
+
+### 3. Bootstrap confidence intervals
+`scripts/26_bootstrap_ci.py` — per-task 2000-sample bootstrap 95% CIs on every
+`rag_eval_*.json`. Example (`v4_k3`): generation 0.8172 [0.7532, 0.8778],
+translation_c2j 1.0000 [1.0000, 1.0000] (n=14), translation_j2c 0.9395
+[0.8621, 0.9955] (n=14), completion 0.9088 [0.8913, 0.9248], analysis 0.5430
+[0.4829, 0.5999]. The J→C CI spanning ±0.07 (n=14) confirms the small-translation-
+testset fragility identified earlier.
+
+### 4. Analysis-task evaluation verification
+`scripts/27_ana_semantic.py` — bge-large-en-v1.5 cosine similarity on the 18
+disputed analysis samples (see Case 2). Finding: no-RAG predictions are
+string-identical to the template gold (sim=1.0); semantic similarity **agrees**
+with ROUGE (RAG 0.7657 avg), i.e. the apparent RAG advantage is NOT recoverable
+by a better metric — the gold references themselves are degenerate
+(instruction restatements). Reported as a caveat; per-sample qualitative
+inspection favors RAG outputs.
 
 ## Files
 
@@ -216,6 +287,11 @@ cleanup. Shows model-side memorization risk, distinct from retrieval-side plagia
 - `scripts/19_rag_retrieve_rerank.py` — two-stage retrieval (vector top-20 → bge-reranker-base top-10)
 - `scripts/20_bm25_retrieve.py` — BM25 keyword retrieval cache (CPU-only)
 - `scripts/21_benchmark_retrieve.py` — vector retrieval for NetworkConfigPro unseen benchmark
-- `scripts/22_eval_benchmark_rag.py` — RAG eval on unseen benchmark (`--is-base`, `--k`, `--no-rag`)
+- `scripts/22_eval_benchmark_rag.py` — RAG eval on unseen benchmark (`--is-base`, `--k`, `--no-rag`, `--bench40`, `--retrieval`)
+- `scripts/24_gen_benchmark_40.py` — generate 40 fresh benchmark pairs
+- `scripts/25_benchmark40_retrieve.py` — vector retrieval for the 40-pair benchmark
+- `scripts/26_bootstrap_ci.py` — bootstrap CIs per task
+- `scripts/27_ana_semantic.py` — semantic similarity check for analysis samples
+- `scripts/28_benchmark40_retrieve_alt.py` — BM25 / reranker retrieval for the 40-pair benchmark
 - `logs/rag_eval_*.json` — per-sample results per config
 - `data/rag/` — FAISS index, docs, retrieval caches (not in git, ~30MB)
