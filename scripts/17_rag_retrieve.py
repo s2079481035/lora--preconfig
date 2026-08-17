@@ -30,8 +30,16 @@ TOP_K = 10
 
 
 def main():
-    test_data = json.load(open(TEST_DATA, encoding="utf-8"))
-    logger.info(f"Loaded {len(test_data)} test samples")
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--data", default=None, help="自定义样本文件 (替代 test_data_multitask.json)")
+    parser.add_argument("--output", default=None)
+    args = parser.parse_args()
+
+    data_path = Path(args.data) if args.data else TEST_DATA
+    output_path = Path(args.output) if args.output else OUTPUT
+    test_data = json.load(open(data_path, encoding="utf-8"))
+    logger.info(f"Loaded {len(test_data)} test samples from {data_path}")
 
     docs = [json.loads(l) for l in open(DOCS_PATH, encoding="utf-8")]
     index = faiss.read_index(str(INDEX_PATH))
@@ -64,9 +72,9 @@ def main():
             })
         logger.info(f"Retrieved {i + len(batch)}/{len(test_data)}")
 
-    with open(OUTPUT, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    logger.info(f"Saved → {OUTPUT} ({len(results)} samples, top-{TOP_K} each)")
+    logger.info(f"Saved → {output_path} ({len(results)} samples, top-{TOP_K} each)")
 
 
 if __name__ == "__main__":

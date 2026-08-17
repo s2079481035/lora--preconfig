@@ -28,7 +28,15 @@ TOP_K = 5
 
 
 def main():
-    pairs = json.load(open(PAIRS, encoding="utf-8"))
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--pairs", default=None)
+    parser.add_argument("--output", default=None)
+    args = parser.parse_args()
+
+    pairs_path = Path(args.pairs) if args.pairs else PAIRS
+    output_path = Path(args.output) if args.output else OUTPUT
+    pairs = json.load(open(pairs_path, encoding="utf-8"))
     docs = [json.loads(l) for l in open(DOCS_PATH, encoding="utf-8")]
     index = faiss.read_index(str(INDEX_PATH))
     model = SentenceTransformer(MODEL_NAME)
@@ -50,9 +58,9 @@ def main():
         if (p["sample"] + 1) % 10 == 0:
             logger.info(f"Retrieved {p['sample'] + 1}/{len(pairs)}")
 
-    with open(OUTPUT, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    logger.info(f"Saved → {OUTPUT}")
+    logger.info(f"Saved → {output_path}")
 
 
 if __name__ == "__main__":

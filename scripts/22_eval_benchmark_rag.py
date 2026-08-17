@@ -114,6 +114,8 @@ def main():
     parser.add_argument("--tag", default=None)
     parser.add_argument("--bench40", action="store_true", help="使用 40 对扩展基准")
     parser.add_argument("--retrieval", choices=["vector", "bm25", "rerank"], default="vector")
+    parser.add_argument("--pairs-file", default=None, help="自定义 pairs 文件")
+    parser.add_argument("--retrieval-file", default=None, help="自定义检索缓存文件")
     args = parser.parse_args()
 
     pairs_path = PAIRS_40 if args.bench40 else PAIRS
@@ -122,20 +124,24 @@ def main():
         retrieval_path = RETRIEVAL_40_BM25
     elif args.bench40 and args.retrieval == "rerank":
         retrieval_path = RETRIEVAL_40_RERANK
+    if args.pairs_file:
+        pairs_path = Path(args.pairs_file)
+    if args.retrieval_file:
+        retrieval_path = Path(args.retrieval_file)
     pairs = json.load(open(pairs_path, encoding="utf-8"))
     retrieval = json.load(open(retrieval_path, encoding="utf-8"))
     model, tokenizer = load_model(args.model_path, args.is_base)
 
     results = {"c2j": [], "j2c": []}
     for p in pairs:
-        ret = next(r for r in retrieval if r["sample"] == p["sample"])
+        ret = None if args.no_rag else next(r for r in retrieval if r["sample"] == p["sample"])
         for direction, src_key, ref_key in [
             ("c2j", "cisco", "juniper"),
             ("j2c", "juniper", "cisco"),
         ]:
             src_cfg = p[src_key]
             ref_cfg = p[ref_key]
-            refs = ret["hits"][direction] if not args.no_rag else []
+            refs = ret["hits"][direction] if (not args.no_rag and ret) else []
             prompt = build_prompt(direction, src_cfg, refs, args.k, sanitize=args.sanitize)
             pred = generate(model, tokenizer, prompt)
             m = compute_all_metrics(pred, ref_cfg)

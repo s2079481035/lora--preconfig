@@ -38,7 +38,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--num", type=int, default=40)
     parser.add_argument("--seed", type=int, default=2024)
+    parser.add_argument("--output", default=None,
+                        help="输出文件路径 (默认 benchmark_pairs_40.json)")
     args = parser.parse_args()
+
+    if args.output:
+        OUTPUT = PROJECT_ROOT / args.output
+    else:
+        OUTPUT = PROJECT_ROOT / "data" / "external" / "translation_benchmark" / "benchmark_pairs_40.json"
 
     rng = random.Random(args.seed)
     gen = ConfigGenerator()

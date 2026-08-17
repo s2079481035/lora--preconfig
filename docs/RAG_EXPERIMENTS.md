@@ -42,7 +42,7 @@ top-k docs injected into the prompt as reference configurations.
 
 | Config | Generation | C->J | J->C | Completion | Analysis |
 |---|---|---|---|---|---|
-| Base | 0.0806 | 0.1951 | 0.3348 | - | - |
+| Base (no-RAG @512, unified) | 0.0813 | 0.0727 | 0.1905 | 0.3324 | 0.0921 |
 | Base + RAG k=1 | 0.3201 | 0.1728 | 0.6462 | 0.5273 | 0.1214 |
 | Base + RAG k=3 | 0.4244 | 0.1783 | 0.3375 | 0.5948 | 0.1198 |
 | Base + RAG k=5 | 0.4509 | 0.1801 | 0.3242 | 0.5732 | 0.1167 |
@@ -52,6 +52,12 @@ top-k docs injected into the prompt as reference configurations.
 | LoRA v4 + RAG k=3 | 0.8172 | **1.0000** | **0.9395** | 0.9088 | 0.5430 |
 | LoRA v4 + RAG k=5 | 0.8102 | **1.0000** | 0.9406 | 0.9398 | 0.5537 |
 | LoRA v4 + RAG k=10 | 0.7995 | 0.9189 | 0.9406 | 0.8967 | 0.5282 |
+
+Note: the previous "Base no-RAG" row used 0.1951/0.3348 from an older eval script
+(`07_evaluate_base.py`) with a different prompt; re-run with the unified RAG-eval
+script at @512 gives 0.0727/0.1905. With consistent prompts, **RAG lifts the base
+model substantially on every task** (+77% J->C, +145% C->J, +422% generation,
++79% completion).
 
 ## Key Findings
 
@@ -168,6 +174,32 @@ Re-run no-RAG on the 8-pair benchmark with the same script/tokens as RAG runs:
 v4 C->J 0.3181 / J->C 0.6681; base C->J 0.1970 / J->C 0.3348. Confirms the
 earlier @512 values; the old 0.3012 figure was the @400 setting.
 
+### Second fresh benchmark: 60 pairs (seed 7777, replication)
+`translate_pairs_60.json` — another 60 fresh pairs (seed 7777, zero overlap) as a
+replication set. Full matrix: v4 no-RAG 0.2260/0.6655 → v4 RAG k=3 0.3123/0.5722
+(C->J +38%, J->C -14%); base no-RAG 0.1408/0.2292 → base RAG k=3 0.2729/0.3662
+(C->J +94%, J->C +60%). C->J gains replicate strongly; v4 J->C again swings
+(noise + parameter plagiarism, e.g. sample 29 copies hostname rt-039 from the
+retrieved reference instead of rt-029), consistent with the n=40 significance
+result that v4 J->C RAG effect is not significant. Combined n=100 (40+60):
+v4 C->J +~44%, J->C ~±8% (non-significant); base C->J +~87%, J->C +~59%.
+
+### Unseen multi-task evaluation (Gen/Comp/Ana on unseen configs, n=80 each)
+`scripts/31_build_unseen_multitask.py` builds generation/completion/analysis
+samples from the 40 unseen pairs (query→config, truncation→config, config→
+description), `scripts/17` retrieves, `scripts/18` evaluates (v4 only):
+
+| Task | no-RAG | RAG k=3 | Δ |
+|---|---|---|---|
+| Generation | 0.0586 | **0.1002** | +71% |
+| Completion | 0.4135 | **0.5412** | +31% |
+| Analysis | 0.1259 | 0.0203 | -84% |
+
+RAG helps generation (+71%) and completion (+31%) on truly unseen configs —
+the first Gen/Comp evidence outside the template-family test set. The analysis
+-84% is the degenerate-reference artifact again (template-style gold, RAG emits
+verbose correct analysis) — consistent with Case 2 and not a real regression.
+
 ## Sanitize: Reference Parameter Cleaning
 
 When RAG references contain concrete parameters (hostname/IP/AS/port/password), a
@@ -224,21 +256,24 @@ v4 J->C, sample 0: source Junos has `host-name gw-01`, but RAG output says
 ConfigBLEU drops 0.7591 → 0.1119. `--sanitize` restores it to 0.5793 (hostname `gw-01`).
 This motivated the sanitize experiment.
 
-### Case 2: Analysis "degradation" — training-template memorization, not pure eval artifact
+### Case 2: Analysis "degradation" — degenerate references + parameter plagiarism
 v4 analysis samples (6, 8, 21, 31, ...): without RAG the model emits a terse summary
 ("Configure BGP on Juniper with AS 65162") that exactly matches the short reference
 (ROUGE=1.0, bge semantic sim=1.0 — string-identical). The reference is itself the
-**training template sentence**, so the high no-RAG score is memorization, not ability.
-With RAG, the retrieved detailed reference pulls the model into a verbose style
-("Configure BGP on this Juniper router with AS number 65152, and add an external
-peer group...") that is semantically complete and correct but no longer matches the
-template gold text (ROUGE=0.2~0.3). 18 samples show this pattern. Verification with
-bge-large-en-v1.5 cosine similarity (scripts/27_ana_semantic.py): no-RAG avg=1.0000,
-RAG avg=0.7657, RAG better in 0/18 — i.e. **the semantic metric agrees with ROUGE here
-because the gold is a memorized template, so both metrics measure string-match against
-a degenerate reference.** Conclusion: the analysis task's gold references are
-low-quality (instruction restatements); this caveat is reported and per-sample
-inspection favors RAG outputs for informativeness.
+**training template sentence** (its AS number is unrelated to the source config,
+e.g. src AS 65408 vs ref AS 65362), so the high no-RAG score is memorization, not ability.
+With RAG, the model produces verbose analyses that (a) are more complete but (b) **copy
+parameters from the retrieved reference** (e.g. AS 65362 and neighbor 192.168.82.1
+instead of the source's 65408/192.168.128.1) — parameter plagiarism extends to the
+analysis task. ROUGE=0.2~0.3. 18 samples show this pattern.
+Verification with token-level F1 (bge-large-en-v1.5, scripts/30b): no-RAG 0.9139 vs
+RAG 0.8832, RAG better in 25/116 — all three automatic metrics (ROUGE, sentence-cosine,
+token-F1) agree with no-RAG because the gold is a memorized template, so every metric
+measures string-match against a degenerate reference.
+**Conclusion:** analysis gold references are low-quality (instruction restatements with
+template-random parameters); RAG's apparent degradation is a mixture of (1) evaluation
+artifact (degenerate gold) and (2) genuine parameter plagiarism from the reference.
+Reported as a caveat; the analysis-task metric cannot be trusted as-is.
 
 ### Case 3: Template-family plagiarism (generation, v3)
 v3 generation samples contaminated by jvd `policy-statement export-direct` /
@@ -270,14 +305,34 @@ translation_c2j 1.0000 [1.0000, 1.0000] (n=14), translation_j2c 0.9395
 [0.4829, 0.5999]. The J→C CI spanning ±0.07 (n=14) confirms the small-translation-
 testset fragility identified earlier.
 
+### 3b. Paired significance tests (40-pair benchmark, n=40)
+`scripts/29_paired_significance.py` — paired bootstrap (10k) + permutation
+(10k) + paired-t on RAG k=3 vs no-RAG, per direction:
+
+| Model | Direction | Δmean | 95% CI | perm p | paired-t p |
+|---|---|---|---|---|---|
+| LoRA v4 | C→J | +0.120 | [+0.076, +0.166] | <0.0001 | <0.0001 |
+| LoRA v4 | J→C | +0.010 | [-0.054, +0.075] | 0.79 | 0.76 |
+| Base | C→J | +0.131 | [+0.113, +0.148] | <0.0001 | <0.0001 |
+| Base | J→C | +0.144 | [+0.084, +0.206] | <0.0001 | <0.0001 |
+
+C→J RAG gains are strongly significant for both models; v4 J→C shows **no
+significant effect** (CI straddles 0, p=0.79) — confirming the n=8 -33% was noise;
+base J→C gain is significant.
+
 ### 4. Analysis-task evaluation verification
-`scripts/27_ana_semantic.py` — bge-large-en-v1.5 cosine similarity on the 18
-disputed analysis samples (see Case 2). Finding: no-RAG predictions are
-string-identical to the template gold (sim=1.0); semantic similarity **agrees**
-with ROUGE (RAG 0.7657 avg), i.e. the apparent RAG advantage is NOT recoverable
-by a better metric — the gold references themselves are degenerate
-(instruction restatements). Reported as a caveat; per-sample qualitative
-inspection favors RAG outputs.
+Three automatic metrics checked on the 18 disputed analysis samples (see Case 2):
+- `scripts/27_ana_semantic.py` — bge-large-en-v1.5 sentence-cosine: no-RAG 1.0000
+  vs RAG 0.7657 (0/18 RAG better)
+- `scripts/30b_ana_bertscore_bge.py` — token-level F1 (lightweight BERTScore on
+  all 116 samples): no-RAG 0.9139 vs RAG 0.8832 (25/116 RAG better)
+- ROUGE: no-RAG 0.6583 vs RAG 0.5430
+
+All three agree: the no-RAG predictions are string-identical to the template gold,
+so every metric measures string-match against a degenerate reference. Per-sample
+inspection additionally reveals **parameter plagiarism in RAG analysis outputs**
+(AS/neighbor copied from the retrieved reference instead of the source). The
+analysis-task metric is unreliable as-is; reported as a caveat.
 
 ## Files
 

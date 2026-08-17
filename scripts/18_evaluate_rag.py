@@ -103,13 +103,18 @@ def main():
                         help="检索缓存: vector=纯向量, rerank=bge-reranker 精排, bm25=关键词, taskaware=按任务过滤")
     parser.add_argument("--max-samples", type=int, default=None)
     parser.add_argument("--sanitize", action="store_true", help="参考配置参数清洗(占位符化)")
+    parser.add_argument("--data", default=None, help="自定义样本文件")
+    parser.add_argument("--retrieval-file", default=None, help="自定义检索缓存文件")
     args = parser.parse_args()
 
-    test_data = json.load(open(TEST_DATA, encoding="utf-8"))
+    data_path = Path(args.data) if args.data else TEST_DATA
+    test_data = json.load(open(data_path, encoding="utf-8"))
     retrieval_path = {
         "vector": RETRIEVAL, "rerank": RETRIEVAL_RERANK, "bm25": RETRIEVAL_BM25,
         "taskaware": RETRIEVAL_TASKAWARE,
     }[args.retrieval]
+    if args.retrieval_file:
+        retrieval_path = Path(args.retrieval_file)
     retrieval = json.load(open(retrieval_path, encoding="utf-8"))
     logger.info(f"Loaded {len(test_data)} test samples, {len(retrieval)} retrieval results ({args.retrieval})")
 
