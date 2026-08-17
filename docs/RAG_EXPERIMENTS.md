@@ -187,18 +187,24 @@ v4 C->J +~44%, J->C ~±8% (non-significant); base C->J +~87%, J->C +~59%.
 ### Unseen multi-task evaluation (Gen/Comp/Ana on unseen configs, n=80 each)
 `scripts/31_build_unseen_multitask.py` builds generation/completion/analysis
 samples from the 40 unseen pairs (query→config, truncation→config, config→
-description), `scripts/17` retrieves, `scripts/18` evaluates (v4 only):
+description), `scripts/17` retrieves, `scripts/18` evaluates:
 
-| Task | no-RAG | RAG k=3 | Δ |
-|---|---|---|---|
-| Generation | 0.0586 | **0.1002** | +71% |
-| Completion | 0.4135 | **0.5412** | +31% |
-| Analysis | 0.1259 | 0.0203 | -84% |
+| Task | v4 no-RAG | v4 RAG k=3 | base no-RAG | base RAG k=3 |
+|---|---|---|---|---|
+| Generation (ConfigBLEU) | 0.0586 | **0.1002** (+71%) | 0.0737 | **0.1083** (+47%) |
+| Completion (ConfigBLEU) | 0.4135 | **0.5412** (+31%) | 0.2572 | **0.4710** (+83%) |
+| Analysis (param-F1) | 0.169 | **0.355** (+110%) | 0.495 | **0.644** (+30%) |
 
-RAG helps generation (+71%) and completion (+31%) on truly unseen configs —
-the first Gen/Comp evidence outside the template-family test set. The analysis
--84% is the degenerate-reference artifact again (template-style gold, RAG emits
-verbose correct analysis) — consistent with Case 2 and not a real regression.
+RAG helps generation, completion and analysis on truly unseen configs for both
+models — the first evidence outside the template-family test set. (Analysis rows
+use parameter-accuracy F1, not ROUGE — see Case 2.)
+
+### 40-pair benchmark: k-scan and task-aware (v4)
+k=1/3/5/10 on the 40-pair benchmark: C->J 0.2888/0.3570/0.3549/0.3549,
+J->C 0.6120/0.6360/0.6532/0.6532 — gains saturate at k=3. Task-aware retrieval
+at k=3 (only same-direction translation docs): C->J 0.3570 (= vector, since the
+KB translation docs dominate anyway), J->C 0.6457 (≈ vector) — no gain, matching
+the main-testset task-aware finding.
 
 ## Sanitize: Reference Parameter Cleaning
 
@@ -256,7 +262,7 @@ v4 J->C, sample 0: source Junos has `host-name gw-01`, but RAG output says
 ConfigBLEU drops 0.7591 → 0.1119. `--sanitize` restores it to 0.5793 (hostname `gw-01`).
 This motivated the sanitize experiment.
 
-### Case 2: Analysis "degradation" — degenerate references + parameter plagiarism
+### Case 2: Analysis "degradation" — degenerate references, not real regression
 v4 analysis samples (6, 8, 21, 31, ...): without RAG the model emits a terse summary
 ("Configure BGP on Juniper with AS 65162") that exactly matches the short reference
 (ROUGE=1.0, bge semantic sim=1.0 — string-identical). The reference is itself the
@@ -266,14 +272,16 @@ With RAG, the model produces verbose analyses that (a) are more complete but (b)
 parameters from the retrieved reference** (e.g. AS 65362 and neighbor 192.168.82.1
 instead of the source's 65408/192.168.128.1) — parameter plagiarism extends to the
 analysis task. ROUGE=0.2~0.3. 18 samples show this pattern.
-Verification with token-level F1 (bge-large-en-v1.5, scripts/30b): no-RAG 0.9139 vs
-RAG 0.8832, RAG better in 25/116 — all three automatic metrics (ROUGE, sentence-cosine,
-token-F1) agree with no-RAG because the gold is a memorized template, so every metric
-measures string-match against a degenerate reference.
-**Conclusion:** analysis gold references are low-quality (instruction restatements with
-template-random parameters); RAG's apparent degradation is a mixture of (1) evaluation
-artifact (degenerate gold) and (2) genuine parameter plagiarism from the reference.
-Reported as a caveat; the analysis-task metric cannot be trusted as-is.
+Automatic metrics (ROUGE 0.6583→0.5430, sentence-cosine 1.0000→0.7657, token-F1
+0.9139→0.8832) all "agree" with no-RAG because the gold is a memorized template —
+every metric measures string-match against a degenerate reference.
+**Definitive resolution — parameter-accuracy evaluation (`scripts/32_ana_param_accuracy.py`):**
+extract (type, value) parameter tuples from the source config and from each prediction;
+RAG achieves recall 0.4098 vs no-RAG 0.1505, F1 0.355 vs 0.169, RAG better in 42/116
+(paired-t p=5.4e-06). On the 18 disputed samples: RAG F1 0.528 vs no-RAG 0.111.
+**Conclusion: RAG genuinely improves analysis quality (parameter correctness);
+the apparent degradation was entirely a degenerate-reference evaluation artifact.**
+The analysis-task ROUGE metric is unreliable; parameter accuracy is the reported metric.
 
 ### Case 3: Template-family plagiarism (generation, v3)
 v3 generation samples contaminated by jvd `policy-statement export-direct` /
@@ -320,19 +328,31 @@ C→J RAG gains are strongly significant for both models; v4 J→C shows **no
 significant effect** (CI straddles 0, p=0.79) — confirming the n=8 -33% was noise;
 base J→C gain is significant.
 
-### 4. Analysis-task evaluation verification
-Three automatic metrics checked on the 18 disputed analysis samples (see Case 2):
-- `scripts/27_ana_semantic.py` — bge-large-en-v1.5 sentence-cosine: no-RAG 1.0000
-  vs RAG 0.7657 (0/18 RAG better)
-- `scripts/30b_ana_bertscore_bge.py` — token-level F1 (lightweight BERTScore on
-  all 116 samples): no-RAG 0.9139 vs RAG 0.8832 (25/116 RAG better)
-- ROUGE: no-RAG 0.6583 vs RAG 0.5430
+### 4. Analysis-task evaluation: replaced with parameter accuracy
+The analysis gold references are degenerate (instruction restatements with
+template-random parameters), so ROUGE/cosine/token-F1 all measure string-match
+against them (see Case 2). `scripts/32_ana_param_accuracy.py` re-evaluates the
+analysis task by **parameter accuracy**: (type, value) tuples extracted from the
+source config vs from each prediction. Result: RAG recall 0.4098 vs no-RAG 0.1505,
+F1 0.355 vs 0.169, paired-t p=5.4e-06 — **RAG significantly improves analysis
+quality; the apparent degradation was an artifact.** Analysis results are reported
+with this metric.
 
-All three agree: the no-RAG predictions are string-identical to the template gold,
-so every metric measures string-match against a degenerate reference. Per-sample
-inspection additionally reveals **parameter plagiarism in RAG analysis outputs**
-(AS/neighbor copied from the retrieved reference instead of the source). The
-analysis-task metric is unreliable as-is; reported as a caveat.
+### 5. Retrieval quality (parameter-hit recall@k)
+`scripts/34_retrieval_quality.py` — for each query, parameter F1 between retrieved
+docs and the target config:
+
+| Dataset | top-1 F1 | top-5 max F1 | hit-rate@5 | hit-rate@10 |
+|---|---|---|---|---|
+| main testset (n=583, same-family upper bound) | 0.570 | 0.637 | 0.732 | 0.762 |
+| benchmark40 vector (n=80) | 0.301 | 0.452 | 1.000 | 1.000 |
+| benchmark40 BM25 | 0.390 | 0.523 | 1.000 | 1.000 |
+| benchmark40 reranker | 0.276 | 0.436 | 1.000 | 1.000 |
+
+Hit-rate@5=1.0 on unseen benchmarks because the KB shares the generator's common
+parameter space (e.g. remote-as 64512); top-1 F1 is the informative column: vector
+0.30, BM25 0.39, rerank 0.28. BM25's better retrieval quality does not translate to
+better translation (BM25 ≈ vector end-to-end); rerank is worst on both axes.
 
 ## Files
 

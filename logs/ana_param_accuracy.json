@@ -1,0 +1,3003 @@
+[
+  {
+    "sample": 1,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 4,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.28.0.0"
+      ],
+      [
+        "ospf_proc",
+        "28"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "28"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 5,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 6,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 8,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 10,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 12,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 13,
+    "src_params": 1,
+    "f1_norag": 0.6666666666666666,
+    "rec_norag": 1.0,
+    "prec_norag": 0.5,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "65065"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65065"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 16,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65408"
+      ],
+      [
+        "neighbor",
+        "192.168.128.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65408"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65408"
+      ]
+    ]
+  },
+  {
+    "sample": 18,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "65200"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 21,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 22,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 26,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "100"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "100"
+      ]
+    ]
+  },
+  {
+    "sample": 27,
+    "src_params": 1,
+    "f1_norag": 0.6666666666666666,
+    "rec_norag": 1.0,
+    "prec_norag": 0.5,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "65276"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65276"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65276"
+      ]
+    ]
+  },
+  {
+    "sample": 28,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65436"
+      ],
+      [
+        "neighbor",
+        "192.168.156.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65436"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65436"
+      ]
+    ]
+  },
+  {
+    "sample": 29,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "acl",
+        "116"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 30,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65422"
+      ],
+      [
+        "neighbor",
+        "192.168.142.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65422"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65422"
+      ]
+    ]
+  },
+  {
+    "sample": 31,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 32,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 34,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 39,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 40,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 42,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 43,
+    "src_params": 1,
+    "f1_norag": 1.0,
+    "rec_norag": 1.0,
+    "prec_norag": 1.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "ospf_proc",
+        "80"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "80"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "ospf_proc",
+        "80"
+      ]
+    ]
+  },
+  {
+    "sample": 44,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 46,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.64.0.0"
+      ],
+      [
+        "ospf_proc",
+        "64"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "64"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 47,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 48,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65352"
+      ],
+      [
+        "neighbor",
+        "192.168.72.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65352"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65352"
+      ]
+    ]
+  },
+  {
+    "sample": 50,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.29.0.0"
+      ],
+      [
+        "ospf_proc",
+        "29"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "29"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 52,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 54,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65087"
+      ],
+      [
+        "neighbor",
+        "192.168.63.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65087"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 57,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65403"
+      ],
+      [
+        "neighbor",
+        "192.168.123.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65403"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65403"
+      ]
+    ]
+  },
+  {
+    "sample": 60,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 61,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 62,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "100"
+      ],
+      [
+        "bgp_as",
+        "200"
+      ],
+      [
+        "neighbor",
+        "192.168.1.1"
+      ],
+      [
+        "neighbor_as",
+        "200"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "100"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "100"
+      ]
+    ]
+  },
+  {
+    "sample": 63,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65370"
+      ],
+      [
+        "neighbor",
+        "192.168.90.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65370"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65370"
+      ]
+    ]
+  },
+  {
+    "sample": 68,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 70,
+    "src_params": 4,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "iface",
+        "Serial0"
+      ],
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.0.1.0"
+      ],
+      [
+        "ospf_proc",
+        "1"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 75,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65101"
+      ],
+      [
+        "neighbor",
+        "192.168.77.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65101"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65101"
+      ]
+    ]
+  },
+  {
+    "sample": 77,
+    "src_params": 1,
+    "f1_norag": 0.6666666666666666,
+    "rec_norag": 1.0,
+    "prec_norag": 0.5,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "65133"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65133"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65133"
+      ]
+    ]
+  },
+  {
+    "sample": 79,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 81,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 86,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 87,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65412"
+      ],
+      [
+        "neighbor",
+        "192.168.132.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65412"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65412"
+      ]
+    ]
+  },
+  {
+    "sample": 88,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 90,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65229"
+      ],
+      [
+        "neighbor",
+        "192.168.205.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65229"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65229"
+      ]
+    ]
+  },
+  {
+    "sample": 91,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 92,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "acl",
+        "148"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 94,
+    "src_params": 1,
+    "f1_norag": 0.6666666666666666,
+    "rec_norag": 1.0,
+    "prec_norag": 0.5,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "65363"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65363"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65363"
+      ]
+    ]
+  },
+  {
+    "sample": 95,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.39.0.0"
+      ],
+      [
+        "ospf_proc",
+        "39"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "39"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 97,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 98,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 99,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 100,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 101,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 104,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "acl",
+        "139"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 105,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 106,
+    "src_params": 12,
+    "f1_norag": 0.15384615384615385,
+    "rec_norag": 0.08333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.15384615384615385,
+    "rec_rag": 0.08333333333333333,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "iface",
+        "Ethernet0"
+      ],
+      [
+        "iface",
+        "Ethernet1"
+      ],
+      [
+        "iface",
+        "Ethernet2"
+      ],
+      [
+        "iface",
+        "Ethernet3"
+      ],
+      [
+        "iface",
+        "Ethernet4"
+      ],
+      [
+        "iface",
+        "Ethernet5"
+      ],
+      [
+        "iface",
+        "ethernet"
+      ],
+      [
+        "ospf_area",
+        "10"
+      ],
+      [
+        "ospf_area",
+        "3"
+      ],
+      [
+        "ospf_net",
+        "192.168.10.0"
+      ],
+      [
+        "ospf_net",
+        "192.168.30.0"
+      ],
+      [
+        "ospf_proc",
+        "109"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "109"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "ospf_proc",
+        "109"
+      ]
+    ]
+  },
+  {
+    "sample": 107,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65349"
+      ],
+      [
+        "neighbor",
+        "192.168.69.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65349"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 108,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 111,
+    "src_params": 0,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 112,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65283"
+      ],
+      [
+        "neighbor",
+        "192.168.3.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65283"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 113,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 114,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.5,
+    "rec_rag": 1.0,
+    "prec_rag": 0.3333333333333333,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 116,
+    "src_params": 1,
+    "f1_norag": 0.6666666666666666,
+    "rec_norag": 1.0,
+    "prec_norag": 0.5,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "65254"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65254"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65254"
+      ]
+    ]
+  },
+  {
+    "sample": 119,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.5,
+    "rec_rag": 1.0,
+    "prec_rag": 0.3333333333333333,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 125,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 126,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "acl",
+        "148"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 127,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 128,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "65304"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65304"
+      ]
+    ]
+  },
+  {
+    "sample": 134,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 135,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65103"
+      ],
+      [
+        "neighbor",
+        "192.168.79.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65103"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65103"
+      ]
+    ]
+  },
+  {
+    "sample": 138,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 140,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 141,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 143,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 145,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.4.0.0"
+      ],
+      [
+        "ospf_proc",
+        "4"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "4"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 146,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 147,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 150,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 154,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65047"
+      ],
+      [
+        "neighbor",
+        "192.168.23.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65047"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 158,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65250"
+      ],
+      [
+        "neighbor",
+        "192.168.226.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65250"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65250"
+      ]
+    ]
+  },
+  {
+    "sample": 159,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.4,
+    "rec_rag": 1.0,
+    "prec_rag": 0.25,
+    "src": [
+      [
+        "bgp_as",
+        "65180"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65180"
+      ]
+    ]
+  },
+  {
+    "sample": 161,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.5,
+    "rec_rag": 0.3333333333333333,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.79.0.0"
+      ],
+      [
+        "ospf_proc",
+        "79"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "79"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "ospf_proc",
+        "79"
+      ]
+    ]
+  },
+  {
+    "sample": 166,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "acl",
+        "144"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 167,
+    "src_params": 1,
+    "f1_norag": 0.6666666666666666,
+    "rec_norag": 1.0,
+    "prec_norag": 0.5,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "65098"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65098"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65098"
+      ]
+    ]
+  },
+  {
+    "sample": 168,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65345"
+      ],
+      [
+        "neighbor",
+        "192.168.65.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65345"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65345"
+      ]
+    ]
+  },
+  {
+    "sample": 169,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 170,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65395"
+      ],
+      [
+        "neighbor",
+        "192.168.115.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65395"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 173,
+    "src_params": 8,
+    "f1_norag": 0.2222222222222222,
+    "rec_norag": 0.125,
+    "prec_norag": 1.0,
+    "f1_rag": 0.2222222222222222,
+    "rec_rag": 0.125,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "40000"
+      ],
+      [
+        "bgp_as",
+        "45000"
+      ],
+      [
+        "bgp_as",
+        "50000"
+      ],
+      [
+        "neighbor",
+        "192.168.1.2"
+      ],
+      [
+        "neighbor",
+        "192.168.3.2"
+      ],
+      [
+        "neighbor_as",
+        "40000"
+      ],
+      [
+        "neighbor_as",
+        "50000"
+      ],
+      [
+        "router_id",
+        "172.17.1.99"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "45000"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "40000"
+      ]
+    ]
+  },
+  {
+    "sample": 174,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 176,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 179,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 180,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 181,
+    "src_params": 0,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 183,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 187,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.32.0.0"
+      ],
+      [
+        "ospf_proc",
+        "32"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "32"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 188,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 189,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 190,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.65.0.0"
+      ],
+      [
+        "ospf_proc",
+        "65"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "65"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 194,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.5,
+    "rec_rag": 1.0,
+    "prec_rag": 0.3333333333333333,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 198,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 201,
+    "src_params": 1,
+    "f1_norag": 0.6666666666666666,
+    "rec_norag": 1.0,
+    "prec_norag": 0.5,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "65129"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65129"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65129"
+      ]
+    ]
+  },
+  {
+    "sample": 202,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 204,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 206,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65494"
+      ],
+      [
+        "neighbor",
+        "192.168.214.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65494"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65494"
+      ]
+    ]
+  },
+  {
+    "sample": 208,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 209,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 211,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 212,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65106"
+      ],
+      [
+        "neighbor",
+        "192.168.82.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65106"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65106"
+      ]
+    ]
+  },
+  {
+    "sample": 213,
+    "src_params": 1,
+    "f1_norag": 0.6666666666666666,
+    "rec_norag": 1.0,
+    "prec_norag": 0.5,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "65338"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65338"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65338"
+      ]
+    ]
+  },
+  {
+    "sample": 214,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.6666666666666666,
+    "rec_rag": 1.0,
+    "prec_rag": 0.5,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 215,
+    "src_params": 3,
+    "f1_norag": 0.5,
+    "rec_norag": 0.3333333333333333,
+    "prec_norag": 1.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "ospf_area",
+        "0"
+      ],
+      [
+        "ospf_net",
+        "10.17.0.0"
+      ],
+      [
+        "ospf_proc",
+        "17"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "ospf_proc",
+        "17"
+      ]
+    ],
+    "hit_rag": []
+  },
+  {
+    "sample": 218,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 0.0,
+    "rec_rag": 0.0,
+    "prec_rag": 0.0,
+    "src": [
+      [
+        "acl",
+        "149"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": []
+  },
+  {
+    "sample": 220,
+    "src_params": 1,
+    "f1_norag": 0.0,
+    "rec_norag": 0.0,
+    "prec_norag": 0.0,
+    "f1_rag": 1.0,
+    "rec_rag": 1.0,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "64512"
+      ]
+    ]
+  },
+  {
+    "sample": 221,
+    "src_params": 4,
+    "f1_norag": 0.4,
+    "rec_norag": 0.25,
+    "prec_norag": 1.0,
+    "f1_rag": 0.4,
+    "rec_rag": 0.25,
+    "prec_rag": 1.0,
+    "src": [
+      [
+        "bgp_as",
+        "64512"
+      ],
+      [
+        "bgp_as",
+        "65310"
+      ],
+      [
+        "neighbor",
+        "192.168.30.1"
+      ],
+      [
+        "neighbor_as",
+        "64512"
+      ]
+    ],
+    "hit_norag": [
+      [
+        "bgp_as",
+        "65310"
+      ]
+    ],
+    "hit_rag": [
+      [
+        "bgp_as",
+        "65310"
+      ]
+    ]
+  }
+]
